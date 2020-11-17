@@ -1,0 +1,10 @@
+# Ignore everything
+*
+
+# But not these files...
+!.gitignore
+!init.el
+!about-me.el
+!config/*
+!pkgs/*
+!themes/*

@@ -1,0 +1,12 @@
+[submodule "pkgs/better-defaults"]
+	path = pkgs/better-defaults
+	url = https://git.sr.ht/~technomancy/better-defaults
+[submodule "themes/nord-emacs"]
+	path = themes/nord-emacs
+	url = git@github.com:arcticicestudio/nord-emacs.git
+[submodule "pkgs/no-littering"]
+	path = pkgs/no-littering
+	url = git@github.com:emacscollective/no-littering.git
+[submodule "pkgs/exec-path-from-shell"]
+	path = pkgs/exec-path-from-shell
+	url = git@github.com:purcell/exec-path-from-shell.git
