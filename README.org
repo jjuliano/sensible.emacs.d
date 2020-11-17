@@ -1,0 +1,44 @@
+* My =very= Personal Emacs Configuration
+
+This emacs configuration only has the absolute necessary configurations tailored for my needs.
+If I need additional feature and package, I can add them later.
+
+It's easier to keep track that way, than trying to keep up with gazillions of pre-installed packages
+that I don't use.
+
+This configuration tries not to be a one-size-fits all configuration, but it tries to be an emacs
+configuration that suits me, that I keep it personal, clean, easy and sensible.
+
+** Files
+
+For starters, it includes a =.gitignore=, which ignores all directories, except the following files and directories:
+
+#+BEGIN_SRC text
+├── about-me.el
+├── config
+│   └── *
+├── init.el
+├── pkgs
+│   └── *
+└── themes
+    └── *
+#+END_SRC
+
+** Packages
+
+It uses the following packages by default, all except =org.el= are managed by =git submodules=.
+
+- no-littering :: ensure .emacs.d folder is clean
+- backup-each-save :: backup files on each save
+- better-defaults :: the base defaults
+- exec-path-from-shell :: made $PATH available inside emacs
+- nord-emacs :: default theme
+- org.el :: Rougier's org-mode GTD workflow presets
+
+** File Locations
+
+All personal configurations, org-notes, backups and auto-saves are stored in the =~/Downloads/Emacs/= directory. Those files
+should not be committed to GIT, but they should be managed via your file-sync utility (i.e. iCloud, Dropbox, etc.).
+
+Package configs and variable files are stored in =~/Documents/Emacs/config/= and =~/Documents/Emacs/data/= respectively.
+Org workdir are set to =~/Documents/Emacs/org/=.
