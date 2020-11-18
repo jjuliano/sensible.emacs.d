@@ -46,7 +46,7 @@ Org workdir are set to =~/Documents/Emacs/org/=.
 
 ** Behaviour
 
-On startup, it will present this =README.org= document. 
+On startup, Emacs will present this =README.org= document. 
 
 ** Key Bindings
 
