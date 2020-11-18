@@ -20,6 +20,7 @@ For starters, it includes a =.gitignore=, which ignores all directories, except 
 ├── init.el
 ├── pkgs
 │   └── *
+├── README.org
 └── themes
     └── *
 #+END_SRC
@@ -28,12 +29,12 @@ For starters, it includes a =.gitignore=, which ignores all directories, except 
 
 It uses the following packages by default, all except =org.el= are managed by =git submodules=.
 
-- no-littering :: ensure .emacs.d folder is clean
-- backup-each-save :: backup files on each save
-- better-defaults :: the base defaults
-- exec-path-from-shell :: made $PATH available inside emacs
-- nord-emacs :: default theme
-- org.el :: Rougier's org-mode GTD workflow presets
+  - [[https://github.com/emacscollective/no-littering][no-littering]] :: ensure .emacs.d folder is clean
+  - [[https://www.emacswiki.org/emacs/backup-each-save.el][backup-each-save.el]] :: backup files on each save
+  - [[https://git.sr.ht/~technomancy/better-defaults][better-defaults.el]] :: the base defaults
+  - [[https://github.com/purcell/exec-path-from-shell][exec-path-from-shell]] :: made $PATH available inside emacs
+  - [[https://github.com/arcticicestudio/nord-emacs][nord-emacs]] :: default theme
+  - [[https://github.com/rougier/emacs-gtd][GTD.org.el]] :: Rougier's org-mode GTD workflow presets
 
 ** File Locations
 
@@ -42,3 +43,38 @@ should not be committed to GIT, but they should be managed via your file-sync ut
 
 Package configs and variable files are stored in =~/Documents/Emacs/config/= and =~/Documents/Emacs/data/= respectively.
 Org workdir are set to =~/Documents/Emacs/org/=.
+
+** Behaviour
+
+On startup, it will present this =README.org= document. 
+
+** Key Bindings
+
+Aside from the classic default keys. Here's important key-strokes for using the =GTD.org.el= presets.
+
+| Command                          | Bindings             | Mode + where           |
+|----------------------------------+----------------------+------------------------|
+| Agenda                           | *C-c a*              | any                    |
+| Agenda for today                 | *C-c a a*            | any                    |
+|                                  |                      |                        |
+| Capture menu                     | *C-c c*              | any                    |
+| Capture meeting (agenda.org)     | *C-c c m*            | any                    |
+| Capture meeting note (notes.org) | *C-c c n*            | any                    |
+| Capture generic TODO (inbox.org) | *C-c i* or *C-c c i* | any                    |
+| Capture mail TODO (inbox.org)    | *C-c i* or *C-c c @* | mu4e view/headers mode |
+|                                  |                      |                        |
+| Add/Remove tag                   | *C-c C-c*            | org-mode on headline   |
+| Update progress indicator        | *C-c C-c*            | org-mode on [/]        |
+| Update all progress indicators   | *C-u C-c #*          | org-mode               |
+| Enter estimated effort           | *C-c C-x e*          | org-mode on headline   |
+| Refile section                   | *C-c C-w*            | org-mode on headline   |
+| Move to next TODO state          | *S-right*            | org-mode on TODO       |
+|                                  |                      |                        |
+| Clock in                         | *C-c C-x C-i*        | org-mode on headline   |
+| Clock out                        | *C-c C-x C-o*        | org-mode on headline   |
+|                                  |                      |                        |
+| Plain timestamp                  | *C-c .*              | org-mode               |
+| Scheduled timestamp              | *C-c s*              | org-mode               |
+| Deadline timestamp               | *C-c d*              | org-mode               |
+| Inactive timestamp               | *C-c !*              | org-mode               |
+

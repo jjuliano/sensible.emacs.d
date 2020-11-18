@@ -9,16 +9,16 @@
 
 ;; Capture
 (setq org-capture-templates
-      `(("i" "Inbox" entry  (file (expand-file-name "inbox.org" org-directory))
+      `(("i" "Inbox" entry  (file "inbox.org")
         ,(concat "* TODO %?\n"
                  "/Entered on/ %U"))
-        ("m" "Meeting" entry  (file+headline (expand-file-name "agenda.org" org-directory) "Future")
+        ("m" "Meeting" entry  (file+headline "agenda.org" "Future")
         ,(concat "* %? :meeting:\n"
                  "<%<%Y-%m-%d %a %H:00>>"))
-        ("n" "Note" entry  (file (expand-file-name "notes.org" org-directory))
+        ("n" "Note" entry  (file "notes.org")
         ,(concat "* Note (%a)\n"
                  "/Entered on/ %U\n" "\n" "%?"))
-        ("@" "Inbox [mu4e]" entry (file (expand-file-name "inbox.org" org-directory))
+        ("@" "Inbox [mu4e]" entry (file "inbox.org")
         ,(concat "* TODO Reply to \"%a\" %?\n"
                  "/Entered on/ %U"))))
 
