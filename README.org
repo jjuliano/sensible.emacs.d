@@ -46,9 +46,42 @@ Org workdir are set to =~/Documents/Emacs/org/=.
 
 ** Behaviour
 
-On startup, Emacs will present this =README.org= document. 
+On startup, Emacs will present this =README.org= document.
 
-** Key Bindings
+** GTD org-mode files
+I use Rougier's [[https://github.com/rougier/emacs-gtd][GTD.org.el]] GTD configuration and presets for managing my tasks and agenda.
+All the org files are stored in =~/Documents/Emacs/org/= folder. The plugin has preconfigured 4 org-files by default.
+Here's the recommended config per each file that should be put on top of each files.
+
+*** ~/Documents/Emacs/org/agenda.org
+#+BEGIN_SRC org
+#+STARTUP: content showstars indent
+#+TAGS: @home(h) @work(w) @mail(m) @comp(c) @web(b)
+#+PROPERTY: Effort_ALL 0 0:05 0:10 0:15 0:30 0:45 1:00 2:00 4:00
+#+FILETAGS: agenda
+#+END_SRC
+
+*** ~/Documents/Emacs/org/inbox.org
+#+BEGIN_SRC org
+#+STARTUP: content showstars indent
+#+FILETAGS: inbox
+#+END_SRC
+
+*** ~/Documents/Emacs/org/notes.org
+#+BEGIN_SRC org
+#+STARTUP: content showstars indent
+#+FILETAGS: notes
+#+END_SRC
+
+*** ~/Documents/Emacs/org/projects.org
+#+BEGIN_SRC org
+#+STARTUP: content showstars indent
+#+TAGS: @home(h) @work(w) @mail(m) @comp(c) @web(b)
+#+PROPERTY: Effort_ALL 0 0:05 0:10 0:15 0:30 0:45 1:00 2:00 4:00
+#+FILETAGS: projects
+#+END_SRC
+
+** Rougier's org-mode GTD Key Bindings
 
 Aside from the classic default keys. Here's important key-strokes for using the =GTD.org.el= presets.
 
