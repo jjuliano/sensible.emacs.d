@@ -1,17 +1,19 @@
 * My =very= Personal Emacs Configuration
 
-This emacs configuration only has the absolute necessary configurations tailored for my needs.
-If I need additional feature and package, I can add them later.
+This emacs configuration only has the absolute necessary configurations tailored
+for my needs. If I need additional feature and package, I can add them later.
 
-It's easier to keep track that way, than trying to keep up with gazillions of pre-installed packages
-that I don't use.
+It's easier to keep track that way, than trying to keep up with gazillions of
+pre-installed packages that I don't use.
 
-This configuration tries not to be a one-size-fits all configuration, but it tries to be an emacs
-configuration that suits me, that I keep it personal, clean, easy and sensible.
+This configuration tries not to be a one-size-fits all configuration, but it 
+tries to be an emacs configuration that suits me, that I keep it personal,
+clean, easy and sensible.
 
 ** Files
 
-For starters, it includes a =.gitignore=, which ignores all directories, except the following files and directories:
+For starters, it includes a =.gitignore=, which ignores all directories, except
+the following files and directories:
 
 #+BEGIN_SRC text
 ├── about-me.el
@@ -27,7 +29,8 @@ For starters, it includes a =.gitignore=, which ignores all directories, except 
 
 ** Packages
 
-It uses the following packages by default, all except =org.el= are managed by =git submodules=.
+It uses the following packages by default, all except =org.el= are managed by
+=git submodules=.
 
   - [[https://github.com/emacscollective/no-littering][no-littering]] :: ensure .emacs.d folder is clean
   - [[https://www.emacswiki.org/emacs/backup-each-save.el][backup-each-save.el]] :: backup files on each save
@@ -38,10 +41,13 @@ It uses the following packages by default, all except =org.el= are managed by =g
 
 ** File Locations
 
-All personal configurations, org-notes, backups and auto-saves are stored in the =~/Downloads/Emacs/= directory. Those files
-should not be committed to GIT, but they should be managed via your file-sync utility (i.e. iCloud, Dropbox, etc.).
+All personal configurations, org-notes, backups and auto-saves are stored in the
+=~/Downloads/Emacs/= directory. Those files should not be committed to GIT, but
+they should be managed via your file-sync utility (i.e. iCloud, Dropbox, etc.).
 
-Package configs and variable files are stored in =~/Documents/Emacs/config/= and =~/Documents/Emacs/data/= respectively.
+Package configs and variable files are stored in =~/Documents/Emacs/config/= and
+=~/Documents/Emacs/data/= respectively.
+
 Org workdir are set to =~/Documents/Emacs/org/=.
 
 ** Behaviour
@@ -49,9 +55,10 @@ Org workdir are set to =~/Documents/Emacs/org/=.
 On startup, Emacs will present this =README.org= document.
 
 ** GTD org-mode files
-I use Rougier's [[https://github.com/rougier/emacs-gtd][GTD.org.el]] GTD configuration and presets for managing my tasks and agenda.
-All the org files are stored in =~/Documents/Emacs/org/= folder. The plugin has preconfigured 4 org-files by default.
-Here's the recommended config per each file that should be put on top of each files.
+I use Rougier's [[https://github.com/rougier/emacs-gtd][GTD.org.el]] GTD configuration and presets for managing my tasks
+and agenda. All the org files are stored in =~/Documents/Emacs/org/= folder. The
+plugin has preconfigured 4 org-files by default. Here's the recommended config
+per each file that should be put on top of each files.
 
 *** ~/Documents/Emacs/org/agenda.org
 #+BEGIN_SRC org
@@ -83,7 +90,8 @@ Here's the recommended config per each file that should be put on top of each fi
 
 ** Rougier's org-mode GTD Key Bindings
 
-Aside from the classic default keys. Here's important key-strokes for using the =GTD.org.el= presets.
+Aside from the classic default keys. Here's important key-strokes for using the
+=GTD.org.el= presets.
 
 | Command                          | Bindings             | Mode + where           |
 |----------------------------------+----------------------+------------------------|
