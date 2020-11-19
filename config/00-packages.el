@@ -23,6 +23,7 @@
 
 (require 'better-defaults)
 (require 'backup-each-save)
+(require 'multiple-line-edit)
 
 ;; melpa/elpa config
 (setq package-user-dir (expand-file-name "packages/" no-littering-var-directory))

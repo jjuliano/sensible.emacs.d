@@ -8,3 +8,8 @@
 
 ;; Turn-on auto-fill mode
 (setq-default auto-fill-function 'do-auto-fill)
+
+;; Multi-line edit keybindings
+(global-set-key (kbd "C-c C-SPC") 'mulled/edit-leading-edges)
+(global-set-key (kbd "C-c M-SPC") 'mulled/edit-trailing-edges)
+

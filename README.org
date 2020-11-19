@@ -38,6 +38,7 @@ It uses the following packages by default, all except =org.el= are managed by
   - [[https://github.com/purcell/exec-path-from-shell][exec-path-from-shell]] :: made $PATH available inside emacs
   - [[https://github.com/arcticicestudio/nord-emacs][nord-emacs]] :: default theme
   - [[https://github.com/rougier/emacs-gtd][GTD.org.el]] :: Rougier's org-mode GTD workflow presets
+  - [[https://www.emacswiki.org/emacs/download/multiple-line-edit.el][multiple-line-edit.el]] :: select lines simultaneously
 
 ** File Locations
 
@@ -53,6 +54,13 @@ Org workdir are set to =~/Documents/Emacs/org/=.
 ** Behaviour
 
 On startup, Emacs will present this =README.org= document.
+
+** Multiple select and edit
+
+Here's the key-stroke to use the multiple select and edit feature.
+
+- C-c C-SPC :: Select and edit leading edges
+- C-c M-SPC :: Select and edit trailing edges
 
 ** GTD org-mode files
 I use Rougier's [[https://github.com/rougier/emacs-gtd][GTD.org.el]] GTD configuration and presets for managing my tasks
