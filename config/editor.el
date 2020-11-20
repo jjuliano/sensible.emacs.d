@@ -13,3 +13,14 @@
 (global-set-key (kbd "C-c C-SPC") 'mulled/edit-leading-edges)
 (global-set-key (kbd "C-c M-SPC") 'mulled/edit-trailing-edges)
 
+;; Pulse highlight current line on switch window
+(defun pulse-line (&rest _)
+  "Pulse the current line."
+  (pulse-momentary-highlight-one-line (point)))
+
+(dolist (command '(scroll-up-command scroll-down-command
+                                     recenter-top-bottom other-window))
+  (advice-add command :after #'pulse-line))
+
+;; Line comments
+(global-set-key (kbd "s-/") 'comment-line)

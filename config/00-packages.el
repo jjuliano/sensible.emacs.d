@@ -11,6 +11,8 @@
 (setq custom-file (expand-file-name "config/custom.el" user-emacs-directory))
 (setq auto-save-file-name-transforms
       `((".*" ,(expand-file-name "auto-save/" no-littering-var-directory) t)))
+;; melpa/elpa config
+(setq package-user-dir (expand-file-name "packages/" no-littering-var-directory))
 (require 'recentf)
 (add-to-list 'recentf-exclude no-littering-var-directory)
 (add-to-list 'recentf-exclude no-littering-etc-directory)
@@ -24,6 +26,3 @@
 (require 'better-defaults)
 (require 'backup-each-save)
 (require 'multiple-line-edit)
-
-;; melpa/elpa config
-(setq package-user-dir (expand-file-name "packages/" no-littering-var-directory))

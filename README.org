@@ -29,8 +29,9 @@ the following files and directories:
 
 ** Packages
 
-It uses the following packages by default, all except =org.el= are managed by
-=git submodules=.
+It uses the following packages by default, the individual elisp packages are
+source directly from the website, while other packages are hosted and are
+managed by =git submodules=.
 
   - [[https://github.com/emacscollective/no-littering][no-littering]] :: ensure .emacs.d folder is clean
   - [[https://www.emacswiki.org/emacs/backup-each-save.el][backup-each-save.el]] :: backup files on each save
@@ -54,6 +55,13 @@ Org workdir are set to =~/Documents/Emacs/org/=.
 ** Behaviour
 
 On startup, Emacs will present this =README.org= document.
+
+Also, the default =pulse.el= is pre-configured to provide visual feedback on the
+current line when switching buffers.
+
+** Commenting
+
+Commenting and un-commenting a line is mapped to =CMD-/= or =S-/=.
 
 ** Multiple select and edit
 
@@ -127,3 +135,35 @@ Aside from the classic default keys. Here's important key-strokes for using the
 | Deadline timestamp               | *C-c d*              | org-mode               |
 | Inactive timestamp               | *C-c !*              | org-mode               |
 
+** Futher Customizations
+
+Some packages are easy to include in the configuration, while other packages
+requires post installation procedures. In those packages, it's recommended to
+use [[https://elpa.gnu.org/][GNU ELPA]] and [[https://melpa.org/][MELPA]].
+
+The configuration contains the basic necessary settings for MELPA to readily use
+it, which you can download the MELPA package and load those packages on startup.
+
+Here's the most recommended packages to install, some are pre-configured.
+
+*** version-control
+- [[https://magit.vc/][magit]] :: a complete text-based user interface to Git.
+  - C-x g ? :: Git status then press =?= to display all git actions
+  - g :: quit the Magit status window
+
+*** development
+If you are looking for a lightweight development combinations, install the
+following packages, otherwise you can install the =company-mode= and =lsp-mode=,
+which I don't use.
+
+- [[https://github.com/auto-complete/auto-complete][auto-complete]] :: provides auto-completion (pre-configured)
+- [[https://github.com/aki2o/org-ac][org-ac]] :: provides auto-completion on org-mode (pre-configured)
+- [[https://web-mode.org/][web-mode]] :: major mode for editing web templates and css files (pre-configured)
+- [[https://github.com/mooz/js2-mode][js2-mode]] :: improved javascript editing (pre-configured)
+- [[https://github.com/prettier/prettier-emacs][prettier]] :: auto beautify both html & js files on save (pre-configured),
+requires =prettier= to be installed.
+
+*** code navigation
+- [[https://github.com/jacktasia/dumb-jump][dumb-jump]] :: jump to definition, requires =ag= and =grep= (pre-configured)
+  - M-. :: jump to definition
+  - M-, :: jump to next definition
