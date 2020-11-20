@@ -149,7 +149,15 @@ Here's the most recommended packages to install, some are pre-configured.
 *** version-control
 - [[https://magit.vc/][magit]] :: a complete text-based user interface to Git.
   - C-x g ? :: Git status then press =?= to display all git actions
-  - g :: quit the Magit status window
+  - q :: quit the Magit status window
+  - s :: git add
+  - b b :: git checkout <branch>
+  - k :: git checkout <file>
+  - c c :: git commit
+    - C-x s and C-c :: save and apply commit
+    - a :: git commit --amend
+  - P p :: git push
+  - g :: refresh magit window
 
 *** development
 If you are looking for a lightweight development combinations, install the
@@ -160,8 +168,7 @@ which I don't use.
 - [[https://github.com/aki2o/org-ac][org-ac]] :: provides auto-completion on org-mode (pre-configured)
 - [[https://web-mode.org/][web-mode]] :: major mode for editing web templates and css files (pre-configured)
 - [[https://github.com/mooz/js2-mode][js2-mode]] :: improved javascript editing (pre-configured)
-- [[https://github.com/prettier/prettier-emacs][prettier]] :: auto beautify both html & js files on save (pre-configured),
-requires =prettier= to be installed.
+- [[https://github.com/prettier/prettier-emacs][prettier]] :: auto beautify both html & js files on save (pre-configured), requires =prettier= to be installed.
 
 *** code navigation
 - [[https://github.com/jacktasia/dumb-jump][dumb-jump]] :: jump to definition, requires =ag= and =grep= (pre-configured)
