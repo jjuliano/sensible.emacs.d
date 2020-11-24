@@ -1,3 +1,8 @@
+;; pre-init
+(setq pre-init-file
+      (expand-file-name "pre-init.el" user-emacs-directory))
+(load-file pre-init-file)
+
 ;; about-me
 (setq about-me-file
       (expand-file-name "about-me.el" user-emacs-directory))

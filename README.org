@@ -41,6 +41,8 @@ managed by =git submodules=.
   - [[https://github.com/rougier/emacs-gtd][GTD.org.el]] :: Rougier's org-mode GTD workflow presets
   - [[https://www.emacswiki.org/emacs/download/multiple-line-edit.el][multiple-line-edit.el]] :: select lines simultaneously
   - [[https://github.com/cyrus-and/zoom][zoom]] :: auto-resize active windows
+  - [[https://github.com/nex3/perspective-el][perspective-el]] :: workspaces management
+
 
 ** File Locations
 
@@ -61,6 +63,21 @@ The default Emacs =pulse.el= is pre-configured to provide visual feedback
 on the current line when switching buffers.
 
 Buffers are automatically-sized using =zoom= when created.
+
+** Workspaces
+
+This configuration uses [[https://github.com/nex3/perspective-el][perspective-el]] for managing and switching to different
+workspaces.
+
+Initially, workspaces are numbered from 0 to 5. The default workspace is 0.
+
+To switch to a workspaces, type =C-M-<0 to 5>=.
+
+- C-x x ? :: show persp-mode keys
+- C-x x s :: switch or create workspace
+- C-x x n or C-c x p :: next/previous workspaces
+- C-x x c :: delete workspace
+- C-x x r :: rename workspace
 
 ** Commenting
 
@@ -197,12 +214,3 @@ which I don't use.
     - C-c ! l :: pop-up list of all errors in the current buffer
     - C-c ! n and C-c ! p ::  next/previous errors in the current buffer
     - C-c ! v :: show currrent setup on buffer
-
-*** workspaces management
-- [[https://github.com/Bad-ptr/persp-mode.el][persp-mode]] :: switch to different workspace per given workspace name
-  - C-c p ? :: show persp-mode keys
-  - C-c p s :: switch or create workspace
-  - C-c p n or C-c p p :: next/previous workspaces
-  - C-c p c :: copy workspace
-  - C-c p C :: delete workspace
-  - C-c p r :: rename workspace

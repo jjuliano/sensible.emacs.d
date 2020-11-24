@@ -102,7 +102,7 @@
        (global-set-key (kbd "C-x 4W") 'langtool-check-done)
        (global-set-key (kbd "C-x 4l") 'langtool-switch-default-language)
        (global-set-key (kbd "C-x 44") 'langtool-show-message-at-point)
-       (global-set-key (kbd "C-x 4c") 'langtool-correct-buffer)))       
+       (global-set-key (kbd "C-x 4c") 'langtool-correct-buffer)))
 
 ;; flycheck
 (cond ((locate-library "flycheck")
@@ -114,7 +114,7 @@
        (require 'flycheck-color-mode-line)
        (add-hook 'flycheck-mode-hook 'flycheck-color-mode-line-mode)))
 
-;; workspace management via persp-mode.el
-(cond ((locate-library "persp-mode")
-       (require 'persp-mode)
-       (persp-mode 1)))
+;; alternative workspace management via persp-mode.el
+;;(cond ((locate-library "persp-mode")
+;;       (require 'persp-mode)
+;;       (persp-mode 1)))

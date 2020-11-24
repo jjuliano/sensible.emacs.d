@@ -32,9 +32,28 @@
 (require 'zoom)
 (zoom-mode t)
 
-;; alternative workspaces management via perspective-el
-;; (require 'perspective)
-;; (persp-mode)
-;; (setq persp-state-default-file "~/Documents/Emacs/data/persp-state-file")
-;; (add-hook 'kill-emacs-hook #'persp-state-save)
-;; (persp-state-load persp-state-default-file)
+;; workspaces management via perspective-el
+(setq persp-state-default-file "~/Documents/Emacs/data/persp-state-file")
+(require 'perspective)
+(persp-mode)
+(add-hook 'kill-emacs-hook #'persp-state-save)
+
+(defvar persp-switch-prefix "C-M-%d")
+(defvar persp-first-perspective "0")
+(defvar persp-top-perspective "0")
+(defvar persp-bottom-perspective "5")
+
+(defun persp-setup ()
+  (mapc (lambda (i)
+          (persp-switch (int-to-string i))
+          (global-set-key (kbd (format persp-switch-prefix i))
+                          `(lambda ()
+                             (interactive)
+                             (persp-switch ,(int-to-string i)))))
+        (number-sequence (string-to-number persp-top-perspective)
+                         (string-to-number persp-bottom-perspective)))
+  (persp-switch persp-first-perspective)
+  (persp-kill "main"))
+
+(add-hook 'persp-state-after-load-hook 'persp-setup)
+(add-hook 'after-init-hook 'persp-setup)
