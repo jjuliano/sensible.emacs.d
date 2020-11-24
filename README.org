@@ -62,6 +62,17 @@ on the current line when switching buffers.
 
 Buffers are automatically-sized using =zoom= when created.
 
+** Workspaces
+
+Workspaces are managed using [[https://github.com/nex3/perspective-el][perspective-el]]. Workspaces are intuitive way to
+switch different setup per given buffer.
+
+- C-x x ? :: show persp-mode keys
+- C-x x s :: switch or create workspace 
+- C-x x n or C-x x p :: next/previous workspaces
+- C-x x c :: delete workspace
+- C-x x r :: rename workspace
+
 ** Commenting
 
 Commenting and uncommenting a line is mapped to =CMD-/= or =S-/=.
@@ -190,3 +201,13 @@ which I don't use.
     - C-x 4l :: switch default language
     - C-x 44 :: show message at point
     - C-x 4c :: correct buffer
+
+*** code syntax check
+
+- [[https://www.flycheck.org/][flycheck]] :: code syntax checking for Emacs (pre-configured)
+  - install the supported flycheck supported [[https://www.flycheck.org/en/latest/languages.html#flycheck-languages][languages]].
+  - Keystrokes
+    - C-c ! l :: pop-up list of all errors in the current buffer
+    - C-c ! n and C-c ! p ::  next/previous errors in the current buffer
+    - C-c ! v :: show currrent setup on buffer
+

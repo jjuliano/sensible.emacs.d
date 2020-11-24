@@ -8,7 +8,6 @@
       (expand-file-name "~/Documents/Emacs/config/"))
 (setq no-littering-var-directory
       (expand-file-name "~/Documents/Emacs/data/"))
-(setq custom-file (expand-file-name "config/custom.el" user-emacs-directory))
 (setq auto-save-file-name-transforms
       `((".*" ,(expand-file-name "auto-save/" no-littering-var-directory) t)))
 ;; melpa/elpa config
@@ -17,6 +16,7 @@
 (add-to-list 'recentf-exclude no-littering-var-directory)
 (add-to-list 'recentf-exclude no-littering-etc-directory)
 (require 'no-littering)
+(setq custom-file (expand-file-name "config/custom.el" user-emacs-directory))
 
 ;; exec-path-from-shell settings to load $PATH on run
 (require 'exec-path-from-shell)
@@ -28,7 +28,11 @@
 (require 'multiple-line-edit)
 
 ;; zoom auto-resize window
+(setq zoom-size '(0.618 . 0.618))
 (require 'zoom)
 (zoom-mode t)
-(custom-set-variables
- '(zoom-size '(0.618 . 0.618)))
+
+;; perspective workspaces management
+(require 'perspective)
+(add-hook 'kill-emacs-hook #'persp-state-save)
+(persp-mode)

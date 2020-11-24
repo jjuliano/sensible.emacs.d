@@ -104,3 +104,14 @@
        (global-set-key (kbd "C-x 44") 'langtool-show-message-at-point)
        (global-set-key (kbd "C-x 4c") 'langtool-correct-buffer)))       
 
+;; flycheck
+(cond ((locate-library "flycheck")
+       (require 'flycheck)
+       (add-hook 'after-init-hook 'global-flycheck-mode)
+       (setq flycheck-display-errors-function
+        #'flycheck-display-error-messages-unless-error-list)))
+
+;; flycheck-color-mode-line
+(cond ((locate-library "flycheck-color-mode-line")
+       (require 'flycheck-color-mode-line)
+       (add-hook 'flycheck-mode-hook 'flycheck-color-mode-line-mode)))
