@@ -6,7 +6,7 @@ for my needs. If I need additional feature and package, I can add them later.
 It's easier to keep track that way, than trying to keep up with gazillions of
 pre-installed packages that I don't use.
 
-This configuration tries not to be a one-size-fits all configuration, but it 
+This configuration tries not to be a one-size-fits all configuration, but it
 tries to be an Emacs configuration that suits me, that I keep it personal,
 clean, easy and sensible.
 
@@ -61,17 +61,6 @@ The default Emacs =pulse.el= is pre-configured to provide visual feedback
 on the current line when switching buffers.
 
 Buffers are automatically-sized using =zoom= when created.
-
-** Workspaces
-
-Workspaces are managed using [[https://github.com/nex3/perspective-el][perspective-el]]. Workspaces are intuitive way to
-switch different setup per given buffer.
-
-- C-x x ? :: show persp-mode keys
-- C-x x s :: switch or create workspace 
-- C-x x n or C-x x p :: next/previous workspaces
-- C-x x c :: delete workspace
-- C-x x r :: rename workspace
 
 ** Commenting
 
@@ -190,7 +179,6 @@ which I don't use.
   - M-, :: jump to next definition
 
 *** spell check and grammar
-
 - [[https://github.com/mhayashi1120/Emacs-langtool][langtool]] :: provides an Emacs interface to =LanguageTool= (pre-configured)
   - Download the desktop version of LanguageTool from [[https://languagetool.org/]].
   - Modify the =config/melpa.el= to point to your =languagetool-commandline.jar=
@@ -203,7 +191,6 @@ which I don't use.
     - C-x 4c :: correct buffer
 
 *** code syntax check
-
 - [[https://www.flycheck.org/][flycheck]] :: code syntax checking for Emacs (pre-configured)
   - install the supported flycheck supported [[https://www.flycheck.org/en/latest/languages.html#flycheck-languages][languages]].
   - Keystrokes
@@ -211,3 +198,11 @@ which I don't use.
     - C-c ! n and C-c ! p ::  next/previous errors in the current buffer
     - C-c ! v :: show currrent setup on buffer
 
+*** workspaces management
+- [[https://github.com/Bad-ptr/persp-mode.el][persp-mode]] :: switch to different workspace per given workspace name
+  - C-c p ? :: show persp-mode keys
+  - C-c p s :: switch or create workspace
+  - C-c p n or C-c p p :: next/previous workspaces
+  - C-c p c :: copy workspace
+  - C-c p C :: delete workspace
+  - C-c p r :: rename workspace

@@ -107,11 +107,14 @@
 ;; flycheck
 (cond ((locate-library "flycheck")
        (require 'flycheck)
-       (add-hook 'after-init-hook 'global-flycheck-mode)
-       (setq flycheck-display-errors-function
-        #'flycheck-display-error-messages-unless-error-list)))
+       (add-hook 'after-init-hook 'global-flycheck-mode)))
 
 ;; flycheck-color-mode-line
 (cond ((locate-library "flycheck-color-mode-line")
        (require 'flycheck-color-mode-line)
        (add-hook 'flycheck-mode-hook 'flycheck-color-mode-line-mode)))
+
+;; workspace management via persp-mode.el
+(cond ((locate-library "persp-mode")
+       (require 'persp-mode)
+       (persp-mode 1)))

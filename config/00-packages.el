@@ -32,7 +32,9 @@
 (require 'zoom)
 (zoom-mode t)
 
-;; perspective workspaces management
-(require 'perspective)
-(add-hook 'kill-emacs-hook #'persp-state-save)
-(persp-mode)
+;; alternative workspaces management via perspective-el
+;; (require 'perspective)
+;; (persp-mode)
+;; (setq persp-state-default-file "~/Documents/Emacs/data/persp-state-file")
+;; (add-hook 'kill-emacs-hook #'persp-state-save)
+;; (persp-state-load persp-state-default-file)

@@ -13,6 +13,3 @@
 [submodule "pkgs/zoom"]
 	path = pkgs/zoom
 	url = git@github.com:cyrus-and/zoom.git
-[submodule "pkgs/perspective-el"]
-	path = pkgs/perspective-el
-	url = https://github.com/nex3/perspective-el
