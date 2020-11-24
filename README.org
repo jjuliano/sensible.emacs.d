@@ -1,13 +1,13 @@
-* My =very= Personal Emacs Configuration
+* My Personal Emacs Configuration
 
-This emacs configuration only has the absolute necessary configurations tailored
+This Emacs configuration only has the absolute necessary configurations tailored
 for my needs. If I need additional feature and package, I can add them later.
 
 It's easier to keep track that way, than trying to keep up with gazillions of
 pre-installed packages that I don't use.
 
 This configuration tries not to be a one-size-fits all configuration, but it 
-tries to be an emacs configuration that suits me, that I keep it personal,
+tries to be an Emacs configuration that suits me, that I keep it personal,
 clean, easy and sensible.
 
 ** Files
@@ -36,10 +36,11 @@ managed by =git submodules=.
   - [[https://github.com/emacscollective/no-littering][no-littering]] :: ensure .emacs.d folder is clean
   - [[https://www.emacswiki.org/emacs/backup-each-save.el][backup-each-save.el]] :: backup files on each save
   - [[https://git.sr.ht/~technomancy/better-defaults][better-defaults.el]] :: the base defaults
-  - [[https://github.com/purcell/exec-path-from-shell][exec-path-from-shell]] :: made $PATH available inside emacs
+  - [[https://github.com/purcell/exec-path-from-shell][exec-path-from-shell]] :: made $PATH available inside Emacs
   - [[https://github.com/arcticicestudio/nord-emacs][nord-emacs]] :: default theme
   - [[https://github.com/rougier/emacs-gtd][GTD.org.el]] :: Rougier's org-mode GTD workflow presets
   - [[https://www.emacswiki.org/emacs/download/multiple-line-edit.el][multiple-line-edit.el]] :: select lines simultaneously
+  - [[https://github.com/cyrus-and/zoom][zoom]] :: auto-resize active windows
 
 ** File Locations
 
@@ -52,16 +53,18 @@ Package configs and variable files are stored in =~/Documents/Emacs/config/= and
 
 Org workdir are set to =~/Documents/Emacs/org/=.
 
-** Behaviour
+** Behavior
 
 On startup, Emacs will present this =README.org= document.
 
-Also, the default =pulse.el= is pre-configured to provide visual feedback on the
-current line when switching buffers.
+The default Emacs =pulse.el= is pre-configured to provide visual feedback
+on the current line when switching buffers.
+
+Buffers are automatically-sized using =zoom= when created.
 
 ** Commenting
 
-Commenting and un-commenting a line is mapped to =CMD-/= or =S-/=.
+Commenting and uncommenting a line is mapped to =CMD-/= or =S-/=.
 
 ** Multiple select and edit
 
@@ -73,8 +76,8 @@ Here's the key-stroke to use the multiple select and edit feature.
 ** GTD org-mode files
 I use Rougier's [[https://github.com/rougier/emacs-gtd][GTD.org.el]] GTD configuration and presets for managing my tasks
 and agenda. All the org files are stored in =~/Documents/Emacs/org/= folder. The
-plugin has preconfigured 4 org-files by default. Here's the recommended config
-per each file that should be put on top of each files.
+plugin has pre-configured 4 org-files by default. Here's the recommended config
+per each file that should be put on top of each file.
 
 *** ~/Documents/Emacs/org/agenda.org
 #+BEGIN_SRC org
@@ -135,10 +138,10 @@ Aside from the classic default keys. Here's important key-strokes for using the
 | Deadline timestamp               | *C-c d*              | org-mode               |
 | Inactive timestamp               | *C-c !*              | org-mode               |
 
-** Futher Customizations
+** Further Customizations
 
 Some packages are easy to include in the configuration, while other packages
-requires post installation procedures. In those packages, it's recommended to
+requires post-installation procedures. In those packages, it's recommended to
 use [[https://elpa.gnu.org/][GNU ELPA]] and [[https://melpa.org/][MELPA]].
 
 The configuration contains the basic necessary settings for MELPA to readily use
@@ -157,7 +160,7 @@ Here's the most recommended packages to install, some are pre-configured.
     - C-x s and C-c :: save and apply commit
     - a :: git commit --amend
   - P p :: git push
-  - g :: refresh magit window
+  - g :: refresh Magit window
 
 *** development
 If you are looking for a lightweight development combinations, install the
@@ -167,10 +170,23 @@ which I don't use.
 - [[https://github.com/auto-complete/auto-complete][auto-complete]] :: provides auto-completion (pre-configured)
 - [[https://github.com/aki2o/org-ac][org-ac]] :: provides auto-completion on org-mode (pre-configured)
 - [[https://web-mode.org/][web-mode]] :: major mode for editing web templates and css files (pre-configured)
-- [[https://github.com/mooz/js2-mode][js2-mode]] :: improved javascript editing (pre-configured)
-- [[https://github.com/prettier/prettier-emacs][prettier]] :: auto beautify both html & js files on save (pre-configured), requires =prettier= to be installed.
+- [[https://github.com/mooz/js2-mode][js2-mode]] :: improved JavaScript editing (pre-configured)
+- [[https://github.com/prettier/prettier-emacs][prettier]] :: auto beautify both HTML & JS files on save (pre-configured), requires =prettier= to be installed.
 
 *** code navigation
 - [[https://github.com/jacktasia/dumb-jump][dumb-jump]] :: jump to definition, requires =ag= and =grep= (pre-configured)
   - M-. :: jump to definition
   - M-, :: jump to next definition
+
+*** spell check and grammar
+
+- [[https://github.com/mhayashi1120/Emacs-langtool][langtool]] :: provides an Emacs interface to =LanguageTool= (pre-configured)
+  - Download the desktop version of LanguageTool from [[https://languagetool.org/]].
+  - Modify the =config/melpa.el= to point to your =languagetool-commandline.jar=
+  - Change the default language from =en-US= to your preferred locale
+  - Keystrokes
+    - C-x 4w :: check spelling and grammar
+    - C-x 4W :: end all check
+    - C-x 4l :: switch default language
+    - C-x 44 :: show message at point
+    - C-x 4c :: correct buffer

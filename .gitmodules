@@ -10,3 +10,6 @@
 [submodule "pkgs/exec-path-from-shell"]
 	path = pkgs/exec-path-from-shell
 	url = git@github.com:purcell/exec-path-from-shell.git
+[submodule "pkgs/zoom"]
+	path = pkgs/zoom
+	url = git@github.com:cyrus-and/zoom.git

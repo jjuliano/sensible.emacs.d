@@ -26,3 +26,9 @@
 (require 'better-defaults)
 (require 'backup-each-save)
 (require 'multiple-line-edit)
+
+;; zoom auto-resize window
+(require 'zoom)
+(zoom-mode t)
+(custom-set-variables
+ '(zoom-size '(0.618 . 0.618)))
