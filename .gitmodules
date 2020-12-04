@@ -16,3 +16,9 @@
 [submodule "pkgs/perspective-el"]
 	path = pkgs/perspective-el
 	url = https://github.com/nex3/perspective-el
+[submodule "pkgs/unicode-fonts"]
+	path = pkgs/unicode-fonts
+	url = git@github.com:rolandwalker/unicode-fonts.git
+[submodule "pkgs/practical.org.el"]
+	path = pkgs/practical.org.el
+	url = git@github.com:jjuliano/practical.org.el.git

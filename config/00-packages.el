@@ -57,3 +57,7 @@
 
 (add-hook 'persp-state-after-load-hook 'persp-setup)
 (add-hook 'after-init-hook 'persp-setup)
+
+;; unicode and emoji support
+(require 'unicode-fonts)
+(unicode-fonts-setup)

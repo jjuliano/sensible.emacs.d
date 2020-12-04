@@ -38,11 +38,10 @@ managed by =git submodules=.
   - [[https://git.sr.ht/~technomancy/better-defaults][better-defaults.el]] :: the base defaults
   - [[https://github.com/purcell/exec-path-from-shell][exec-path-from-shell]] :: made $PATH available inside Emacs
   - [[https://github.com/arcticicestudio/nord-emacs][nord-emacs]] :: default theme
-  - [[https://github.com/rougier/emacs-gtd][GTD.org.el]] :: Rougier's org-mode GTD workflow presets
+  - [[https://github.com/jjuliano/practical.org.el][practical.org.el]] :: practical org-mode GTD and Zekelkasten workflow presets
   - [[https://www.emacswiki.org/emacs/download/multiple-line-edit.el][multiple-line-edit.el]] :: select lines simultaneously
   - [[https://github.com/cyrus-and/zoom][zoom]] :: auto-resize active windows
   - [[https://github.com/nex3/perspective-el][perspective-el]] :: workspaces management
-
 
 ** File Locations
 
@@ -63,6 +62,8 @@ The default Emacs =pulse.el= is pre-configured to provide visual feedback
 on the current line when switching buffers.
 
 Buffers are automatically-sized using =zoom= when created.
+
+Emoji display support is handled via =unicode-fonts= package.
 
 ** Workspaces
 
@@ -91,7 +92,7 @@ Here's the key-stroke to use the multiple select and edit feature.
 - C-c M-SPC :: Select and edit trailing edges
 
 ** GTD org-mode files
-I use Rougier's [[https://github.com/rougier/emacs-gtd][GTD.org.el]] GTD configuration and presets for managing my tasks
+I created [[https://github.com/jjuliano/practical.org.el][practical.org.el]] GTD configuration and presets for managing my tasks
 and agenda. All the org files are stored in =~/Documents/Emacs/org/= folder. The
 plugin has pre-configured 4 org-files by default. Here's the recommended config
 per each file that should be put on top of each file.
@@ -124,36 +125,46 @@ per each file that should be put on top of each file.
 #+FILETAGS: projects
 #+END_SRC
 
-** Rougier's org-mode GTD Key Bindings
+** Org-mode GTD+Zettelkasten Key Bindings
 
 Aside from the classic default keys. Here's important key-strokes for using the
-=GTD.org.el= presets.
+=practical.org.el= presets.
 
-| Command                          | Bindings             | Mode + where           |
-|----------------------------------+----------------------+------------------------|
-| Agenda                           | *C-c a*              | any                    |
-| Agenda for today                 | *C-c a a*            | any                    |
-|                                  |                      |                        |
-| Capture menu                     | *C-c c*              | any                    |
-| Capture meeting (agenda.org)     | *C-c c m*            | any                    |
-| Capture meeting note (notes.org) | *C-c c n*            | any                    |
-| Capture generic TODO (inbox.org) | *C-c i* or *C-c c i* | any                    |
-| Capture mail TODO (inbox.org)    | *C-c i* or *C-c c @* | mu4e view/headers mode |
-|                                  |                      |                        |
-| Add/Remove tag                   | *C-c C-c*            | org-mode on headline   |
-| Update progress indicator        | *C-c C-c*            | org-mode on [/]        |
-| Update all progress indicators   | *C-u C-c #*          | org-mode               |
-| Enter estimated effort           | *C-c C-x e*          | org-mode on headline   |
-| Refile section                   | *C-c C-w*            | org-mode on headline   |
-| Move to next TODO state          | *S-right*            | org-mode on TODO       |
-|                                  |                      |                        |
-| Clock in                         | *C-c C-x C-i*        | org-mode on headline   |
-| Clock out                        | *C-c C-x C-o*        | org-mode on headline   |
-|                                  |                      |                        |
-| Plain timestamp                  | *C-c .*              | org-mode               |
-| Scheduled timestamp              | *C-c s*              | org-mode               |
-| Deadline timestamp               | *C-c d*              | org-mode               |
-| Inactive timestamp               | *C-c !*              | org-mode               |
+| Command                                       | Bindings             | Mode + where         |
+|-----------------------------------------------+----------------------+----------------------|
+| Agenda                                        | *C-c a*              | any                  |
+| Agenda for today                              | *C-c a a*            | any                  |
+|                                               |                      |                      |
+| Capture menu                                  | *C-c c*              | any                  |
+| Add new inbox items (inbox.org)               | *C-c c i* or *C-c i* | any                  |
+| Create new Scheduled agenda item (agenda.org) | *C-c c a*            | any                  |
+| Create a new note entry (notes.org)           | *C-c c n*            | any                  |
+| Create a note as a new org file               | *C-c c n* or *C-c b* | any                  |
+|                                               |                      |                      |
+| Add/Remove tag                                | *C-c C-c*            | org-mode on headline |
+| Update progress indicator                     | *C-c C-c*            | org-mode on [/]      |
+| Update all progress indicators                | *C-u C-c #*          | org-mode             |
+| Enter estimated effort                        | *C-c C-x e*          | org-mode on headline |
+| Refile section                                | *C-c C-w*            | org-mode on headline |
+| Move to next TODO state                       | *S-right*            | org-mode on TODO     |
+|                                               |                      |                      |
+| Clock in                                      | *C-c C-x C-i*        | org-mode on headline |
+| Clock out                                     | *C-c C-x C-o*        | org-mode on headline |
+|                                               |                      |                      |
+| Plain timestamp                               | *C-c .*              | org-mode             |
+| Scheduled timestamp                           | *C-c s*              | org-mode             |
+| Deadline timestamp                            | *C-c d*              | org-mode             |
+| Inactive timestamp                            | *C-c !*              | org-mode             |
+|                                               |                      |                      |
+| Show all contacts                             | *C-c c C*            | any                  |
+| Create a new contact                          | *C-c c c*            | any                  |
+| Regexp search all contacts                    | *C-c c s*            | any                  |
+|                                               |                      |                      |
+| Create a new contact                          | *c*                  | bbdb-mode            |
+| Edit contact                                  | *e*                  | bbdb-mode            |
+| Insert a line                                 | *i*                  | bbdb-mode            |
+| Copy the contact                              | *Cr*                 | bbdb-mode            |
+| Save the contact                              | *s*                  | bbdb-mode            |
 
 ** Further Customizations
 
