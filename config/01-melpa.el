@@ -121,3 +121,20 @@
 ;;(cond ((locate-library "persp-mode")
 ;;       (require 'persp-mode)
 ;;       (persp-mode 1)))
+
+;; wucuo flyspell spell-checking
+(if (locate-library "wucuo")
+    (progn
+      (require 'wucuo)
+      (add-hook 'prog-mode-hook 'wucuo-start)
+      (add-hook 'text-mode-hook 'wucuo-start))
+    ;; start Flyspell if "wucuo" package is not found
+    (progn
+      (require 'flyspell)
+      (add-hook 'text-mode-hook 'flyspell-mode)
+      (add-hook 'prog-mode-hook 'flyspell-prog-mode)))
+
+;; flyspell-popup to display popup on wrong spelling words
+(cond ((locate-library "flyspell-popup")
+       (require 'flyspell-popup)
+       (define-key flyspell-mode-map (kbd "C-;") #'flyspell-popup-correct)))

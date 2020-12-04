@@ -206,7 +206,14 @@ which I don't use.
   - M-. :: jump to definition
   - M-, :: jump to next definition
 
-*** spell check and grammar
+*** spell check
+- [[https://github.com/redguardtoo/wucuo][wucuo]] :: provides a fast spell checking using built-in Flyspell library, if it
+is found, it will use this library instead.
+
+- [[https://github.com/xuchunyang/flyspell-popup][flyspell-popup]] :: provides pop-up menu selection on a wrong spelled word.
+  - C-; :: display the pop-up menu
+
+*** grammar check
 - [[https://github.com/mhayashi1120/Emacs-langtool][langtool]] :: provides an Emacs interface to =LanguageTool= (pre-configured)
   - Download the desktop version of LanguageTool from [[https://languagetool.org/]].
   - Modify the =config/melpa.el= to point to your =languagetool-commandline.jar=
@@ -224,4 +231,4 @@ which I don't use.
   - Keystrokes
     - C-c ! l :: pop-up list of all errors in the current buffer
     - C-c ! n and C-c ! p ::  next/previous errors in the current buffer
-    - C-c ! v :: show currrent setup on buffer
+    - C-c ! v :: show current setup on buffer
