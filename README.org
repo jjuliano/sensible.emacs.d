@@ -93,9 +93,10 @@ Here's the key-stroke to use the multiple select and edit feature.
 
 ** GTD+Zettelkasten org-mode files
 I created [[https://github.com/jjuliano/practical.org.el][practical.org.el]] GTD+Zettelkasten configuration and presets for
-managing my tasks, notes, routines, habits and agenda. All the org files are
-relative to your =org-directory= path. The plugin has pre-configured 4 org-files
-by default which is included in the repository under the =files/= folder.
+managing my tasks, notes, routines, habits and agenda. All the org files should
+be put relative to your =org-directory= path. The plugin has pre-configured 4
+org-files by default which is included in the repository under the =files/=
+folder.
 
 Please refer to the [[https://github.com/jjuliano/practical.org.el#installation][practical.org.el's installation instructions]].
 
