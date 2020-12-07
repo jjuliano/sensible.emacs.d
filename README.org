@@ -91,39 +91,13 @@ Here's the key-stroke to use the multiple select and edit feature.
 - C-c C-SPC :: Select and edit leading edges
 - C-c M-SPC :: Select and edit trailing edges
 
-** GTD org-mode files
-I created [[https://github.com/jjuliano/practical.org.el][practical.org.el]] GTD configuration and presets for managing my tasks
-and agenda. All the org files are stored in =~/Documents/Emacs/org/= folder. The
-plugin has pre-configured 4 org-files by default. Here's the recommended config
-per each file that should be put on top of each file.
+** GTD+Zettelkasten org-mode files
+I created [[https://github.com/jjuliano/practical.org.el][practical.org.el]] GTD+Zettelkasten configuration and presets for
+managing my tasks, notes, routines, habits and agenda. All the org files are
+relative to your =org-directory= path. The plugin has pre-configured 4 org-files
+by default which is included in the repository under the =files/= folder.
 
-*** ~/Documents/Emacs/org/agenda.org
-#+BEGIN_SRC org
-#+STARTUP: content showstars indent
-#+TAGS: @home(h) @work(w) @mail(m) @comp(c) @web(b)
-#+PROPERTY: Effort_ALL 0 0:05 0:10 0:15 0:30 0:45 1:00 2:00 4:00
-#+FILETAGS: agenda
-#+END_SRC
-
-*** ~/Documents/Emacs/org/inbox.org
-#+BEGIN_SRC org
-#+STARTUP: content showstars indent
-#+FILETAGS: inbox
-#+END_SRC
-
-*** ~/Documents/Emacs/org/notes.org
-#+BEGIN_SRC org
-#+STARTUP: content showstars indent
-#+FILETAGS: notes
-#+END_SRC
-
-*** ~/Documents/Emacs/org/projects.org
-#+BEGIN_SRC org
-#+STARTUP: content showstars indent
-#+TAGS: @home(h) @work(w) @mail(m) @comp(c) @web(b)
-#+PROPERTY: Effort_ALL 0 0:05 0:10 0:15 0:30 0:45 1:00 2:00 4:00
-#+FILETAGS: projects
-#+END_SRC
+Please refer to the [[https://github.com/jjuliano/practical.org.el#installation][practical.org.el's installation instructions]].
 
 ** Org-mode GTD+Zettelkasten Key Bindings
 
