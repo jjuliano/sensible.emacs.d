@@ -182,8 +182,7 @@ which I don't use.
   - M-, :: jump to next definition
 
 *** spell check
-- [[https://github.com/redguardtoo/wucuo][wucuo]] :: provides a fast spell checking using built-in Flyspell library, if it
-is found, it will use this library instead.
+- [[https://github.com/redguardtoo/wucuo][wucuo]] :: provides a fast spell checking using built-in Flyspell library, if found, it will use this library instead.
 
 - [[https://github.com/xuchunyang/flyspell-popup][flyspell-popup]] :: provides pop-up menu selection on a wrong spelled word.
   - C-; :: display the pop-up menu
