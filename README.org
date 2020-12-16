@@ -1,13 +1,16 @@
-* My Personal Emacs Configuration
+* Personable and Sensible Emacs Configuration
 
-This Emacs configuration only has the absolute necessary configurations tailored
-for my needs. If I need additional feature and package, I can add them later.
+This Emacs configuration aims to be uncluttered, but practically useful for your day-to-day tasks.
 
-It's easier to keep track that way, than trying to keep up with gazillions of
-pre-installed packages that I don't use.
+It only has the absolute necessary configurations, tailored to be minimal, practical and useful.
+It is easy to add any additional feature and package later.
+
+The reason for keeping a bare minimum is that it's easier to keep track of all the packages and keystrokes,
+and use the existing configurations as much as possible, than having a cluttered setup, that will
+just make it difficult to keep up with gazillions of pre-installed packages that you don't use.
 
 This configuration tries not to be a one-size-fits all configuration, but it
-tries to be an Emacs configuration that suits me, that I keep it personal,
+tries to be an Emacs configuration that suits most of the developers, and I keep it personable,
 clean, easy and sensible.
 
 ** Files
