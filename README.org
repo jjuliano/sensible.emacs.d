@@ -163,6 +163,7 @@ Here's the most recommended packages to install, some are pre-configured.
     - C-x s and C-c :: save and apply commit
     - a :: git commit --amend
   - P p :: git push
+  - F p :: git pull
   - g :: refresh Magit window
 
 *** development
