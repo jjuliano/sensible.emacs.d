@@ -1,6 +1,6 @@
 * Personable and Sensible Emacs Configuration
 
-This Emacs configuration aims to be uncluttered, but practically useful for your day-to-day tasks.
+This Emacs configuration aims to be uncluttered, clean, vanilla, and practically useful for your day-to-day tasks.
 
 It only has the absolute necessary configurations, tailored to be minimal, practical and useful.
 It is easy to add any additional feature and package later.
