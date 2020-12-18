@@ -1,17 +1,20 @@
 * Personable and Sensible Emacs Configuration
 
-This Emacs configuration aims to be uncluttered, clean, vanilla, and practically useful for your day-to-day tasks.
+This Emacs configuration aims to be uncluttered, clean, vanilla, and practically
+useful for your day-to-day tasks.
 
-It only has the absolute necessary configurations, tailored to be minimal, practical and useful.
-It is easy to add any additional feature and package later.
+It only has the absolute necessary configurations, tailored to be minimal,
+practical and useful. It is easy to add any additional feature and package
+later.
 
-The reason for keeping a bare minimum is that it's easier to keep track of all the packages and keystrokes,
-and use the existing configurations as much as possible, than having a cluttered setup, that will
-just make it difficult to keep up with gazillions of pre-installed packages that you don't use.
+The reason for keeping a bare minimum is that it's easier to keep track of all
+the packages and keystrokes, and use the existing configurations as much as
+possible, than having a cluttered setup, that will just make it difficult to
+keep up with gazillions of pre-installed packages that you don't use.
 
 This configuration tries not to be a one-size-fits all configuration, but it
-tries to be an Emacs configuration that suits most of the developers, and I keep it personable,
-clean, easy and sensible.
+tries to be an Emacs configuration that suits most of the developers, and I keep
+it personable, clean, easy and sensible.
 
 ** Files
 
@@ -210,3 +213,12 @@ which I don't use.
     - C-c ! l :: pop-up list of all errors in the current buffer
     - C-c ! n and C-c ! p ::  next/previous errors in the current buffer
     - C-c ! v :: show current setup on buffer
+
+*** markdown-mode
+- [[markdown-mode]] :: markdown-mode using =multimarkdown= binary (pre-configured)
+  - Install =multimarkdown=.
+  - Note to disable =zoom-mode= when using live preview.
+  - Keystrokes
+    - C-c C-c l :: live-mode using eww buffer
+    - C-c C-c m :: preview raw HTML on buffer
+    - C-c C-c p :: preview on the browser

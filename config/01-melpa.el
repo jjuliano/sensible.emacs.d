@@ -138,3 +138,12 @@
 (cond ((locate-library "flyspell-popup")
        (require 'flyspell-popup)
        (define-key flyspell-mode-map (kbd "C-;") #'flyspell-popup-correct)))
+
+;; markdown-mode
+(cond ((locate-library "markdown-mode")
+       (require 'markdown-mode)
+       (add-to-list 'auto-mode-alist
+             '("\\.\\(?:md\\|markdown\\|mkd\\|mdown\\|mkdn\\|mdwn\\)\\'"
+               . markdown-mode))
+       (add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode))
+       (setq markdown-command "multimarkdown")))
