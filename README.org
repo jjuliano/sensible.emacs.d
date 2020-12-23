@@ -1,16 +1,17 @@
 * Personable and Sensible Emacs Configuration
 
 This Emacs configuration aims to be uncluttered, clean, vanilla, and practically
-useful for your day-to-day tasks.
+useful for any day-to-day tasks.
 
 It only has the absolute necessary configurations, tailored to be minimal,
 practical and useful. It is easy to add any additional feature and package
-later.
+later if you need one.
 
-The reason for keeping a bare minimum is that it's easier to keep track of all
-the packages and keystrokes, and use the existing configurations as much as
-possible, than having a cluttered setup, that will just make it difficult to
-keep up with gazillions of pre-installed packages that you don't use.
+There are several reasons for keeping the configuration to a bare minimum, one
+is that it's easier to keep track of all the packages and keystrokes. It is
+better to have a setup that you use 90% of the time, than having a cluttered
+setup that will just make it difficult to keep up with gazillions of
+preinstalled packages that usually end-up being unused.
 
 This configuration tries not to be a one-size-fits all configuration, but it
 tries to be an Emacs configuration that suits most of the developers, and I keep
@@ -25,12 +26,34 @@ the following files and directories:
 ├── about-me.el
 ├── config
 │   └── *
+├── pre-init.el
 ├── init.el
 ├── pkgs
 │   └── *
 ├── README.org
 └── themes
     └── *
+#+END_SRC
+
+** Installation
+
+To install, clone the repository to a =.emacs.d= directory. Note that it is
+recommended to backup your previous emacs directory.
+
+#+BEGIN_SRC shell
+$ mv ~/.emacs.d ~/.emacs.d.bak
+$ git clone https://github.com/jjuliano/sensible.emacs.d ~/.emacs.d
+$ cd .emacs.d && git submodule update --init --recursive
+#+END_SRC
+
+** Upgrade
+
+To upgrade your local configuration and it's submodules type:
+
+#+BEGIN_SRC shell
+$ cd ~/.emacs.d
+$ git pull origin main
+$ git submodule update --init --recursive
 #+END_SRC
 
 ** Packages
@@ -52,7 +75,7 @@ managed by =git submodules=.
 ** File Locations
 
 All personal configurations, org-notes, backups and auto-saves are stored in the
-=~/Downloads/Emacs/= directory. Those files should not be committed to GIT, but
+=~/Documents/Emacs/= directory. Those files should not be committed to GIT, but
 they should be managed via your file-sync utility (i.e. iCloud, Dropbox, etc.).
 
 Package configs and variable files are stored in =~/Documents/Emacs/config/= and
