@@ -147,15 +147,3 @@
                . markdown-mode))
        (add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode))
        (setq markdown-command "multimarkdown")))
-
-;; minted for syntax highlighting on PDF exports
-(cond ((locate-library "minted")
-       (require 'minted)
-       (setq org-latex-listings
-             'minted
-             org-latex-packages-alist
-             '(("" "minted"))
-             org-latex-pdf-process
-             '("pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
-               "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
-               "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"))))
