@@ -38,7 +38,8 @@ the following files and directories:
 ** Installation
 
 To install, clone the repository to a =.emacs.d= directory. Note that it is
-recommended to backup your previous emacs directory.
+
+recommended to backup your previous Emacs directory.
 
 #+BEGIN_SRC shell
 $ mv ~/.emacs.d ~/.emacs.d.bak
@@ -101,7 +102,7 @@ workspaces.
 
 Initially, workspaces are numbered from 0 to 5. The default workspace is 0.
 
-To switch to a workspaces, type =C-M-<0 to 5>=.
+To switch to a workspace, type =C-M-<0 to 5>=.
 
 - C-x x ? :: show persp-mode keys
 - C-x x s :: switch or create workspace
@@ -202,7 +203,7 @@ which I don't use.
 
 - [[https://github.com/auto-complete/auto-complete][auto-complete]] :: provides auto-completion (pre-configured)
 - [[https://github.com/aki2o/org-ac][org-ac]] :: provides auto-completion on org-mode (pre-configured)
-- [[https://web-mode.org/][web-mode]] :: major mode for editing web templates and css files (pre-configured)
+- [[https://web-mode.org/][web-mode]] :: major mode for editing web templates and CSS files (pre-configured)
 - [[https://github.com/mooz/js2-mode][js2-mode]] :: improved JavaScript editing (pre-configured)
 - [[https://github.com/prettier/prettier-emacs][prettier]] :: auto beautify both HTML & JS files on save (pre-configured), requires =prettier= to be installed.
 
@@ -245,3 +246,8 @@ which I don't use.
     - C-c C-c l :: live-mode using eww buffer
     - C-c C-c m :: preview raw HTML on buffer
     - C-c C-c p :: preview on the browser
+
+*** pretty code syntax highlighting on PDF/LaTeX exports
+- minted :: built-in code highlighting for LaTeX
+  - Install =Pygments= (i.e. pip install Pygments)
+  - add =#+ATTR_LATEX: :options frame=single= and =#+LaTeX_HEADER: \usepackage{minted}= on top of org-mode file
