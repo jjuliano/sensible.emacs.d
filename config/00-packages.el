@@ -61,3 +61,6 @@
 ;; unicode and emoji support
 (require 'unicode-fonts)
 (unicode-fonts-setup)
+
+;; ox-timeline
+(require 'ox-timeline)
