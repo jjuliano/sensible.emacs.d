@@ -251,3 +251,7 @@ which I don't use.
 - minted :: built-in code highlighting for LaTeX
   - Install =Pygments= (i.e. pip install Pygments)
   - add =#+ATTR_LATEX: :options frame=single= and =#+LaTeX_HEADER: \usepackage{minted}= on top of org-mode file
+
+*** tide typescript IDE
+- tide :: typescript IDE for Emacs
+  - See https://github.com/ananthakumaran/tide#commands for keyboard shortcuts
