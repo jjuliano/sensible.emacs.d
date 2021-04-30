@@ -76,6 +76,7 @@
 
   (show-paren-mode 1)
   (setq-default indent-tabs-mode nil)
+  (savehist-mode 1)
   (setq save-interprogram-paste-before-kill t
         apropos-do-all t
         mouse-yank-at-point t

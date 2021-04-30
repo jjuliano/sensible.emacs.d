@@ -78,6 +78,8 @@ functionality came from if it turns out to be undesired.
 
 * `indent-tabs-mode` defaults to nil.
 
+* `savehist-mode` defaults to t. Persists M-x commands history across shutdowns.
+
 ## Copyright
 
 Copyright © 2013-2014 Phil Hagelberg and contributors
