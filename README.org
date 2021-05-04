@@ -248,6 +248,6 @@ following packages. They are all pre-configured
     - C-c C-c p :: preview on the browser
 
 *** pretty code syntax highlighting on PDF/LaTeX exports
-- minted :: built-in code highlighting for LaTeX
+- [[https://github.com/gpoore/minted][minted]] :: built-in code highlighting for LaTeX
   - Install =Pygments= (i.e. pip install Pygments)
   - add =#+ATTR_LATEX: :options frame=single= and =#+LaTeX_HEADER: \usepackage{minted}= on top of org-mode file
