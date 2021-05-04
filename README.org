@@ -198,14 +198,14 @@ Here's the most recommended packages to install, some are pre-configured.
 
 *** development
 If you are looking for a lightweight development combinations, install the
-following packages, otherwise you can install the =company-mode= and =lsp-mode=,
-which I don't use.
+following packages. They are all pre-configured
 
-- [[https://github.com/auto-complete/auto-complete][auto-complete]] :: provides auto-completion (pre-configured)
-- [[https://github.com/aki2o/org-ac][org-ac]] :: provides auto-completion on org-mode (pre-configured)
-- [[https://web-mode.org/][web-mode]] :: major mode for editing web templates and CSS files (pre-configured)
-- [[https://github.com/mooz/js2-mode][js2-mode]] :: improved JavaScript editing (pre-configured)
-- [[https://github.com/prettier/prettier-emacs][prettier]] :: auto beautify both HTML & JS files on save (pre-configured), requires =prettier= to be installed.
+- [[https://github.com/auto-complete/auto-complete][auto-complete]] :: provides auto-completion
+- [[https://github.com/aki2o/org-ac][org-ac]] :: provides auto-completion on org-mode
+- [[https://web-mode.org/][web-mode]] :: major mode for editing web templates and CSS files
+- [[https://github.com/mooz/js2-mode][js2-mode]] :: improved JavaScript editing
+- [[https://github.com/prettier/prettier-emacs][prettier]] :: auto beautify both HTML & JS files on save, requires =prettier= to be installed
+- [[https://github.com/ananthakumaran/tide][tide]] :: TypeScript IDE for Emacs, pre-configured for =company= mode
 
 *** code navigation
 - [[https://github.com/jacktasia/dumb-jump][dumb-jump]] :: jump to definition, requires =ag= and =grep= (pre-configured)
@@ -251,7 +251,3 @@ which I don't use.
 - minted :: built-in code highlighting for LaTeX
   - Install =Pygments= (i.e. pip install Pygments)
   - add =#+ATTR_LATEX: :options frame=single= and =#+LaTeX_HEADER: \usepackage{minted}= on top of org-mode file
-
-*** tide typescript IDE
-- tide :: typescript IDE for Emacs
-  - See https://github.com/ananthakumaran/tide#commands for keyboard shortcuts
