@@ -73,7 +73,17 @@ managed by =git submodules=.
   - [[https://github.com/cyrus-and/zoom][zoom]] :: auto-resize active windows
   - [[https://github.com/nex3/perspective-el][perspective-el]] :: workspaces management
 
-** File Locations
+** Overrides and personal configurations
+
+Settings can be overridden by creating the elisp file in the =personal/= folder.
+All configurations on this folder will be loaded right after the initialization
+of the configurations and packages is completed, however, appending =pre=,
+i.e. =pre-<file>.el= on the config file will preload the file.
+
+All overrides and personal configurations in the =personal/*.el= folder is added
+to =.gitignore= file, to avoid committing any personal information in VC.
+
+** Default File Locations
 
 All personal configurations, org-notes, backups and auto-saves are stored in the
 =~/Documents/Emacs/= directory. Those files should not be committed to GIT, but
@@ -83,6 +93,17 @@ Package configs and variable files are stored in =~/Documents/Emacs/config/= and
 =~/Documents/Emacs/data/= respectively.
 
 Org workdir are set to =~/Documents/Emacs/org/=.
+
+However, you can override it by creating a personal config file in the
+=personal/= folder.
+
+For example, create a file =~/.emacs.d/personal/org.el= which contains the
+following overrides.
+
+#+BEGIN_SRC elisp
+(setq org-directory "~/Emacs/org")
+(setq org-mobile-directory (expand-file-name "~/Emacs/mobile"))
+#+END_SRC
 
 ** Behavior
 
@@ -95,7 +116,14 @@ Buffers are automatically-sized using =zoom= when created.
 
 Emoji display support is handled via =unicode-fonts= package.
 
-Transparency is enabled by default.
+** Window Transparency Mode
+
+Window transparency can be enabled by defining =transparent-windows-mode=
+variable to =t=.
+
+For example, if you create a =personal/pre-variables.el= file with the
+content =(setq transparent-windows-mode t)=, this will turn transparency mode
+on.
 
 ** Workspaces
 
