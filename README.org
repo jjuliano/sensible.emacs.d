@@ -95,6 +95,8 @@ Buffers are automatically-sized using =zoom= when created.
 
 Emoji display support is handled via =unicode-fonts= package.
 
+Transparency is enabled by default.
+
 ** Workspaces
 
 This configuration uses [[https://github.com/nex3/perspective-el][perspective-el]] for managing and switching to different
