@@ -240,6 +240,7 @@ following packages. They are all pre-configured
 - [[https://github.com/mooz/js2-mode][js2-mode]] :: improved JavaScript editing
 - [[https://github.com/prettier/prettier-emacs][prettier]] :: auto beautify both HTML & JS files on save, requires =prettier= to be installed
 - [[https://github.com/ananthakumaran/tide][tide]] :: TypeScript IDE for Emacs, pre-configured for =company= mode
+- [[https://github.com/wbolster/emacs-direnv][emacs-direnv]] :: load .env files inside Emacs
 
 *** code navigation
 - [[https://github.com/jacktasia/dumb-jump][dumb-jump]] :: jump to definition, requires =ag= and =grep= (pre-configured)
