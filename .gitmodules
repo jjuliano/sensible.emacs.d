@@ -31,3 +31,9 @@
 [submodule "pkgs/list-utils"]
         path = pkgs/list-utils
         url = https://github.com/rolandwalker/list-utils.git
+[submodule "pkgs/emacs-direnv"]
+	path = pkgs/emacs-direnv
+	url = https://github.com/wbolster/emacs-direnv.git
+[submodule "pkgs/tide"]
+	path = pkgs/tide
+	url = https://github.com/ananthakumaran/tide
