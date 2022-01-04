@@ -1,3 +1,9 @@
+#+OPTIONS: toc:nil
+
+#+BEGIN_CENTER
+/If a craftsman wants to do good work, he must first sharpen his tools. —- Confucius/
+#+END_CENTER
+
 * Personable and Sensible Emacs Configuration
 
 This Emacs configuration aims to be uncluttered, clean, vanilla, and practically
