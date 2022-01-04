@@ -59,8 +59,8 @@
 (add-hook 'after-init-hook 'persp-setup)
 
 ;; unicode and emoji support
+(require 'font-utils)
+(require 'ucs-utils)
+(require 'list-utils)
 (require 'unicode-fonts)
 (unicode-fonts-setup)
-
-;; ox-timeline
-(require 'ox-timeline)

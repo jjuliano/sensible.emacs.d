@@ -22,3 +22,12 @@
 [submodule "pkgs/practical.org.el"]
 	path = pkgs/practical.org.el
 	url = git@github.com:jjuliano/practical.org.el.git
+[submodule "pkgs/font-utils"]
+	path = pkgs/font-utils
+	url = https://github.com/rolandwalker/font-utils.git
+[submodule "pkgs/ucs-utils"]
+	path = pkgs/ucs-utils
+	url = https://github.com/rolandwalker/ucs-utils.git
+[submodule "pkgs/list-utils"]
+	path = pkgs/list-utils
+	url = https://github.com/rolandwalker/list-utils.git
