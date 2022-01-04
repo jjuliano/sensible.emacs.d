@@ -57,7 +57,7 @@ $ git pull origin main
 $ git submodule update --init --recursive
 #+END_SRC
 
-** Packages
+** Editor Packages
 
 It uses the following packages by default, the individual elisp packages are
 source directly from the website, while other packages are hosted and are
@@ -72,6 +72,10 @@ managed by =git submodules=.
   - [[https://www.emacswiki.org/emacs/download/multiple-line-edit.el][multiple-line-edit.el]] :: select lines simultaneously
   - [[https://github.com/cyrus-and/zoom][zoom]] :: auto-resize active windows
   - [[https://github.com/nex3/perspective-el][perspective-el]] :: workspaces management
+  - [[https://github.com/rolandwalker/unicode-fonts][unicode-fonts]] :: configure unicode-fonts for Emacs with the following dependencies
+    - [[https://github.com/rolandwalker/font-utils][font-utils]] :: Utility functions for working with fonts in Emacs
+    - [[https://github.com/rolandwalker/ucs-utils][ucs-utils]] :: Utilities for Unicode characters in Emacs
+    - [[https://github.com/rolandwalker/list-utils][list-utils]] :: List-manipulation utility functions for Emacs
 
 ** Overrides and personal configurations
 
