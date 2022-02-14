@@ -64,3 +64,7 @@
 (require 'list-utils)
 (require 'unicode-fonts)
 (unicode-fonts-setup)
+
+;; typescript IDE support
+(require 'dash)
+(require 's)

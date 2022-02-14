@@ -37,3 +37,18 @@
 [submodule "pkgs/tide"]
 	path = pkgs/tide
 	url = https://github.com/ananthakumaran/tide
+[submodule "pkgs/typescript-mode"]
+	path = pkgs/typescript-mode
+	url = https://github.com/emacs-typescript/typescript.el.git
+[submodule "pkgs/dash"]
+	path = pkgs/dash
+	url = https://github.com/magnars/dash.el.git
+[submodule "pkgs/s"]
+	path = pkgs/s.el
+	url = https://github.com/magnars/s.el.git
+[submodule "pkgs/flycheck"]
+	path = pkgs/flycheck
+	url = https://github.com/flycheck/flycheck.git
+[submodule "pkgs/web-mode"]
+	path = pkgs/web-mode
+	url = https://github.com/fxbois/web-mode.git
