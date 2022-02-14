@@ -3,25 +3,25 @@
         url = https://git.sr.ht/~technomancy/better-defaults
 [submodule "themes/nord-emacs"]
         path = themes/nord-emacs
-        url = git@github.com:arcticicestudio/nord-emacs.git
+        url = https://github.com/arcticicestudio/nord-emacs.git
 [submodule "pkgs/no-littering"]
         path = pkgs/no-littering
-        url = git@github.com:emacscollective/no-littering.git
+        url = https://github.com/emacscollective/no-littering.git
 [submodule "pkgs/exec-path-from-shell"]
         path = pkgs/exec-path-from-shell
-        url = git@github.com:purcell/exec-path-from-shell.git
+        url = https://github.com/purcell/exec-path-from-shell.git
 [submodule "pkgs/zoom"]
         path = pkgs/zoom
-        url = git@github.com:cyrus-and/zoom.git
+        url = https://github.com/cyrus-and/zoom.git
 [submodule "pkgs/perspective-el"]
         path = pkgs/perspective-el
         url = https://github.com/nex3/perspective-el
 [submodule "pkgs/unicode-fonts"]
         path = pkgs/unicode-fonts
-        url = git@github.com:rolandwalker/unicode-fonts.git
+        url = https://github.com/rolandwalker/unicode-fonts.git
 [submodule "pkgs/practical.org.el"]
         path = pkgs/practical.org.el
-        url = git@github.com:jjuliano/practical.org.el.git
+        url = https://github.com/jjuliano/practical.org.el.git
 [submodule "pkgs/font-utils"]
         path = pkgs/font-utils
         url = https://github.com/rolandwalker/font-utils.git
