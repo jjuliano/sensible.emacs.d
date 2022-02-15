@@ -68,3 +68,29 @@
 ;; typescript IDE support
 (require 'dash)
 (require 's)
+
+;; Go IDE support
+(require 'go-mode)
+
+(defun go-mode-setup ()
+  ; Use goimports instead of go-fmt
+  (setq gofmt-command "goimports")
+
+  ;; Call Gofmt before saving
+  (add-hook 'before-save-hook 'gofmt-before-save)
+
+  ;; Godef jump key binding
+  (local-set-key (kbd "M-.") 'godef-jump)
+  (local-set-key (kbd "M-*") 'pop-tag-mark)
+
+  ;; Customize compile command to run go build
+  (if (not (string-match "go" compile-command))
+      (set (make-local-variable 'compile-command)
+           "go build -v && go test -v && go vet"))
+
+  ;; auto-complete mode for Go
+  (with-eval-after-load 'go-mode
+   (require 'go-autocomplete))
+  (auto-complete-mode 1))
+
+(add-hook 'go-mode-hook 'go-mode-setup)

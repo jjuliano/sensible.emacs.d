@@ -280,7 +280,7 @@ following packages. They are all pre-configured
     - C-c ! v :: show current setup on buffer
 
 *** markdown-mode
-- [[markdown-mode]] :: markdown-mode using =multimarkdown= binary (pre-configured)
+- [[https://github.com/jrblevin/markdown-mode]] :: markdown-mode using =multimarkdown= binary (pre-configured)
   - Install =multimarkdown=.
   - Note to disable =zoom-mode= when using live preview.
   - Keystrokes

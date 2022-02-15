@@ -52,3 +52,54 @@
 [submodule "pkgs/web-mode"]
 	path = pkgs/web-mode
 	url = https://github.com/fxbois/web-mode.git
+[submodule "pkgs/go-mode"]
+	path = pkgs/go-mode
+	url = https://github.com/dominikh/go-mode.el.git
+[submodule "pkgs/auto-complete"]
+	path = pkgs/auto-complete
+	url = https://github.com/auto-complete/auto-complete.git
+[submodule "pkgs/popup-el"]
+	path = pkgs/popup-el
+	url = https://github.com/auto-complete/popup-el.git
+[submodule "pkgs/fuzzy-el"]
+	path = pkgs/fuzzy-el
+	url = https://github.com/auto-complete/fuzzy-el.git
+[submodule "pkgs/magit"]
+	path = pkgs/magit
+	url = https://github.com/magit/magit.git
+[submodule "pkgs/org-ac"]
+	path = pkgs/org-ac
+	url = https://github.com/aki2o/org-ac.git
+[submodule "pkgs/js2-mode"]
+	path = pkgs/js2-mode
+	url = https://github.com/mooz/js2-mode.git
+[submodule "pkgs/prettier"]
+	path = pkgs/prettier
+	url = https://github.com/prettier/prettier-emacs.git
+[submodule "pkgs/dumb-jump"]
+	path = pkgs/dumb-jump
+	url = https://github.com/jacktasia/dumb-jump.git
+[submodule "pkgs/wucuo"]
+	path = pkgs/wucuo
+	url = https://github.com/redguardtoo/wucuo.git
+[submodule "pkgs/flyspell-popup"]
+	path = pkgs/flyspell-popup
+	url = https://github.com/xuchunyang/flyspell-popup.git
+[submodule "pkgs/langtool"]
+	path = pkgs/langtool
+	url = https://github.com/mhayashi1120/Emacs-langtool.git
+[submodule "pkgs/markdown-mode"]
+	path = pkgs/markdown-mode
+	url = https://github.com/jrblevin/markdown-mode.git
+[submodule "pkgs/minted"]
+	path = pkgs/minted
+	url = https://github.com/gpoore/minted.git
+[submodule "pkgs/auto-complete-pcmp"]
+	path = pkgs/auto-complete-pcmp
+	url = https://github.com/aki2o/auto-complete-pcmp.git
+[submodule "pkgs/log4e"]
+	path = pkgs/log4e
+	url = https://github.com/aki2o/log4e.git
+[submodule "pkgs/yaxception"]
+	path = pkgs/yaxception
+	url = https://github.com/aki2o/yaxception.git
