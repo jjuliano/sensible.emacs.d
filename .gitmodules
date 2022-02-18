@@ -103,3 +103,6 @@
 [submodule "pkgs/yaxception"]
 	path = pkgs/yaxception
 	url = https://github.com/aki2o/yaxception.git
+[submodule "pkgs/go-autocomplete"]
+	path = pkgs/go-autocomplete
+	url = https://github.com/emacsattic/go-autocomplete.git
