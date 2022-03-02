@@ -1,13 +1,13 @@
-# Ignore everything
-*
-
-# But not these files...
+# Do not ignore these files...
 !README.org
 !.gitignore
 !init.el
-!about-me.el
-!pre-init.el
+!config.el
 !config/*
 !pkgs/*
 !themes/*
 !personal/.gitkeep
+
+# All else, ignore
+*
+.*
