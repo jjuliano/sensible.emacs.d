@@ -8,6 +8,6 @@
 !themes/*
 !personal/.gitkeep
 
-# All else, ignore
-*
-.*
+# Ignore all personal/* files
+
+personal/*

@@ -44,7 +44,7 @@
 	path = pkgs/dash
 	url = https://github.com/magnars/dash.el.git
 [submodule "pkgs/s"]
-	path = pkgs/s.el
+	path = pkgs/s
 	url = https://github.com/magnars/s.el.git
 [submodule "pkgs/flycheck"]
 	path = pkgs/flycheck
@@ -106,3 +106,12 @@
 [submodule "pkgs/go-autocomplete"]
 	path = pkgs/go-autocomplete
 	url = https://github.com/emacsattic/go-autocomplete.git
+[submodule "pkgs/bbdb"]
+	path = pkgs/bbdb
+	url = https://git.savannah.nongnu.org/git/bbdb.git
+[submodule "pkgs/transient"]
+	path = pkgs/transient
+	url = https://github.com/magit/transient.git
+[submodule "pkgs/with-editor"]
+	path = pkgs/with-editor
+	url = https://github.com/magit/with-editor.git
