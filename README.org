@@ -53,16 +53,16 @@
 
 ** System packages
 
-   In addition to the Emacs [[Packages][default packages]], you need to ensure the following
+   In addition to the Emacs [[#packages][default packages]], you need to ensure the following
    packages exists in your system, which can be installed via your operating
    system's package manager.
 
-   - [[https://git-scm.com][git]] :: Used by Magit for [[version-control]].
-   - [[https://github.com/ggreer/the_silver_searcher][ag]], rg, git grep or grep :: Used by Dumb-jump for [[code navigation]].
-   - [[https://prettier.io/][prettier]] :: Used to prettify HTML & JS code upon save. See: [[development]].
-   - [[https://fletcherpenney.net/multimarkdown/][multimarkdown]] :: Used for [[markdown-mode]].
-   - [[https://internal1.languagetool.org/snapshots/][languagetool-commandline.jar]] :: Used for [[grammar check]].
-   - [[https://pygments.org/][Pygments]] :: Used for [[code syntax highlighting]].
+   - [[https://git-scm.com][git]] :: Used by Magit for [[#version-control][version control]].
+   - [[https://github.com/ggreer/the_silver_searcher][ag]], rg, git grep or grep :: Used by Dumb-jump for [[#code-navigation][code navigation]].
+   - [[https://prettier.io/][prettier]] :: Used to prettify HTML & JS code upon save. See: [[#development][development]].
+   - [[https://fletcherpenney.net/multimarkdown/][multimarkdown]] :: Used for [[#markdown-mode][markdown-mode]].
+   - [[https://internal1.languagetool.org/snapshots/][languagetool-commandline.jar]] :: Used for [[#grammar-check][grammar check]].
+   - [[https://pygments.org/][Pygments]] :: Used for [[#code-syntax-highlighting][code syntax highlighting]].
 
 ** Upgrade
 
