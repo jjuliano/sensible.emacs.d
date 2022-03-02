@@ -6,6 +6,7 @@
 !config/*
 !pkgs/*
 !themes/*
+!docs/*
 !personal/.gitkeep
 
 # Ignore all personal/* files

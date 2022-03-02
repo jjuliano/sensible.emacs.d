@@ -4,6 +4,10 @@
 /If a craftsman wants to do good work, he must first sharpen his tools. —- Confucius/
 #+END_CENTER
 
+#+CAPTION: Screenshot
+#+NAME:   fig:SCREENSHOT
+[[docs/screenshot.png]]
+
 * Personable and Sensible Emacs Configuration
 
   This Emacs configuration aims to be uncluttered, clean, vanilla, and
@@ -26,7 +30,7 @@
 ** Files
 
   Files are structured in the following tree.
-  
+
    #+BEGIN_SRC text
      ├── README.org                // default documentation (shown on start-up)
      ├── config
@@ -36,6 +40,7 @@
      ├── init.el                   // contains the org-directory and about-me settings
      ├── personal/.gitkeep.        // added to .gitignore, to store all custom user configurations
      ├── pkgs/                     // default packages as git submodules
+     ├── docs/                     // contains docs related files
      └── themes/                   // themes
    #+END_SRC
 
