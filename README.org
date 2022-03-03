@@ -68,7 +68,7 @@
    - [[https://internal1.languagetool.org/snapshots/][languagetool-commandline.jar]] :: Used for [[#grammar-check][grammar check]].
    - [[https://pygments.org/][Pygments]] :: Used for [[#code-syntax-highlighting][code syntax highlighting]].
    - [[https://cmake.org/][cmake]] :: Used by [[#term][terminal emulator]].
-     - shell-side configs needed to be added to .zshrc or .bashrc see: [[https://github.com/akermu/emacs-libvterm#shell-side-configuration][shell-side configuration]]
+     - [[https://github.com/akermu/emacs-libvterm/tree/master/etc][shell-side configurations]] :: shell-side configs needed to be added to .zshrc or .bashrc
 
 ** Upgrade
 
@@ -105,6 +105,7 @@
 *** term
     - [[https://github.com/akermu/emacs-libvterm][vterm]] :: terminal emulator based on libvterm C library
       - M-x vterm :: runs the terminal
+        - C-c C-t :: turns-on =vterm-copy-mode= to treat the terminal like a text-file
 
 *** version-control
     - [[https://magit.vc/][magit]] :: a complete text-based user interface to Git.

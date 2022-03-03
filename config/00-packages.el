@@ -340,8 +340,13 @@
 
 ;; vterm
 (cond ((locate-library "vterm")
-       (require 'vterm)
-       (setq vterm-term-environment-variable "eterm-color")))
+       (setq vterm-term-environment-variable "eterm-color")
+       (add-hook 'vterm-mode-hook
+          (lambda ()
+            (set (make-local-variable 'buffer-face-mode-face) 'fixed-pitch)
+            (buffer-face-mode t)))
+
+       (require 'vterm)))
 
 ;; MELPA package variable initialization
 (cond ((locate-library "package")
