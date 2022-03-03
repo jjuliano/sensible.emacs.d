@@ -118,3 +118,12 @@
 [submodule "pkgs/emacs-libvterm"]
 	path = pkgs/emacs-libvterm
 	url = https://github.com/akermu/emacs-libvterm.git
+[submodule "pkgs/eterm-256color"]
+	path = pkgs/eterm-256color
+	url = https://github.com/dieggsy/eterm-256color
+[submodule "pkgs/xterm-color"]
+	path = pkgs/xterm-color
+	url = https://github.com/atomontage/xterm-color
+[submodule "pkgs/f"]
+	path = pkgs/f
+	url = https://github.com/rejeep/f.el

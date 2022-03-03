@@ -329,9 +329,19 @@
 (cond ((locate-library "magit")
        (require 'magit)))
 
+;; improve vterm color mode
+(cond ((locate-library "eterm-256color")
+       (require 'eterm-256color)
+       (add-hook 'term-mode-hook #'eterm-256color-mode)))
+
+;; dependency of eterm-256color
+(cond ((locate-library "xterm-color")
+       (require 'xterm-color)))
+
 ;; vterm
 (cond ((locate-library "vterm")
-       (require 'vterm)))
+       (require 'vterm)
+       (setq vterm-term-environment-variable "eterm-color")))
 
 ;; MELPA package variable initialization
 (cond ((locate-library "package")
