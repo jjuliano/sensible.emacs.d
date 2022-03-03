@@ -329,6 +329,10 @@
 (cond ((locate-library "magit")
        (require 'magit)))
 
+;; vterm
+(cond ((locate-library "vterm")
+       (require 'vterm)))
+
 ;; MELPA package variable initialization
 (cond ((locate-library "package")
        (custom-set-variables

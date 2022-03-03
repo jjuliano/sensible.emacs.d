@@ -115,3 +115,6 @@
 [submodule "pkgs/with-editor"]
 	path = pkgs/with-editor
 	url = https://github.com/magit/with-editor.git
+[submodule "pkgs/emacs-libvterm"]
+	path = pkgs/emacs-libvterm
+	url = https://github.com/akermu/emacs-libvterm.git
