@@ -8,7 +8,9 @@
 !themes/*
 !docs/*
 !personal/.gitkeep
+!data/.gitkeep
 
 # Ignore all personal/* files
 
 personal/*
+data/*
