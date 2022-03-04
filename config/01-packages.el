@@ -27,9 +27,7 @@
 
 ;; set custom.el to no-littering dir
 (cond ((locate-library "no-littering")
-       (require 'no-littering)
-       (setq custom-file (expand-file-name "config/custom.el"
-                                           user-emacs-directory))))
+       (require 'no-littering)))
 
 ;; exec-path-from-shell settings to load $PATH on run
 (cond ((locate-library "exec-path-from-shell")
@@ -56,7 +54,7 @@
 (cond ((locate-library "zoom")
        (setq zoom-size '(0.618 . 0.618))
        (require 'zoom)
-       (zoom-mode t)))
+       (zoom-mode use-zoom-mode)))
 
 ;; workspaces management via perspective-el
 (cond ((locate-library "perspective")
@@ -88,8 +86,6 @@
 
        (add-hook 'persp-state-after-load-hook 'persp-setup)
        (add-hook 'after-init-hook 'persp-setup)))
-
-
 
 ;; unicode and emoji support
 
@@ -284,6 +280,18 @@
                       . markdown-mode))
        (add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode))
        (setq markdown-command "multimarkdown")))
+
+;; minted for syntax highlighting on PDF exports
+(cond ((locate-library "minted")
+       (setq org-latex-prefer-user-labels t)
+       (setq org-latex-listings
+             'minted
+             org-latex-packages-alist
+             '(("" "minted"))
+             org-latex-pdf-process
+             '("pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+               "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+               "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"))))
 
 ;; tide typescript IDE for Emacs
 (cond ((locate-library "tide")

@@ -33,12 +33,13 @@
 
    #+BEGIN_SRC text
      ├── README.org                // default documentation (shown on start-up)
-     ├── config
-     │   └── 00-packages.el        // default package configurations
-     |   └── 01-editor.el          // editor configurations
-     ├── boot.el                   // loads all the *.el files in the config/ and personal/ directory
      ├── init.el                   // contains the org-directory and about-me settings
-     ├── personal/.gitkeep.        // added to .gitignore, to store all custom user configurations
+     ├── boot.el                   // loads all the *.el files in the config/ and personal/ directory
+     ├── config
+     │   └── 00-globals.el         // global configurations
+     │   └── 01-packages.el        // package configurations
+     |   └── 02-editor.el          // editor configurations
+     ├── personal/                 // added to .gitignore, to store all custom user configurations
      ├── pkgs/                     // default packages as git submodules
      ├── docs/                     // contains docs related files
      └── themes/                   // themes
@@ -67,6 +68,7 @@
    - [[https://fletcherpenney.net/multimarkdown/][multimarkdown]] :: Used for [[#markdown-mode][markdown-mode]].
    - [[https://internal1.languagetool.org/snapshots/][languagetool-commandline.jar]] :: Used for [[#grammar-check][grammar check]].
    - [[https://pygments.org/][Pygments]] :: Used for [[#code-syntax-highlighting][code syntax highlighting]].
+     - [[https://tug.org/texlive/][pdflatex]] :: [[#code-syntax-highlighting][code syntax highlighting]] when exporting to PDF from LaTeX.
    - [[https://cmake.org/][cmake]] :: Used by [[#term][terminal emulator]].
      - [[https://github.com/akermu/emacs-libvterm/tree/master/etc][shell-side configurations]] :: shell-side configs needed to be added to .zshrc or .bashrc
 
@@ -143,7 +145,7 @@
 *** grammar check
     - [[https://github.com/mhayashi1120/Emacs-langtool][langtool]] :: provides an Emacs interface to =LanguageTool= (pre-configured)
       - Download the desktop version of LanguageTool from [[https://languagetool.org/]].
-      - Modify the =config/00-packages.el= to point to your =languagetool-commandline.jar=
+      - Modify the =config/01-packages.el= to point to your =languagetool-commandline.jar=
       - Change the default language from =en-US= to your preferred locale
       - Keystrokes
         - C-x 4w :: check spelling and grammar
@@ -313,4 +315,4 @@
 
    The [[Packages][default packages]] includes a custom configuration that contains the basic
    necessary settings to readily use it, you can modify the settings in the
-   =~/.emacs.d/config/00-packages.el= file.
+   =~/.emacs.d/config/01-packages.el= file.
