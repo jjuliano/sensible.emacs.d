@@ -36,7 +36,7 @@
      ├── config
      │   └── 00-packages.el        // default package configurations
      |   └── 01-editor.el          // editor configurations
-     ├── config.el                 // loads all the *.el files in the config/ and personal/ directory
+     ├── boot.el                   // loads all the *.el files in the config/ and personal/ directory
      ├── init.el                   // contains the org-directory and about-me settings
      ├── personal/.gitkeep.        // added to .gitignore, to store all custom user configurations
      ├── pkgs/                     // default packages as git submodules
