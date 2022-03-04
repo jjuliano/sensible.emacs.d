@@ -230,9 +230,6 @@
 
 ;; langtool
 (cond ((locate-library "langtool")
-       (setq langtool-language-tool-jar "/opt/LanguageTool/languagetool-commandline.jar")
-       (setq langtool-default-language "en-US")
-
        (require 'langtool)
        (global-set-key (kbd "C-x 4w") 'langtool-check)
        (global-set-key (kbd "C-x 4W") 'langtool-check-done)

@@ -14,3 +14,9 @@
 
 ;; zoom-mode
 (setq-default use-zoom-mode t)
+
+;; language-tool
+(setq-default langtool-language-tool-jar (expand-file-name
+                                          "data/languagetool-commandline.jar"
+                                          user-emacs-directory))
+(setq-default langtool-default-language "en-US")
