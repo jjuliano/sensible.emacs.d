@@ -71,6 +71,8 @@
      - [[https://tug.org/texlive/][pdflatex]] :: [[#code-syntax-highlighting][code syntax highlighting]] when exporting to PDF from LaTeX.
    - [[https://cmake.org/][cmake]] :: Used by [[#term][terminal emulator]].
      - [[https://github.com/akermu/emacs-libvterm/tree/master/etc][shell-side configurations]] :: shell-side configs needed to be added to .zshrc or .bashrc
+   - [[http://hunspell.github.io/][hunspell]] :: Used for [[#spell-check][spell checking]].
+     - Download dictionaries from http://wordlist.aspell.net/dicts/ and put them to =/Library/Spelling/=.
 
 ** Upgrade
 
