@@ -18,7 +18,6 @@
 (setq package-user-dir (expand-file-name "packages/"
                                          no-littering-var-directory))
 
-
 ;; set recent files to no-littering dir
 (cond ((locate-library "recentf")
        (require 'recentf)
@@ -51,10 +50,12 @@
        (global-set-key (kbd "C-c M-SPC") 'mulled/edit-trailing-edges)))
 
 ;; zoom auto-resize window
-(cond ((locate-library "zoom")
-       (setq zoom-size '(0.618 . 0.618))
-       (require 'zoom)
-       (zoom-mode use-zoom-mode)))
+(if (bound-and-true-p use-zoom-mode)
+    (progn
+      (cond ((locate-library "zoom")
+             (setq zoom-size '(0.618 . 0.618))
+             (require 'zoom)
+             (zoom-mode t)))))
 
 ;; workspaces management via perspective-el
 (cond ((locate-library "perspective")

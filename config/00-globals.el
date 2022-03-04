@@ -13,4 +13,4 @@
 (setq-default org-mobile-directory (expand-file-name "~/Dropbox/Apps/MobileOrg"))
 
 ;; zoom-mode
-(setq-default use-zoom-mode nil)
+(setq-default use-zoom-mode t)
