@@ -127,3 +127,6 @@
 [submodule "pkgs/f"]
 	path = pkgs/f
 	url = https://github.com/rejeep/f.el
+[submodule "pkgs/add-node-modules-path"]
+	path = pkgs/add-node-modules-path
+	url = https://github.com/codesuki/add-node-modules-path.git

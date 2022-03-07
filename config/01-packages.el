@@ -222,6 +222,11 @@
                ("html" . (ac-source-words-in-buffer ac-source-abbrev))))
        ))
 
+;; load node-modules/bin paths
+(cond ((locate-library "add-node-modules-path")
+       (eval-after-load 'js-mode
+         (add-hook 'js-mode-hook #'add-node-modules-path))))
+
 ;; prettier-js
 (cond ((locate-library "prettier-js")
        (require 'prettier-js)
@@ -351,7 +356,6 @@
           (lambda ()
             (set (make-local-variable 'buffer-face-mode-face) 'fixed-pitch)
             (buffer-face-mode t)))
-
        (require 'vterm)))
 
 ;; MELPA package variable initialization
