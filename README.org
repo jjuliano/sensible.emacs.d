@@ -80,8 +80,7 @@
 
    #+BEGIN_SRC shell
      $ cd ~/.emacs.d
-     $ git pull origin main
-     $ git submodule update --init --recursive
+     $ git submodule update --remote --merge
    #+END_SRC
 
 ** Packages
