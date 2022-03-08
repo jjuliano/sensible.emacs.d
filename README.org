@@ -16,6 +16,9 @@
 
   It strives to steer away from existing trends or dogmas, avoiding unnecessary packages,
   and among all, stick with the most basic and complete "useful form".
+  
+  Over time, the configuration will improve, based on what's "realized" design pattern
+  that is both beautiful and "makes sense".
 
 * Personable and Sensible Emacs Configuration
 
