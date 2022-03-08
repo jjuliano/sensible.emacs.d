@@ -8,6 +8,15 @@
 #+NAME:   fig:SCREENSHOT
 [[docs/screenshot.png]]
 
+* What is sensible.emacs.d?
+
+  =sensible.emacs.d= is a clean room implementation of what a pure vanilla Emacs
+  configuration should be for any user, that is sanely manageable, and practically
+  useful by everyone.
+
+  It strives to steer away from existing trends or dogmas, avoiding unnecessary packages,
+  and among all, stick with the most basic and complete "useful form".
+
 * Personable and Sensible Emacs Configuration
 
   This Emacs configuration aims to be uncluttered, clean, vanilla, and
