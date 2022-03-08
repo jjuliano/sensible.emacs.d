@@ -358,6 +358,10 @@
             (buffer-face-mode t)))
        (require 'vterm)))
 
+;; org-tempo
+(cond ((locate-library "org-tempo")
+       (require 'org-tempo)))
+
 ;; MELPA package variable initialization
 (cond ((locate-library "package")
        (custom-set-variables
