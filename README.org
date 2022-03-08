@@ -77,6 +77,7 @@
    - [[https://git-scm.com][git]] :: Used by Magit for [[#version-control][version control]].
    - [[https://github.com/ggreer/the_silver_searcher][ag]], rg, git grep or grep :: Used by Dumb-jump for [[#code-navigation][code navigation]].
    - [[https://prettier.io/][prettier]] :: Used to prettify HTML & JS code upon save. See: [[#development][development]].
+     - [[https://github.com/codesuki/add-node-modules-path][add-node-modules-path]] :: Utilized local =.prettierrc=, provided that =prettier= package is also listed on =package.json=.
    - [[https://fletcherpenney.net/multimarkdown/][multimarkdown]] :: Used for [[#markdown-mode][markdown-mode]].
    - [[https://internal1.languagetool.org/snapshots/][languagetool-commandline.jar]] :: Used for [[#grammar-check][grammar check]].
      - Preconfigured to look in =~/.emacs.d/data/languagetool-commandline.jar=, modify in =00-globals.el=.
