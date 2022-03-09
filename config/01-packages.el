@@ -225,13 +225,21 @@
 ;; load node-modules/bin paths
 (cond ((locate-library "add-node-modules-path")
        (eval-after-load 'js-mode
-         (add-hook 'js-mode-hook #'add-node-modules-path))))
+         '(add-hook 'js-mode-hook #'add-node-modules-path))
+       (eval-after-load 'web-mode
+         '(add-hook 'web-mode-hook #'add-node-modules-path))
+       (eval-after-load 'js2-mode
+         '(add-hook 'js2-mode-hook #'add-node-modules-path))
+       (eval-after-load 'typescript-mode
+         '(add-hook 'typescript-mode-hook #'add-node-modules-path))))
 
-;; prettier-js
-(cond ((locate-library "prettier-js")
-       (require 'prettier-js)
-       (add-hook 'js2-mode-hook 'prettier-js-mode)
-       (add-hook 'web-mode-hook 'prettier-js-mode)))
+;; prettier-rc
+(cond ((locate-library "prettier-rc")
+       (require 'prettier-rc)
+
+       (add-hook 'typescript-mode-hook 'prettier-rc-mode)
+       (add-hook 'js2-mode-hook 'prettier-rc-mode)
+       (add-hook 'web-mode-hook 'prettier-rc-mode)))
 
 ;; langtool
 (cond ((locate-library "langtool")
@@ -308,12 +316,17 @@
          (eldoc-mode +1)
          (tide-hl-identifier-mode +1)
 
+         ;; use prettier-rc if found
+         (if (locate-library "prettier-rc")
+             (prettier-rc-mode +1)
+           ;; use default tide formatter on sav
+           (add-hook 'before-save-hook 'tide-format-before-save))
+
          (cond ((locate-library "company")
                 (company-mode +1))))
 
        (setq company-tooltip-align-annotations t)
 
-       (add-hook 'before-save-hook 'tide-format-before-save)
        (add-hook 'typescript-mode-hook #'setup-tide-mode)
 
        ;; for handling TSX and JSX files
@@ -353,9 +366,9 @@
 (cond ((locate-library "vterm")
        (setq vterm-term-environment-variable "eterm-color")
        (add-hook 'vterm-mode-hook
-          (lambda ()
-            (set (make-local-variable 'buffer-face-mode-face) 'fixed-pitch)
-            (buffer-face-mode t)))
+                 (lambda ()
+                   (set (make-local-variable 'buffer-face-mode-face) 'fixed-pitch)
+                   (buffer-face-mode t)))
        (require 'vterm)))
 
 ;; org-tempo

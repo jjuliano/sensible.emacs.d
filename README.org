@@ -70,7 +70,6 @@
    - [[https://git-scm.com][git]] :: Used by Magit for [[#version-control][version control]].
    - [[https://github.com/ggreer/the_silver_searcher][ag]], rg, git grep or grep :: Used by Dumb-jump for [[#code-navigation][code navigation]].
    - [[https://prettier.io/][prettier]] :: Used to prettify HTML & JS code upon save. See: [[#development][development]].
-     - [[https://github.com/codesuki/add-node-modules-path][add-node-modules-path]] :: Utilized local =.prettierrc=, provided that =prettier= package is also listed on =package.json=.
    - [[https://fletcherpenney.net/multimarkdown/][multimarkdown]] :: Used for [[#markdown-mode][markdown-mode]].
    - [[https://internal1.languagetool.org/snapshots/][languagetool-commandline.jar]] :: Used for [[#grammar-check][grammar check]].
      - Preconfigured to look in =~/.emacs.d/data/languagetool-commandline.jar=, modify in =00-globals.el=.
@@ -135,8 +134,9 @@
     - [[https://github.com/aki2o/org-ac][org-ac]] :: provides auto-completion on org-mode
     - [[https://web-mode.org/][web-mode]] :: major mode for editing web templates and CSS files
     - [[https://github.com/mooz/js2-mode][js2-mode]] :: improved JavaScript editing-
-    - [[https://github.com/prettier/prettier-emacs][prettier]] :: auto beautify both HTML & JS files on save, requires =prettier= to be installed
+    - [[https://github.com/jjuliano/prettier-rc-emacs][prettier-rc]] :: auto beautify both HTML & JS files on save (per project, using local rc files), requires =prettier= to be installed via =npm= or package manager.
     - [[https://github.com/ananthakumaran/tide][tide]] :: TypeScript IDE for Emacs, pre-configured for =company= mode
+    - [[https://github.com/codesuki/add-node-modules-path][add-node-modules-path]] :: add the per project's =node_modules/.bin/= to the =exec-path=
     - [[https://github.com/wbolster/emacs-direnv][emacs-direnv]] :: load .env files inside Emacs
 
 *** code navigation

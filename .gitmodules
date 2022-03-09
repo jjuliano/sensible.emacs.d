@@ -130,3 +130,6 @@
 [submodule "pkgs/add-node-modules-path"]
 	path = pkgs/add-node-modules-path
 	url = https://github.com/codesuki/add-node-modules-path.git
+[submodule "pkgs/prettier-rc-emacs"]
+	path = pkgs/prettier-rc-emacs
+	url = https://github.com/jjuliano/prettier-rc-emacs
