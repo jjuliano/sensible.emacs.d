@@ -34,7 +34,7 @@
 
 ** Files
 
-  Files are structured in the following tree.
+   The files are structured in the following tree.
 
    #+BEGIN_SRC text
      ├── README.org                // default documentation (shown on start-up)
@@ -243,18 +243,18 @@
    content =(setq transparent-windows-mode t)=, this will turn transparency mode
    on.
 
-** Workspaces
+** Workspace
 
    This configuration uses [[https://github.com/nex3/perspective-el][perspective-el]] for managing and switching to
-   different workspaces.
+   different workspace.
 
-   Initially, workspaces are numbered from 0 to 5. The default workspace is 0.
+   Initially, workspace are numbered from 0 to 5. The default workspace is 0.
 
    To switch to a workspace, type =C-M-<0 to 5>=.
 
    - C-x x ? :: show persp-mode keys
    - C-x x s :: switch or create workspace
-   - C-x x n or C-c x p :: next/previous workspaces
+   - C-x x n or C-c x p :: next/previous workspace
    - C-x x c :: delete workspace
    - C-x x r :: rename workspace
 
