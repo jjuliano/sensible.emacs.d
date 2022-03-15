@@ -229,9 +229,7 @@
        (eval-after-load 'web-mode
          '(add-hook 'web-mode-hook #'add-node-modules-path))
        (eval-after-load 'js2-mode
-         '(add-hook 'js2-mode-hook #'add-node-modules-path))
-       (eval-after-load 'typescript-mode
-         '(add-hook 'typescript-mode-hook #'add-node-modules-path))))
+         '(add-hook 'js2-mode-hook #'add-node-modules-path))))
 
 ;; prettier-rc
 (cond ((locate-library "prettier-rc")
@@ -241,6 +239,13 @@
        (add-hook 'js2-mode-hook 'prettier-rc-mode)
        (add-hook 'web-mode-hook 'prettier-rc-mode)))
 
+;; eslint-rc
+(cond ((locate-library "eslint-rc")
+       (require 'eslint-rc)
+
+       (add-hook 'typescript-mode-hook 'eslint-rc-mode)
+       (add-hook 'js2-mode-hook 'eslint-rc-mode)
+       (add-hook 'web-mode-hook 'eslint-rc-mode)))
 ;; langtool
 (cond ((locate-library "langtool")
        (require 'langtool)
