@@ -133,3 +133,15 @@
 [submodule "pkgs/prettier-rc-emacs"]
 	path = pkgs/prettier-rc-emacs
 	url = https://github.com/jjuliano/prettier-rc-emacs
+[submodule "pkgs/eslint-fix"]
+	path = pkgs/eslint-fix
+	url = https://github.com/codesuki/eslint-fix.git
+[submodule "pkgs/eslint-rc-emacs"]
+	path = pkgs/eslint-rc-emacs
+	url = https://github.com/jjuliano/eslint-rc-emacs.git
+[submodule "themes/uwu-theme"]
+	path = themes/uwu-theme
+	url = https://github.com/kborling/uwu-theme.git
+[submodule "themes/starlit-emacs"]
+	path = themes/starlit-emacs
+	url = https://github.com/SFTtech/starlit-emacs.git

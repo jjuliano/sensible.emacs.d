@@ -33,9 +33,15 @@
 ;; whitespace cleanup on save
 (add-hook 'before-save-hook 'whitespace-cleanup)
 
-;; load the theme
-(add-to-list 'custom-theme-load-path (expand-file-name "themes/nord-emacs/" user-emacs-directory))
-(load-theme 'nord t)
+;; load the themes
+(let ((basedir (expand-file-name "themes/" user-emacs-directory)))
+  (dolist (f (directory-files basedir))
+    (if (and (not (or (equal f ".") (equal f "..")))
+             (file-directory-p (concat basedir f)))
+        (add-to-list 'custom-theme-load-path (concat basedir f)))))
+
+(load-theme 'nord t t)
+(enable-theme 'nord)
 
 ;; Display README.org on start
 (setq initial-buffer-choice (expand-file-name "README.org" user-emacs-directory))
