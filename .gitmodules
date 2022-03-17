@@ -157,3 +157,6 @@
 [submodule "pkgs/rainbow-delimeters"]
 	path = pkgs/rainbow-delimeters
 	url = https://github.com/Fanael/rainbow-delimiters.git
+[submodule "pkgs/emacs-which-key"]
+	path = pkgs/emacs-which-key
+	url = https://github.com/justbur/emacs-which-key.git
