@@ -40,8 +40,8 @@
              (file-directory-p (concat basedir f)))
         (add-to-list 'custom-theme-load-path (concat basedir f)))))
 
-(load-theme 'nord t t)
-(enable-theme 'nord)
+(load-theme 'uwu t t)
+(enable-theme 'uwu)
 
 ;; Display README.org on start
 (setq initial-buffer-choice (expand-file-name "README.org" user-emacs-directory))

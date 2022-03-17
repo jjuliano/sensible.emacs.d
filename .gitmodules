@@ -145,3 +145,15 @@
 [submodule "themes/starlit-emacs"]
 	path = themes/starlit-emacs
 	url = https://github.com/SFTtech/starlit-emacs.git
+[submodule "pkgs/terraform-mode"]
+	path = pkgs/terraform-mode
+	url = https://github.com/emacsorphanage/terraform-mode.git
+[submodule "pkgs/emacs-hcl-mode"]
+	path = pkgs/emacs-hcl-mode
+	url = https://github.com/purcell/emacs-hcl-mode.git
+[submodule "pkgs/projectile"]
+	path = pkgs/projectile
+	url = https://github.com/bbatsov/projectile.git
+[submodule "pkgs/rainbow-delimeters"]
+	path = pkgs/rainbow-delimeters
+	url = https://github.com/Fanael/rainbow-delimiters.git

@@ -200,8 +200,7 @@
                ("closure" . "\\.soy\\'")
                ("lsp"     . "\\.lsp\\'")
                ("mako"    . "\\.mako\\'")
-               ("blade"   . "\\.blade\\."))
-             )
+               ("blade"   . "\\.blade\\.")))
        (setq web-mode-markup-indent-offset 2)
        (setq web-mode-css-indent-offset 2)
        (setq web-mode-code-indent-offset 2)
@@ -296,6 +295,21 @@
                       . markdown-mode))
        (add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode))
        (setq markdown-command "multimarkdown")))
+
+;; terraform-mode
+(cond ((locate-library "terraform-mode")
+       (require 'terraform-mode)))
+
+;; projectile
+(cond ((locate-library "projectile")
+       (require 'projectile)
+       (projectile-global-mode)
+       (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)))
+
+;; rainbow-delimiters mode
+(cond ((locate-library "rainbow-delimiters")
+       (require 'rainbow-delimiters)
+       (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)))
 
 ;; minted for syntax highlighting on PDF exports
 (cond ((locate-library "minted")
