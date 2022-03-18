@@ -68,7 +68,7 @@
    system's package manager.
 
    - [[https://git-scm.com][git]] :: Used by Magit for [[#version-control][version control]].
-   - [[https://github.com/ggreer/the_silver_searcher][ag]], rg, git grep or grep :: Used by Dumb-jump for [[#code-navigation][code navigation]].
+   - [[https://github.com/ggreer/the_silver_searcher][ag]], rg, git grep or grep :: Used by Dumb-jump for [[#code-navigation][code navigation]] and recursive search in [[#project-management][project management]].
    - [[https://prettier.io/][prettier]] :: Used to prettify HTML & JS code upon save. See: [[#development][development]].
    - [[https://fletcherpenney.net/multimarkdown/][multimarkdown]] :: Used for [[#markdown-mode][markdown-mode]].
    - [[https://internal1.languagetool.org/snapshots/][languagetool-commandline.jar]] :: Used for [[#grammar-check][grammar check]].
@@ -114,11 +114,14 @@
 *** project-management
     - [[https://github.com/bbatsov/projectile][projectile]] :: integrated project management for Emacs
       - C-c p :: opens the projectile command menu
+        - p :: opens existing project
         - s :: opens up the search menu
           - s :: search current project using [[https://github.com/ggreer/the_silver_searcher][ag]]
         - R :: regenerate searchable tags on the current project
           - j :: find a tag on the current project
-        - x v :: run a [[#term][vterm terminal]] on the current buffer directory
+        - x v :: open a [[#term][vterm terminal]] on the current buffer directory
+        - ! :: run a shell command on the current buffer directory
+        - & :: run a background shell process command on the current buffer directory
 
 *** term
     - [[https://github.com/akermu/emacs-libvterm][vterm]] :: terminal emulator based on libvterm C library
@@ -141,7 +144,7 @@
       - C-c M-g :: open common git shortcuts
         - s :: stage current buffer
         - c :: commit current buffer
-        - B :: blame curent buffer
+        - B :: show git blame on the current buffer
 
 *** Development
     - [[https://github.com/auto-complete/auto-complete][auto-complete]] :: provides auto-completion
