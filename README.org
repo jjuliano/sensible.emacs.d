@@ -114,7 +114,8 @@
 *** project-management
     - [[https://github.com/bbatsov/projectile][projectile]] :: integrated project management for Emacs
       - C-c p :: opens the projectile command menu
-        - p :: opens existing project
+        - D :: add a new project
+        - p :: opens an existing project
         - s :: opens up the search menu
           - s :: search current project using [[https://github.com/ggreer/the_silver_searcher][ag]]
         - R :: regenerate searchable tags on the current project
