@@ -160,3 +160,6 @@
 [submodule "pkgs/emacs-which-key"]
 	path = pkgs/emacs-which-key
 	url = https://github.com/justbur/emacs-which-key.git
+[submodule "pkgs/ag.el"]
+	path = pkgs/ag.el
+	url = https://github.com/Wilfred/ag.el

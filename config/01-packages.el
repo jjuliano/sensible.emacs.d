@@ -316,6 +316,10 @@
        (require 'which-key)
        (which-key-mode +1)))
 
+;; ag.el
+(cond ((locate-library "ag")
+       (require 'ag)))
+
 ;; minted for syntax highlighting on PDF exports
 (cond ((locate-library "minted")
        (setq org-latex-prefer-user-labels t)
