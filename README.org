@@ -78,6 +78,7 @@
    - [[https://cmake.org/][cmake]] :: Used by [[#term][terminal emulator]].
      - [[https://github.com/akermu/emacs-libvterm/tree/master/etc][shell-side configurations]] :: shell-side configs needed to be added to .zshrc or .bashrc
    - [[http://aspell.net][aspell]] :: Used for [[#spell-check][spell checking]].
+   - [[http://ctags.sourceforge.net][Exuberant CTAGS]] :: Used for indexing symbols on the current project in [[#project-management][project management]].
 
 ** Upgrade
 
@@ -110,6 +111,10 @@
       - [[https://github.com/rolandwalker/ucs-utils][ucs-utils]] :: Utilities for Unicode characters in Emacs
       - [[https://github.com/rolandwalker/list-utils][list-utils]] :: List-manipulation utility functions for Emacs
 
+*** project-management
+    - [[https://github.com/bbatsov/projectile][projectile]] :: integrated project management for Emacs
+      - C-c p :: opens the projectile command menu
+
 *** term
     - [[https://github.com/akermu/emacs-libvterm][vterm]] :: terminal emulator based on libvterm C library
       - M-x vterm :: runs the terminal
@@ -128,6 +133,10 @@
       - P p :: git push
       - F p :: git pull
       - g :: refresh Magit window
+      - C-c M-g :: open common git shortcuts
+        - s :: stage current buffer
+        - c :: commit current buffer
+        - B :: blame curent buffer
 
 *** Development
     - [[https://github.com/auto-complete/auto-complete][auto-complete]] :: provides auto-completion
