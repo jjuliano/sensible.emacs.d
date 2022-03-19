@@ -101,12 +101,11 @@
     - [[https://www.emacswiki.org/emacs/backup-each-save.el][backup-each-save.el]] :: backup files on each save
     - [[https://git.sr.ht/~technomancy/better-defaults][better-defaults.el]] :: the base defaults
     - [[https://github.com/purcell/exec-path-from-shell][exec-path-from-shell]] :: made $PATH available inside Emacs
-    - [[https://github.com/arcticicestudio/nord-emacs][nord-emacs]] :: default theme
     - [[https://github.com/jjuliano/practical.org.el][practical.org.el]] :: practical org-mode GTD and Zekelkasten workflow presets
       - [[https://www.emacswiki.org/emacs/BbdbMode][bbdb]] :: The Insidious Big Brother Database, an Emacs address-book database
     - [[https://www.emacswiki.org/emacs/download/multiple-line-edit.el][multiple-line-edit.el]] :: select lines simultaneously
     - [[https://github.com/cyrus-and/zoom][zoom]] :: auto-resize active windows
-    - [[https://github.com/nex3/perspective-el][perspective-el]] :: workspaces management
+    - [[https://github.com/nex3/perspective-el][perspective-el]] :: workspace management
     - [[https://github.com/rolandwalker/unicode-fonts][unicode-fonts]] :: configure unicode-fonts for Emacs with the following dependencies
       - [[https://github.com/rolandwalker/font-utils][font-utils]] :: Utility functions for working with fonts in Emacs
       - [[https://github.com/rolandwalker/ucs-utils][ucs-utils]] :: Utilities for Unicode characters in Emacs
@@ -117,13 +116,14 @@
       - C-c p :: opens the projectile command menu
         - D :: add a new project
         - p :: opens an existing project
-        - s :: opens up the search menu
-          - s :: search current project using [[https://github.com/ggreer/the_silver_searcher][ag]]
+        - s s :: search current project using [[https://github.com/ggreer/the_silver_searcher][ag]]
+        - x v :: open a [[#term][vterm terminal]] on the current buffer directory
         - R :: regenerate searchable tags on the current project
           - j :: find a tag on the current project
-        - x v :: open a [[#term][vterm terminal]] on the current buffer directory
         - ! :: run a shell command on the current buffer directory
         - & :: run a background shell process command on the current buffer directory
+        - S :: save all buffers in the current project
+        - v :: opens magit (see [[#version-control][version control]])
 
 *** term
     - [[https://github.com/akermu/emacs-libvterm][vterm]] :: terminal emulator based on libvterm C library
@@ -146,17 +146,21 @@
       - C-c M-g :: open common git shortcuts
         - s :: stage current buffer
         - c :: commit current buffer
-        - B :: show git blame on the current buffer
+        - b :: show git blame on the current buffer
+          - C-RET :: opens the actual file in the diff window
 
-*** Development
+*** development
     - [[https://github.com/auto-complete/auto-complete][auto-complete]] :: provides auto-completion
     - [[https://github.com/aki2o/org-ac][org-ac]] :: provides auto-completion on org-mode
     - [[https://web-mode.org/][web-mode]] :: major mode for editing web templates and CSS files
-    - [[https://github.com/mooz/js2-mode][js2-mode]] :: improved JavaScript editing-
+    - [[https://github.com/mooz/js2-mode][js2-mode]] :: improved JavaScript editing
     - [[https://github.com/jjuliano/prettier-rc-emacs][prettier-rc]] :: auto beautify both HTML & JS files on save (per project, using local rc files), requires =prettier= to be installed via =npm= or package manager.
+    - [[https://github.com/jjuliano/prettier-rc-emacs][eslint-rc]] :: apply ESLint rules on save (per project, using local rc files), requires =eslint= to be installed via =npm= or package manager.
     - [[https://github.com/ananthakumaran/tide][tide]] :: TypeScript IDE for Emacs, pre-configured for =company= mode
     - [[https://github.com/codesuki/add-node-modules-path][add-node-modules-path]] :: add the per project's =node_modules/.bin/= to the =exec-path=
-    - [[https://github.com/wbolster/emacs-direnv][emacs-direnv]] :: load .env files inside Emacs
+    - [[https://github.com/wbolster/emacs-direnv][emacs-direnv]] :: load =.env= files inside Emacs
+    - [[https://github.com/purcell/emacs-hcl-mode][emacs-hcl-mode]] :: HCL minor mode editing
+      - [[https://github.com/emacsorphanage/terraform-mode][terraform-mode]] :: major mode for viewing Terraform files
 
 *** code navigation
     - [[https://github.com/jacktasia/dumb-jump][dumb-jump]] :: jump to definition, requires =ag= or =grep= (pre-configured)
