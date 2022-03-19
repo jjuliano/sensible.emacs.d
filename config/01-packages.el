@@ -245,6 +245,7 @@
        (add-hook 'typescript-mode-hook 'eslint-rc-mode)
        (add-hook 'js2-mode-hook 'eslint-rc-mode)
        (add-hook 'web-mode-hook 'eslint-rc-mode)))
+
 ;; langtool
 (cond ((locate-library "langtool")
        (require 'langtool)
@@ -311,10 +312,62 @@
        (require 'rainbow-delimiters)
        (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)))
 
+;; consult
+(cond ((locate-library "consult")
+       (require 'consult)
+       (progn
+         (add-hook 'completion-list-mode-hook #'consult-preview-at-point-mode)
+         (defun consult-find-file (arg)
+           (interactive "P")
+           (call-interactively (if arg 'consult-file-externally 'find-file)))
+
+         (define-key consult-narrow-map (vconcat consult-narrow-key "?")
+           #'consult-narrow-help)
+
+         (global-set-key (kbd "C-x C-f") 'consult-find-file)
+
+         (consult-customize consult-mark :preview-key 'any)
+         (add-hook 'completion-list-mode-hook #'consult-preview-at-point-mode))))
+
 ;; which-key-mode
 (cond ((locate-library "which-key")
        (require 'which-key)
        (which-key-mode +1)))
+
+;; vertico-mode
+(cond ((locate-library "vertico")
+       (require 'vertico)
+       (vertico-mode +1)
+       (with-eval-after-load 'vertico
+         (require 'vertico-directory)
+
+         )
+       ))
+
+;; marginalia-mode
+(cond ((locate-library "marginalia")
+       (require 'marginalia)
+       (marginalia-mode +1)))
+
+;; embark
+(cond ((locate-library "embark")
+       (require 'embark)
+       (with-eval-after-load 'consult
+         (with-eval-after-load 'embark
+           (require 'embark-consult)
+           (add-hook 'embark-collect-mode-hook #'consult-preview-at-point-mode)))))
+
+;; orderless-mode
+(cond ((locate-library "orderless")
+       (require 'orderless)
+       (setq completion-styles '(orderless)
+             completion-category-defaults nil
+             completion-category-overrides '((file (styles partial-completion))))))
+
+;; savehist-mode
+(cond((locate-library "savehist")
+      (require 'savehist)
+      (savehist-mode)))
 
 ;; ag.el
 (cond ((locate-library "ag")

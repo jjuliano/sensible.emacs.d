@@ -211,6 +211,14 @@
       - <s [TAB] :: insert a new inline =#+BEGIN_SRC...#+END_SRC= line.
       - C-c C-' :: creates a new window for editing the inline code.
 
+*** minibuffer information display
+    - [[https://github.com/justbur/emacs-which-key][emacs-which-key]] :: displays keybinding on minibuffer
+    - [[https://github.com/minad/vertico][vertico]] :: vertical completion on minibuffer
+    - [[https://github.com/minad/marginalia.git][marginalia]] :: provides more useful info on minibuffer completion
+    - [[https://github.com/oantolin/embark.git][embark]] :: provides actionable items on the minibuffer
+    - [[https://github.com/oantolin/orderless.git][orderless]] :: regexp support for minibuffer matching
+    - [[https://github.com/minad/consult][consult]] :: search and navigation command
+
 *** themes
     - [[https://github.com/kborling/uwu-theme][uwu-theme]] :: default dark theme
     - [[https://github.com/arcticicestudio/nord-emacs][nord-emacs]] :: nord dark theme

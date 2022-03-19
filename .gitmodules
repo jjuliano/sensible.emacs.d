@@ -163,3 +163,18 @@
 [submodule "pkgs/ag"]
 	path = pkgs/ag
 	url = https://github.com/Wilfred/ag.el
+[submodule "pkgs/vertico"]
+	path = pkgs/vertico
+	url = https://github.com/minad/vertico.git
+[submodule "pkgs/marginalia"]
+	path = pkgs/marginalia
+	url = https://github.com/minad/marginalia.git
+[submodule "pkgs/consult"]
+	path = pkgs/consult
+	url = https://github.com/minad/consult
+[submodule "pkgs/embark"]
+	path = pkgs/embark
+	url = https://github.com/oantolin/embark.git
+[submodule "pkgs/orderless"]
+	path = pkgs/orderless
+	url = https://github.com/oantolin/orderless.git
