@@ -206,6 +206,11 @@
       - <s [TAB] :: insert a new inline =#+BEGIN_SRC...#+END_SRC= line.
       - C-c C-' :: creates a new window for editing the inline code.
 
+*** themes
+    - [[https://github.com/kborling/uwu-theme][uwu-theme]] :: default dark theme
+    - [[https://github.com/arcticicestudio/nord-emacs][nord-emacs]] :: nord dark theme
+    - [[https://github.com/SFTtech/starlit-emacs][starlit-emacs]] :: starlit dark theme
+
 ** Overrides and personal configurations
 
    Settings can be overridden by creating the elisp file in the =personal/=
@@ -286,6 +291,16 @@
 
    - C-c C-SPC :: Select and edit leading edges
    - C-c M-SPC :: Select and edit trailing edges
+
+** Themes and Appearance
+
+   Themes can be changed via =M-x load-theme=, or modifying the
+   =config/02-editor.el= file.
+
+   #+BEGIN_SRC elisp
+     (load-theme 'uwu t t)
+     (enable-theme 'uwu)
+   #+END_SRC
 
 ** GTD+Zettelkasten org-mode files
    I created [[https://github.com/jjuliano/practical.org.el][practical.org.el]] GTD+Zettelkasten configuration and presets for
