@@ -178,3 +178,6 @@
 [submodule "pkgs/orderless"]
 	path = pkgs/orderless
 	url = https://github.com/oantolin/orderless.git
+[submodule "pkgs/consult-projectile"]
+	path = pkgs/consult-projectile
+	url = https://gitlab.com/OlMon/consult-projectile.git

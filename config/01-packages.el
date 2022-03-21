@@ -301,12 +301,6 @@
 (cond ((locate-library "terraform-mode")
        (require 'terraform-mode)))
 
-;; projectile
-(cond ((locate-library "projectile")
-       (require 'projectile)
-       (projectile-global-mode)
-       (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)))
-
 ;; rainbow-delimiters mode
 (cond ((locate-library "rainbow-delimiters")
        (require 'rainbow-delimiters)
@@ -464,6 +458,27 @@
 ;; org-tempo
 (cond ((locate-library "org-tempo")
        (require 'org-tempo)))
+
+;; projectile
+(cond ((locate-library "projectile")
+       (require 'projectile)
+       (projectile-global-mode)
+       (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)))
+
+;; consult-projectile
+(cond ((locate-library "consult-projectile")
+       (with-eval-after-load 'consult
+         (with-eval-after-load 'projectile
+           (require 'consult-projectile)
+
+           (define-key projectile-command-map (kbd "0")
+             'consult-projectile)
+           (define-key projectile-command-map (kbd "f")
+             'consult-projectile-find-file)
+           (define-key projectile-command-map (kbd "p")
+             'consult-projectile-switch-project)
+           (define-key projectile-command-map (kbd "e")
+             'consult-projectile-recentf)))))
 
 ;; MELPA package variable initialization
 (cond ((locate-library "package")
