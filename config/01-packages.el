@@ -341,8 +341,17 @@
        (with-eval-after-load 'vertico
          (require 'vertico-directory)
 
-         )
-       ))
+         (define-key vertico-map "\r" #'vertico-directory-enter)
+         (define-key vertico-map "\d" #'vertico-directory-delete-char)
+         (define-key vertico-map "\M-\d" #'vertico-directory-delete-word)
+         (add-hook 'rfn-eshadow-update-overlay-hook #'vertico-directory-tidy)
+
+         (setq completion-in-region-function
+               (lambda (&rest args)
+                 (apply (if vertico-mode
+                            #'consult-completion-in-region
+                          #'completion--in-region)
+                        args))))))
 
 ;; marginalia-mode
 (cond ((locate-library "marginalia")
