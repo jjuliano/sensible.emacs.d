@@ -101,7 +101,7 @@
     - [[https://www.emacswiki.org/emacs/backup-each-save.el][backup-each-save.el]] :: backup files on each save
     - [[https://git.sr.ht/~technomancy/better-defaults][better-defaults.el]] :: the base defaults
     - [[https://github.com/purcell/exec-path-from-shell][exec-path-from-shell]] :: made $PATH available inside Emacs
-    - [[https://github.com/jjuliano/practical.org.el][practical.org.el]] :: practical org-mode GTD and Zekelkasten workflow presets
+    - [[https://github.com/jjuliano/practical.org.el][practical.org.el]] :: practical org-mode GTD and Zettelkasten workflow presets
       - [[https://www.emacswiki.org/emacs/BbdbMode][bbdb]] :: The Insidious Big Brother Database, an Emacs address-book database
     - [[https://www.emacswiki.org/emacs/download/multiple-line-edit.el][multiple-line-edit.el]] :: select lines simultaneously
     - [[https://github.com/cyrus-and/zoom][zoom]] :: auto-resize active windows
@@ -114,7 +114,7 @@
 *** project-management
     - [[https://github.com/bbatsov/projectile][projectile]] :: integrated project management for Emacs
       - C-c p :: opens the projectile command menu
-        - D :: add a new project
+        - D :: add a new project (by opening a file, the directory will be added automatically)
         - p :: opens an existing project
         - s s :: search current project using [[https://github.com/ggreer/the_silver_searcher][ag]]
         - x v :: open a [[#term][vterm terminal]] on the current buffer directory
