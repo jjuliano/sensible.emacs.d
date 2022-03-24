@@ -108,7 +108,7 @@
 	url = https://github.com/emacsattic/go-autocomplete.git
 [submodule "pkgs/bbdb"]
 	path = pkgs/bbdb
-	url = https://git.savannah.nongnu.org/git/bbdb.git
+	url = https://github.com/emacsmirror/bbdb.git
 [submodule "pkgs/transient"]
 	path = pkgs/transient
 	url = https://github.com/magit/transient.git

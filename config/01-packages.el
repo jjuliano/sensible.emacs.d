@@ -6,27 +6,57 @@
   (normal-top-level-add-to-load-path '("."))
   (normal-top-level-add-subdirs-to-load-path))
 
-;; no-littering settings to keep .emacs.d clean
-(setq no-littering-etc-directory
-      (expand-file-name "config/" org-directory))
-(setq no-littering-var-directory
-      (expand-file-name "data/" org-directory))
-(setq auto-save-file-name-transforms
-      `((".*" ,(expand-file-name "auto-save/" no-littering-var-directory) t)))
-
-;; melpa/elpa config
-(setq package-user-dir (expand-file-name "packages/"
-                                         no-littering-var-directory))
-
-;; set recent files to no-littering dir
-(cond ((locate-library "recentf")
-       (require 'recentf)
-       (add-to-list 'recentf-exclude no-littering-var-directory)
-       (add-to-list 'recentf-exclude no-littering-etc-directory)))
-
-;; set custom.el to no-littering dir
 (cond ((locate-library "no-littering")
-       (require 'no-littering)))
+       (progn
+         ;; no-littering settings to keep .emacs.d clean
+         (setq no-littering-etc-directory
+               (expand-file-name "var/config/" user-emacs-directory))
+         (setq no-littering-var-directory
+               (expand-file-name "var/data/" user-emacs-directory))
+
+         (setq auto-save-file-name-transforms
+               `((".*" ,(expand-file-name "auto-save/" no-littering-var-directory) t)))
+
+         ;; set recent files to no-littering dir
+         (cond ((locate-library "recentf")
+                (require 'recentf)
+                (add-to-list 'recentf-exclude no-littering-var-directory)
+                (add-to-list 'recentf-exclude no-littering-etc-directory)))
+
+         ;; melpa/elpa config
+         (setq package-user-dir (expand-file-name "pkgs/"
+                                                  no-littering-var-directory))
+         ;; workspaces management via perspective-el
+         (cond ((locate-library "perspective")
+                (setq persp-state-default-file (expand-file-name "persp-state-file"
+                                                                 no-littering-var-directory))
+
+                (require 'perspective)
+                (persp-mode)
+                (add-hook 'kill-emacs-hook #'persp-state-save)
+
+                ;; perspective keybinding
+                (defvar persp-switch-prefix "C-M-%d")
+                (defvar persp-first-perspective "0")
+                (defvar persp-top-perspective "0")
+                (defvar persp-bottom-perspective "5")
+
+                ;; perspective workspaces setup
+                (defun persp-setup ()
+                  (mapc (lambda (i)
+                          (persp-switch (int-to-string i))
+                          (global-set-key (kbd (format persp-switch-prefix i))
+                                          `(lambda ()
+                                             (interactive)
+                                             (persp-switch ,(int-to-string i)))))
+                        (number-sequence (string-to-number persp-top-perspective)
+                                         (string-to-number persp-bottom-perspective)))
+                  (persp-switch persp-first-perspective)
+                  (persp-kill "main"))
+
+                (add-hook 'persp-state-after-load-hook 'persp-setup)
+                (add-hook 'after-init-hook 'persp-setup)))
+         (require 'no-littering))))
 
 ;; exec-path-from-shell settings to load $PATH on run
 (cond ((locate-library "exec-path-from-shell")
@@ -56,37 +86,6 @@
              (setq zoom-size '(0.618 . 0.618))
              (require 'zoom)
              (zoom-mode t)))))
-
-;; workspaces management via perspective-el
-(cond ((locate-library "perspective")
-       (setq persp-state-default-file (expand-file-name "data/persp-state-file"
-                                                        org-directory))
-
-       (require 'perspective)
-       (persp-mode)
-       (add-hook 'kill-emacs-hook #'persp-state-save)
-
-       ;; perspective keybinding
-       (defvar persp-switch-prefix "C-M-%d")
-       (defvar persp-first-perspective "0")
-       (defvar persp-top-perspective "0")
-       (defvar persp-bottom-perspective "5")
-
-       ;; perspective workspaces setup
-       (defun persp-setup ()
-         (mapc (lambda (i)
-                 (persp-switch (int-to-string i))
-                 (global-set-key (kbd (format persp-switch-prefix i))
-                                 `(lambda ()
-                                    (interactive)
-                                    (persp-switch ,(int-to-string i)))))
-               (number-sequence (string-to-number persp-top-perspective)
-                                (string-to-number persp-bottom-perspective)))
-         (persp-switch persp-first-perspective)
-         (persp-kill "main"))
-
-       (add-hook 'persp-state-after-load-hook 'persp-setup)
-       (add-hook 'after-init-hook 'persp-setup)))
 
 ;; unicode and emoji support
 
@@ -271,17 +270,17 @@
 ;;       (persp-mode 1)))
 
 ;; wucuo flyspell spell-checking
-(if (locate-library "wucuo")
-    (progn
-      (require 'wucuo)
-      (add-hook 'prog-mode-hook 'wucuo-start)
-      (add-hook 'text-mode-hook 'wucuo-start))
+(cond ((locate-library "wucuo")
+       (progn
+         (require 'wucuo)
+         (add-hook 'prog-mode-hook 'wucuo-start)
+         (add-hook 'text-mode-hook 'wucuo-start))
 
-  ;; start Flyspell if "wucuo" package is not found
-  (progn
-    (require 'flyspell)
-    (add-hook 'text-mode-hook 'flyspell-mode)
-    (add-hook 'prog-mode-hook 'flyspell-prog-mode)))
+       ;; start Flyspell if "wucuo" package is not found
+       (progn
+         (require 'flyspell)
+         (add-hook 'text-mode-hook 'flyspell-mode)
+         (add-hook 'prog-mode-hook 'flyspell-prog-mode))))
 
 ;; flyspell-popup to display popup on wrong spelling words
 (cond ((locate-library "flyspell-popup")
