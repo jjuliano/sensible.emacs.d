@@ -178,3 +178,6 @@
 [submodule "pkgs/consult-projectile"]
 	path = pkgs/consult-projectile
 	url = https://gitlab.com/OlMon/consult-projectile.git
+[submodule "pkgs/textsize"]
+	path = pkgs/textsize
+	url = https://github.com/WJCFerguson/textsize.git
