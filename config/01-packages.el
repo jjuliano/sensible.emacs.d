@@ -463,7 +463,11 @@
        (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
        (setq projectile-indexing-method 'hybrid)
        (setq projectile-sort-order 'recentf)
-       (setq projectile-tags-backend 'standard)))
+       (setq projectile-tags-backend 'standard)
+       (mapc (lambda (dir)
+               (add-to-list 'projectile-globally-ignored-directories dir))
+             '("vendor" "public" "out" "dist" "coverage" "node_modules"))))
+
 
 ;; consult-projectile
 (cond ((locate-library "consult-projectile")
