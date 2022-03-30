@@ -72,20 +72,19 @@
 (cond ((locate-library "backup-each-save")
        (require 'backup-each-save)))
 
+;; multiple-line edit
 (cond ((locate-library "multiple-line-edit")
        (require 'multiple-line-edit)
 
-       ;; Multi-line edit keybinding
        (global-set-key (kbd "C-c C-SPC") 'mulled/edit-leading-edges)
        (global-set-key (kbd "C-c M-SPC") 'mulled/edit-trailing-edges)))
 
 ;; zoom auto-resize window
 (if (bound-and-true-p use-zoom-mode)
-    (progn
-      (cond ((locate-library "zoom")
-             (setq zoom-size '(0.618 . 0.618))
-             (require 'zoom)
-             (zoom-mode t)))))
+    (cond ((locate-library "zoom")
+           (setq zoom-size '(0.618 . 0.618))
+           (require 'zoom)
+           (zoom-mode t))))
 
 ;; unicode and emoji support
 
@@ -139,7 +138,6 @@
 
        (add-hook 'go-mode-hook 'go-mode-setup)))
 
-
 ;; auto-complete
 (cond ((locate-library "auto-complete")
        (require 'auto-complete)
@@ -149,6 +147,9 @@
 
 ;; auto-complete on org
 (cond ((locate-library "org-ac")
+       (require 'auto-complete-pcmp)
+       (require 'log4e)
+       (require 'yaxception)
        (require 'org-ac)
        (org-ac/config-default)))
 
@@ -217,8 +218,7 @@
        (setq web-mode-enable-current-column-highlight t)
        (setq web-mode-ac-sources-alist
              '(("css" . (ac-source-css-property))
-               ("html" . (ac-source-words-in-buffer ac-source-abbrev))))
-       ))
+               ("html" . (ac-source-words-in-buffer ac-source-abbrev))))))
 
 ;; load node-modules/bin paths
 (cond ((locate-library "add-node-modules-path")
@@ -269,18 +269,16 @@
 ;;       (require 'persp-mode)
 ;;       (persp-mode 1)))
 
-;; wucuo flyspell spell-checking
-(cond ((locate-library "wucuo")
-       (progn
-         (require 'wucuo)
-         (add-hook 'prog-mode-hook 'wucuo-start)
-         (add-hook 'text-mode-hook 'wucuo-start))
+;; textsize-mode
+(cond ((locate-library "textsize")
+       (require 'textsize)
+       (textsize-mode +1)))
 
-       ;; start Flyspell if "wucuo" package is not found
-       (progn
-         (require 'flyspell)
-         (add-hook 'text-mode-hook 'flyspell-mode)
-         (add-hook 'prog-mode-hook 'flyspell-prog-mode))))
+;; flyspell spell-checking
+(cond ((locate-library "flyspell")
+       (require 'flyspell)
+       (add-hook 'text-mode-hook 'flyspell-mode)
+       (add-hook 'prog-mode-hook 'flyspell-prog-mode)))
 
 ;; flyspell-popup to display popup on wrong spelling words
 (cond ((locate-library "flyspell-popup")
@@ -462,7 +460,10 @@
 (cond ((locate-library "projectile")
        (require 'projectile)
        (projectile-global-mode)
-       (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)))
+       (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+       (setq projectile-indexing-method 'hybrid)
+       (setq projectile-sort-order 'recentf)
+       (setq projectile-tags-backend 'standard)))
 
 ;; consult-projectile
 (cond ((locate-library "consult-projectile")
