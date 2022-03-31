@@ -181,3 +181,12 @@
 [submodule "pkgs/textsize"]
 	path = pkgs/textsize
 	url = https://github.com/WJCFerguson/textsize.git
+[submodule "pkgs/company-mode"]
+	path = pkgs/company-mode
+	url = https://github.com/company-mode/company-mode.git
+[submodule "pkgs/tern"]
+	path = pkgs/tern
+	url = https://github.com/ternjs/tern.git
+[submodule "themes/emacs-faff-theme"]
+	path = themes/emacs-faff-theme
+	url = https://github.com/WJCFerguson/emacs-faff-theme.git

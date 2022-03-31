@@ -385,6 +385,15 @@
                "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
                "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"))))
 
+;; ternjs
+(cond ((locate-library "tern")
+       (require 'tern)
+       (add-hook 'js-mode-hook (lambda () (tern-mode t)))
+       (eval-after-load 'tern
+         '(progn
+            (require 'tern-auto-complete)
+            (tern-ac-setup)))))
+
 ;; tide typescript IDE for Emacs
 (cond ((locate-library "tide")
        (require 'tide)
@@ -404,6 +413,8 @@
            (add-hook 'before-save-hook 'tide-format-before-save))
 
          (cond ((locate-library "company")
+                (require 'company)
+                (setq company-minimum-prefix-length 1)
                 (company-mode +1))))
 
        (setq company-tooltip-align-annotations t)
