@@ -464,10 +464,12 @@
        (setq projectile-indexing-method 'hybrid)
        (setq projectile-sort-order 'recentf)
        (setq projectile-tags-backend 'standard)
+       (mapc (lambda (file)
+               (add-to-list 'projectile-globally-ignored-buffers file))
+             '("TAGS" "GTAGS"))
        (mapc (lambda (dir)
                (add-to-list 'projectile-globally-ignored-directories dir))
              '("vendor" "public" "out" "dist" "coverage" "node_modules"))))
-
 
 ;; consult-projectile
 (cond ((locate-library "consult-projectile")
@@ -479,6 +481,8 @@
              'consult-projectile)
            (define-key projectile-command-map (kbd "f")
              'consult-projectile-find-file)
+           (define-key projectile-command-map (kbd "D")
+             'consult-projectile-find-dir)
            (define-key projectile-command-map (kbd "p")
              'consult-projectile-switch-project)
            (define-key projectile-command-map (kbd "e")
