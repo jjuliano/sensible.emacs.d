@@ -475,6 +475,10 @@
        (setq projectile-indexing-method 'hybrid)
        (setq projectile-sort-order 'recentf)
        (setq projectile-tags-backend 'standard)
+       (setq projectile-tags-command (concat (format "ctags --options=\"%s\""
+                                                     (expand-file-name "data/ctags"
+                                                                       user-emacs-directory))
+                                             " -Re -f \"%s\" %s \"%s\""))
        (mapc (lambda (file)
                (add-to-list 'projectile-globally-ignored-buffers file))
              '("TAGS" "GTAGS"))

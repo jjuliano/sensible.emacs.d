@@ -24,6 +24,10 @@
 ;; Line comments
 (global-set-key (kbd "s-/") 'comment-line)
 
+;; sort and remove duplicates keybinding
+(global-set-key (kbd "s-[") 'sort-lines)
+(global-set-key (kbd "s-]") 'delete-duplicate-lines)
+
 ;; Transparency
 (if (bound-and-true-p transparent-windows-mode)
     (progn

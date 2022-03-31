@@ -127,6 +127,7 @@
         - & :: run a background shell process command on the current buffer directory
         - S :: save all buffers in the current project
         - v :: opens magit (see [[#version-control][version control]])
+      - C-u C-c p f :: force projectile to re-initialize project
 
 *** term
     - [[https://github.com/akermu/emacs-libvterm][vterm]] :: terminal emulator based on libvterm C library
@@ -310,6 +311,11 @@
 
    - C-c C-SPC :: Select and edit leading edges
    - C-c M-SPC :: Select and edit trailing edges
+
+** Sorting and deleting duplicate lines
+
+   - =CMD-[= or =S-[= :: To sort a selection
+   - =CMD-]= or =S-]= :: To delete duplicates from selected lines
 
 ** Themes and Appearance
 

@@ -9,8 +9,9 @@
 !docs/*
 !personal/.gitkeep
 !data/.gitkeep
+!data/ctags
 
-# Ignore all personal/* files
+# Ignore the following files
 
 personal/*
 data/*
