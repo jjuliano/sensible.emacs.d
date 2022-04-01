@@ -479,6 +479,19 @@
                                                      (expand-file-name "data/ctags"
                                                                        user-emacs-directory))
                                              " -Re -f \"%s\" %s \"%s\""))
+
+       (with-eval-after-load 'projectile
+         (defun projectile-relevant-known-projects ()
+           "Return a list of known projects except the current one (if present)."
+           (if (projectile-project-p)
+
+               (->> projectile-known-projects
+                    (--reduce-from
+                     (if (-contains? (-map 's-downcase acc) (s-downcase it)) acc (cons it acc))
+                     (list (abbreviate-file-name (projectile-project-root))))
+                    (-sort 'string-lessp))
+             projectile-known-projects)))
+
        (mapc (lambda (file)
                (add-to-list 'projectile-globally-ignored-buffers file))
              '("TAGS" "GTAGS"))

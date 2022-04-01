@@ -41,10 +41,8 @@
 --exclude=var
 --exclude=vendor
 --exclude=vendor/*
---extra=+q
 --extra=+q+f
 --fields=+i+a+S+n
---fields=+iaS
 --javascript-kinds=-c-f-m-p-v
 --langdef=Clojure
 --langdef=Elixir
@@ -54,34 +52,25 @@
 --langdef=css
 --langdef=golang
 --langdef=haskell
---langdef=js
+--langdef=javascript
 --langdef=latex
 --langdef=markdown
 --langdef=mtc
---langdef=typescript
---langmap=Clojure:+.cljs
---langmap=Clojure:+.cljx
---langmap=Clojure:.clj
+--langmap=Clojure:.clj.cljs.cljx
 --langmap=Elixir:.ex.exs
---langmap=Lisp:+.clj
 --langmap=Rust:.rs
 --langmap=bibtex:.bib
 --langmap=coffee:.coffee
---langmap=css:+.less
---langmap=css:+.sass
---langmap=css:+.scss
---langmap=css:+.styl
---langmap=css:.css
+--langmap=css:.less.sass.scss.styl.css
 --langmap=golang:.go
 --langmap=haskell:.hs
---langmap=javascript:.js.es6.es.jsx.mjs
---langmap=js:.js
+--langmap=javascript:.js.es6.es.jsx.mjs.ts.tsx
 --langmap=latex:.tex .latex
 --langmap=markdown:+.md.mkd
 --langmap=mtc:.mtc
---langmap=php:.engine.inc.module.theme.install.php --php-kinds=+cf-v
---langmap=typescript:.ts.tsx
+--langmap=php:.engine.inc.module.theme.install.php
 --languages=-html
+--php-kinds=+cf-v
 --python-kinds=-i
 --recurse=yes
 --regex-Elixir=/^[ \t]*Record\.defrecord[ \t]+:([a-zA-Z0-9_]+)/\1/r,records,records (defrecord...)/
@@ -136,6 +125,41 @@
 --regex-haskell=/^class[ \t]*([A-Z][a-zA-Z0-9'_]*)/\1/c,class/
 --regex-haskell=/^data[ \t]*([A-Z][a-zA-Z0-9'_]*)/\1/d,data/
 --regex-haskell=/^module[ \t]*([A-Z][a-zA-Z0-9'_.]*)/\1/m,module/
+--regex-javascript=/(,|(;|^)[ \t]*(var|let|([A-Za-z_$][A-Za-z0-9_$.]+\.)*))[ \t]*([A-Za-z0-9_$]+)[ \t]*=[ \t]*(true|false)/\5/b,boolean/
+--regex-javascript=/(,|(;|^)[ \t]*(var|let|([A-Za-z_$][A-Za-z0-9_$.]+\.)*))[ \t]*([A-Za-z0-9_$]+)[ \t]*=[ \t]*.+([,;=]|$)/\5/v,variable/
+--regex-javascript=/(,|(;|^)[ \t]*(var|let|([A-Za-z_$][A-Za-z0-9_$.]+\.)*))[ \t]*([A-Za-z0-9_$]+)[ \t]*=[ \t]*[0-9]+/\5/n,number/
+--regex-javascript=/(,|(;|^)[ \t]*(var|let|([A-Za-z_$][A-Za-z0-9_$.]+\.)*))[ \t]*([A-Za-z0-9_$]+)[ \t]*=[ \t]*[^"]'[^']*/\5/s,string/
+--regex-javascript=/(,|(;|^)[ \t]*(var|let|([A-Za-z_$][A-Za-z0-9_$.]+\.)*))[ \t]*([A-Za-z0-9_$]+)[ \t]*=[ \t]*\[/\5/a,array/
+--regex-javascript=/(,|(;|^)[ \t]*(var|let|([A-Za-z_$][A-Za-z0-9_$.]+\.)*))[ \t]*([A-Za-z0-9_$]+)[ \t]*=[ \t]*\{/\5/o,object/
+--regex-javascript=/(,|(;|^)[ \t]*(var|let|([A-Za-z_$][A-Za-z0-9_$.]+\.)*))[ \t]*([A-Za-z0-9_$]+)[ \t]*=[ \t]*function[ \t]*\(/\5/f,function/
+--regex-javascript=/(,|(;|^)[ \t]*(var|let|([A-Za-z_$][A-Za-z0-9_$.]+\.)*))[ \t]*([A-Za-z0-9_$]+)[ \t]*[ \t]*([,;]|$)/\5/v,variable/
+--regex-javascript=/(,|^)[ \t]*([A-Za-z_$][A-Za-z0-9_$]+)[ \t]*:[ \t]*(true|false)/\2/b,boolean/
+--regex-javascript=/(,|^)[ \t]*([A-Za-z_$][A-Za-z0-9_$]+)[ \t]*:[ \t]*[0-9]+/\2/n,number/
+--regex-javascript=/(,|^)[ \t]*([A-Za-z_$][A-Za-z0-9_$]+)[ \t]*:[ \t]*[^"]'[^']*/\2/s,string/
+--regex-javascript=/(,|^)[ \t]*([A-Za-z_$][A-Za-z0-9_$]+)[ \t]*:[ \t]*[^=]+([,;]|$)/\2/v,variable/
+--regex-javascript=/(,|^)[ \t]*([A-Za-z_$][A-Za-z0-9_$]+)[ \t]*:[ \t]*\[/\2/a,array/
+--regex-javascript=/(,|^)[ \t]*([A-Za-z_$][A-Za-z0-9_$]+)[ \t]*:[ \t]*\{/\2/o,object/
+--regex-javascript=/(,|^)[ \t]*([A-Za-z_$][A-Za-z0-9_$]+)[ \t]*:[ \t]*function[ \t]*\(/\2/f,function/
+--regex-javascript=/([A-Za-z$][A-Za-z0-9_$]+)[ \t]*=[ \t]*function[ \t]*\(/\1/m,method/
+--regex-javascript=/([A-Za-z0-9._$()]+)[ \t]*[:=][ \t]*function[ \t]*\(/\1/f,function/
+--regex-javascript=/([A-Za-z0-9._$]+)[ \t]*=[ \t]*\(function\(\)/\1/c,class/
+--regex-javascript=/([A-Za-z0-9._$]+)[ \t]*=[ \t]*\[/\1/a,array/
+--regex-javascript=/([A-Za-z0-9._$]+)[ \t]*=[ \t]*\{/\1/o,object/
+--regex-javascript=/([A-Za-z0-9._$]+)[ \t]*[:=][ \t]*\[/\1/a,array/
+--regex-javascript=/([A-Za-z0-9._$]+)[ \t]*[:=][ \t]*\{/\1/o,object/
+--regex-javascript=/([A-Za-z0-9._$]+)\.prototype[ \t.=]/\1/c,class/
+--regex-javascript=/([A-Za-z0-9._$]+)\[["']([A-Za-z0-9_$]+)["']\][ \t]*=[ \t]*\[/\1\.\2/a,array/
+--regex-javascript=/([A-Za-z0-9._$]+)\[["']([A-Za-z0-9_$]+)["']\][ \t]*=[ \t]*\{/\1\.\2/o,object/
+--regex-javascript=/([A-Za-z0-9_$]+)\[["']([A-Za-z0-9_$]+)["']\][ \t]*=[ \t]*function[ \t]*\(/\2/m,method/
+--regex-javascript=/([^= ]+)[ \t]*=[ \t]*[^"]'[^']*/\1/s,string/
+--regex-javascript=/([^= ]+)[ \t]*=[ \t]*[^']"[^"]*/\1/s,string/
+--regex-javascript=/[ \t.]([A-Z][A-Z0-9._$]+)[ \t]*=[ \t]*[0-9"'\[\{]/\1/n,constant/
+--regex-javascript=/[ \t]*function[ \t]* \*([A-Za-z$][A-Za-z0-9_$()]+)[ \t]*\(/\1/f,function/
+--regex-javascript=/[ \t]*function[ \t]+([A-Za-z$][A-Za-z0-9_$]+)[ \t]*\(([^)])\)/\1/f,function/
+--regex-javascript=/['"]*([A-Za-z$][A-Za-z0-9_$]+)['"]*:[ \t]*\[/\1/a,array/
+--regex-javascript=/['"]*([A-Za-z$][A-Za-z0-9_$]+)['"]*:[ \t]*function[ \t]*\(/\1/m,method/
+--regex-javascript=/['"]*([A-Za-z0-9_$]+)['"]*:[ \t]*\(function\(\)/\1/c,class/
+--regex-javascript=/['"]*([A-Za-z0-9_$]+)['"]*[ \t]*:[ \t]*\{/\1/o,object/
 --regex-javascript=/\/\/[ \t]*\(!!!\)[ \t]*:*\(.*\)/\1/T,Tag,Tags/b
 --regex-javascript=/\/\/[ \t]*\(???\)[ \t]*:*\(.*\)/\1/T,Tag,Tags/b
 --regex-javascript=/\/\/[ \t]*\(BUG\)[ \t]*:*\(.*\)/\1/T,Tag,Tags/b
@@ -144,6 +168,21 @@
 --regex-javascript=/\/\/[ \t]*\(NOBUG\)[ \t]*:*\(.*\)/\1/T,Tag,Tags/b
 --regex-javascript=/\/\/[ \t]*\(TODO\)[ \t]*:*\(.*\)/\1/T,Tag,Tags/b
 --regex-javascript=/\/\/[ \t]*\(XXX\)[ \t]*:*\(.*\)/\1/T,Tag,Tags/b
+--regex-javascript=/^[ \t]*(declare[ \t]+)?namespace[ \t]+([a-zA-Z0-9_$]+)/\2/c,modules/
+--regex-javascript=/^[ \t]*(export)?[ \t]*(public|private)[ \t]+(static)?[ \t]*([a-zA-Z0-9_]+)/\4/m,members/
+--regex-javascript=/^[ \t]*(export)?[ \t]*class[ \t]+([a-zA-Z0-9_]+)/\2/c,classes/
+--regex-javascript=/^[ \t]*(export)?[ \t]*enum[ \t]+([a-zA-Z0-9_]+)/\2/e,enums/
+--regex-javascript=/^[ \t]*(export)?[ \t]*function[ \t]+([a-zA-Z0-9_]+)/\2/f,functions/
+--regex-javascript=/^[ \t]*(export)?[ \t]*interface[ \t]+([a-zA-Z0-9_]+)/\2/i,interfaces/
+--regex-javascript=/^[ \t]*(export)?[ \t]*module[ \t]+([a-zA-Z0-9_]+)/\2/n,modules/
+--regex-javascript=/^[ \t]*(export[ \t]+([a-z]+[ \t]+)?)?class[ \t]+([a-zA-Z0-9_$]+)/\3/c,classes/
+--regex-javascript=/^[ \t]*(export[ \t]+)?(default[ \t]+)?(async[ \t]+)?function(\*)?[ \t]+([a-zA-Z0-9_$]+)/\5/f,functions/
+--regex-javascript=/^[ \t]*(export[ \t]+)?(public|protected|private)?[ \t]*(static[ \t]+)?(abstract[ \t]+)?(((get|set|readonly)[ \t]+)|(async[ \t]+[*]*[ \t]*))?(#?[a-zA-Z1-9_$]+)[ \t]*[:(]/\9/m,members/
+--regex-javascript=/^[ \t]*(export[ \t]+)?enum[ \t]+([a-zA-Z0-9_$]+)/\2/e,enums/
+--regex-javascript=/^[ \t]*(export[ \t]+)?interface[ \t]+([a-zA-Z0-9_$]+)/\2/i,interfaces/
+--regex-javascript=/^[ \t]*(export[ \t]+)?module[ \t]+([a-zA-Z0-9_$]+)/\2/n,modules/
+--regex-javascript=/^[ \t]*(export[ \t]+)?type[ \t]+([a-zA-Z0-9_$]+)/\2/t,types/
+--regex-javascript=/^[ \t]*(var|let|const)[ \t]+([a-zA-Z0-9_$]+)[ \t]*=[ \t]*function[ \t]*[*]?[ \t]*\(\)/\2/v,varlambdas/
 --regex-javascript=/^[ \t]*[(]async[ \t]function[ \t]*\([A-Za-z0-9_$]\{1,\}\)[ \t(]/\1/F,Function,Functions/b
 --regex-javascript=/^[ \t]*[(]function[ \t]*\([A-Za-z0-9_$]\{1,\}\)[ \t(]/\1/F,Function,Functions/b
 --regex-javascript=/^[ \t]*[A-Za-z0-9_]\{1,\}[ \t]as[ \t]\([A-Za-z0-9_]\{1,\}\)/\1/I,Import,Imports/b
@@ -180,6 +219,8 @@
 --regex-javascript=/^[ \t]*const[ \t]\{1,\}{[ \t]*\([A-Za-z0-9_$]\{1,\}\)[ \t]*,[ \t]*\([A-Za-z0-9_$]\{1,\}\)[ \t]*[ \t]*,[ \t]*\([A-Za-z0-9_$]\{1,\}\)[ \t]*,[ \t]*\([A-Za-z0-9_$]\{1,\}\)[^}]*}[ \t]*=/\4/V,Variable,Variables/b
 --regex-javascript=/^[ \t]*const[ \t]\{1,\}{[ \t]*\([A-Za-z0-9_$]\{1,\}\)[ \t]*,[ \t]*\([A-Za-z0-9_$]\{1,\}\)[^}]*}[ \t]*=/\2/V,Variable,Variables/b
 --regex-javascript=/^[ \t]*const[ \t]\{1,\}{[ \t]*\([A-Za-z0-9_$]\{1,\}\)[^}]*}[ \t]*=/\1/V,Variable,Variables/b
+--regex-javascript=/^[ \t]*export[ \t]+(var|let|const)[ \t]+([a-zA-Z0-9_$]+)/\2/v,variables/
+--regex-javascript=/^[ \t]*export[ \t]+var[ \t]+([a-zA-Z0-9_]+)/\1/v,variables/
 --regex-javascript=/^[ \t]*export[ \t]\{1,\}\({[ \t]*\)*\([A-Za-z0-9_\*]*[ \t]as[ \t]\)*\([A-Za-z0-9_]\{1,\}\),[ \t]*\([A-Za-z0-9_\*]*[ \t]as[ \t]\)*\([A-Za-z0-9_]\{1,\}\),[ \t]*\([A-Za-z0-9_\*]*[ \t]as[ \t]\)\([A-Za-z0-9_]\{1,\}\)/\7/E,Export,Exports/b
 --regex-javascript=/^[ \t]*export[ \t]\{1,\}\({[ \t]*\)*\([A-Za-z0-9_\*]*[ \t]as[ \t]\)*\([A-Za-z0-9_]\{1,\}\),[ \t]*\([A-Za-z0-9_\*]*[ \t]as[ \t]\)\([A-Za-z0-9_]\{1,\}\)/\5/E,Export,Exports/b
 --regex-javascript=/^[ \t]*export[ \t]\{1,\}\({[ \t]*\)*\([A-Za-z0-9_\*]*[ \t]as[ \t]\)\([A-Za-z0-9_]\{1,\}\)/\3/E,Export,Exports/b
@@ -209,6 +250,8 @@
 --regex-javascript=/^[ \t]*function[ \t]*\([A-Za-z0-9_$]\{1,\}\)[ \t(]/\1/F,Function,Functions/b
 --regex-javascript=/^[ \t]*function[ \t]*\*[ \t]*\([A-Za-z0-9_$]\{1,\}\)/\1/G,Generator,Generators/b
 --regex-javascript=/^[ \t]*get[ \t]\{1,\}\([A-Za-z0-9_$]\{1,\}\)[ \t]*(/\1/M,Method,Methods/b
+--regex-javascript=/^[ \t]*import[ \t]+([a-zA-Z0-9_$]+)/\1/I,imports/
+--regex-javascript=/^[ \t]*import[ \t]+([a-zA-Z0-9_]+)/\1/I,imports/
 --regex-javascript=/^[ \t]*import[ \t]\{1,\}\([{][ \t]*\)*\([A-Za-z0-9_\*]*[ \t]as[ \t]\)*\([A-Za-z0-9_]\{1,\}\),[ \t]*\([A-Za-z0-9_\*]*[ \t]as[ \t]\)*\([A-Za-z0-9_]\{1,\}\),[ \t]*\([A-Za-z0-9_\*]*[ \t]as[ \t]\)\([A-Za-z0-9_]\{1,\}\)/\7/I,Import,Imports/b
 --regex-javascript=/^[ \t]*import[ \t]\{1,\}\([{][ \t]*\)*\([A-Za-z0-9_\*]*[ \t]as[ \t]\)*\([A-Za-z0-9_]\{1,\}\),[ \t]*\([A-Za-z0-9_\*]*[ \t]as[ \t]\)\([A-Za-z0-9_]\{1,\}\)/\5/I,Import,Imports/b
 --regex-javascript=/^[ \t]*import[ \t]\{1,\}\([{][ \t]*\)*\([A-Za-z0-9_\*]*[ \t]as[ \t]\)\([A-Za-z0-9_]\{1,\}\)/\3/I,Import,Imports/b
@@ -237,6 +280,7 @@
 --regex-javascript=/^[ \t]*let[ \t]\{1,\}{[ \t]*\([A-Za-z0-9_$]\{1,\}\)[^}]*}[ \t]*=/\1/V,Variable,Variables/b
 --regex-javascript=/^[ \t]*set[ \t]\{1,\}\([A-Za-z0-9_$]\{1,\}\)[ \t]*(/\1/M,Method,Methods/b
 --regex-javascript=/^[ \t]*static[ \t]\{1,\}\([A-Za-z0-9_$]\{1,\}\)[ \t]*(/\1/M,Method,Methods/b
+--regex-javascript=/^[ \t]*var[ \t]+([a-zA-Z0-9_]+)[ \t]*=[ \t]*function[ \t]*\(\)/\1/v,varlambdas/
 --regex-javascript=/^[ \t]*var[ \t]\{1,\}\([A-Za-z0-9_$]\{1,\}\)[ \t]*,[ \t]*\([A-Za-z0-9_$]\{1,\}\)/\2/V,Variable,Variables/b
 --regex-javascript=/^[ \t]*var[ \t]\{1,\}\([A-Za-z0-9_$]\{1,\}\)[ \t]*,[ \t]*\([A-Za-z0-9_$]\{1,\}\)[ \t]*,[ \t]*\([A-Za-z0-9_$]\{1,\}\)/\3/V,Variable,Variables/b
 --regex-javascript=/^[ \t]*var[ \t]\{1,\}\([A-Za-z0-9_$]\{1,\}\)[ \t]*=.\{1,\}=>/\1/F,Function,Functions/b
@@ -260,44 +304,9 @@
 --regex-javascript=/^[ \t]*var[ \t]\{1,\}{[ \t]*\([A-Za-z0-9_$]\{1,\}\)[^}]*}[ \t]*=/\1/V,Variable,Variables/b
 --regex-javascript=/^[ \t]\{1,\}\([A-Za-z0-9_$]\{1,\}\)$/\1/V,Variable,Variables/b
 --regex-javascript=/^[ \t]\{1,\}\([A-Za-z0-9_$]\{1,\}\),$/\1/V,Variable,Variables/b
---regex-js=/(,|(;|^)[ \t]*(var|let|([A-Za-z_$][A-Za-z0-9_$.]+\.)*))[ \t]*([A-Za-z0-9_$]+)[ \t]*=[ \t]*(true|false)/\5/b,boolean/
---regex-js=/(,|(;|^)[ \t]*(var|let|([A-Za-z_$][A-Za-z0-9_$.]+\.)*))[ \t]*([A-Za-z0-9_$]+)[ \t]*=[ \t]*.+([,;=]|$)/\5/v,variable/
---regex-js=/(,|(;|^)[ \t]*(var|let|([A-Za-z_$][A-Za-z0-9_$.]+\.)*))[ \t]*([A-Za-z0-9_$]+)[ \t]*=[ \t]*[0-9]+/\5/n,number/
---regex-js=/(,|(;|^)[ \t]*(var|let|([A-Za-z_$][A-Za-z0-9_$.]+\.)*))[ \t]*([A-Za-z0-9_$]+)[ \t]*=[ \t]*[^"]'[^']*/\5/s,string/
---regex-js=/(,|(;|^)[ \t]*(var|let|([A-Za-z_$][A-Za-z0-9_$.]+\.)*))[ \t]*([A-Za-z0-9_$]+)[ \t]*=[ \t]*\[/\5/a,array/
---regex-js=/(,|(;|^)[ \t]*(var|let|([A-Za-z_$][A-Za-z0-9_$.]+\.)*))[ \t]*([A-Za-z0-9_$]+)[ \t]*=[ \t]*\{/\5/o,object/
---regex-js=/(,|(;|^)[ \t]*(var|let|([A-Za-z_$][A-Za-z0-9_$.]+\.)*))[ \t]*([A-Za-z0-9_$]+)[ \t]*=[ \t]*function[ \t]*\(/\5/f,function/
---regex-js=/(,|(;|^)[ \t]*(var|let|([A-Za-z_$][A-Za-z0-9_$.]+\.)*))[ \t]*([A-Za-z0-9_$]+)[ \t]*[ \t]*([,;]|$)/\5/v,variable/
---regex-js=/(,|^)[ \t]*([A-Za-z_$][A-Za-z0-9_$]+)[ \t]*:[ \t]*(true|false)/\2/b,boolean/
---regex-js=/(,|^)[ \t]*([A-Za-z_$][A-Za-z0-9_$]+)[ \t]*:[ \t]*[0-9]+/\2/n,number/
---regex-js=/(,|^)[ \t]*([A-Za-z_$][A-Za-z0-9_$]+)[ \t]*:[ \t]*[^"]'[^']*/\2/s,string/
---regex-js=/(,|^)[ \t]*([A-Za-z_$][A-Za-z0-9_$]+)[ \t]*:[ \t]*[^=]+([,;]|$)/\2/v,variable/
---regex-js=/(,|^)[ \t]*([A-Za-z_$][A-Za-z0-9_$]+)[ \t]*:[ \t]*\[/\2/a,array/
---regex-js=/(,|^)[ \t]*([A-Za-z_$][A-Za-z0-9_$]+)[ \t]*:[ \t]*\{/\2/o,object/
---regex-js=/(,|^)[ \t]*([A-Za-z_$][A-Za-z0-9_$]+)[ \t]*:[ \t]*function[ \t]*\(/\2/f,function/
---regex-js=/([A-Za-z$][A-Za-z0-9_$]+)[ \t]*=[ \t]*function[ \t]*\(/\1/m,method/
---regex-js=/([A-Za-z0-9._$()]+)[ \t]*[:=][ \t]*function[ \t]*\(/\1/f,function/
---regex-js=/([A-Za-z0-9._$]+)[ \t]*=[ \t]*\(function\(\)/\1/c,class/
---regex-js=/([A-Za-z0-9._$]+)[ \t]*=[ \t]*\[/\1/a,array/
---regex-js=/([A-Za-z0-9._$]+)[ \t]*=[ \t]*\{/\1/o,object/
---regex-js=/([A-Za-z0-9._$]+)[ \t]*[:=][ \t]*\[/\1/a,array/
---regex-js=/([A-Za-z0-9._$]+)[ \t]*[:=][ \t]*\{/\1/o,object/
---regex-js=/([A-Za-z0-9._$]+)\.prototype[ \t.=]/\1/c,class/
---regex-js=/([A-Za-z0-9._$]+)\[["']([A-Za-z0-9_$]+)["']\][ \t]*=[ \t]*\[/\1\.\2/a,array/
---regex-js=/([A-Za-z0-9._$]+)\[["']([A-Za-z0-9_$]+)["']\][ \t]*=[ \t]*\{/\1\.\2/o,object/
---regex-js=/([A-Za-z0-9_$]+)\[["']([A-Za-z0-9_$]+)["']\][ \t]*=[ \t]*function[ \t]*\(/\2/m,method/
---regex-js=/([^= ]+)[ \t]*=[ \t]*[^"]'[^']*/\1/s,string/
---regex-js=/([^= ]+)[ \t]*=[ \t]*[^']"[^"]*/\1/s,string/
---regex-js=/[ \t.]([A-Z][A-Z0-9._$]+)[ \t]*=[ \t]*[0-9"'\[\{]/\1/n,constant/
---regex-js=/[ \t]*function[ \t]* \*([A-Za-z$][A-Za-z0-9_$()]+)[ \t]*\(/\1/f,function/
---regex-js=/[ \t]*function[ \t]+([A-Za-z$][A-Za-z0-9_$]+)[ \t]*\(([^)])\)/\1/f,function/
---regex-js=/['"]*([A-Za-z$][A-Za-z0-9_$]+)['"]*:[ \t]*\[/\1/a,array/
---regex-js=/['"]*([A-Za-z$][A-Za-z0-9_$]+)['"]*:[ \t]*function[ \t]*\(/\1/m,method/
---regex-js=/['"]*([A-Za-z0-9_$]+)['"]*:[ \t]*\(function\(\)/\1/c,class/
---regex-js=/['"]*([A-Za-z0-9_$]+)['"]*[ \t]*:[ \t]*\{/\1/o,object/
---regex-js=/function[ \t]+([A-Za-z0-9._$]+)[ \t]*\(([^)])\)/\1/f,function/
---regex-js=/function[ \t]+([A-Za-z0-9_$]+)[ \t]*\([^)]*\)/\1/f,function/
---regex-js=/var[ \t]*([A-Za-z$][A-Za-z0-9_$()]+)[ \t]*=[ \t]*function[ \t]*\(/\1/f,function/
+--regex-javascript=/function[ \t]+([A-Za-z0-9._$]+)[ \t]*\(([^)])\)/\1/f,function/
+--regex-javascript=/function[ \t]+([A-Za-z0-9_$]+)[ \t]*\([^)]*\)/\1/f,function/
+--regex-javascript=/var[ \t]*([A-Za-z$][A-Za-z0-9_$()]+)[ \t]*=[ \t]*function[ \t]*\(/\1/f,function/
 --regex-latex=/\\bibitem[[:space:]]*\[([^]]*)\]\{([^}]+)\}/\1 \2/b,bibitem/
 --regex-latex=/\\label[[:space:]]*\{([^}]+)\}/\1/l,label/
 --regex-latex=/^\\chapter[[:space:]]*(\[[^]]*\])?[[:space:]]*\{([^}]+)\}/CHAP \2/s,chapter/
@@ -325,26 +334,5 @@
 --regex-ruby=/(^|;)[ \t]*event\(? *:([[:alnum:]_]+)/\2?/f,function,aasm_event/
 --regex-ruby=/(^|;)[ \t]*expose\(? *:([[:alnum:]_]+)/\2/f,function,exposure/
 --regex-ruby=/(^|[:;])[ \t]*([A-Z][[:alnum:]_]+) *=/\2/c,class,constant/
---regex-typescript=/^[ \t]*(declare[ \t]+)?namespace[ \t]+([a-zA-Z0-9_$]+)/\2/c,modules/
---regex-typescript=/^[ \t]*(export)?[ \t]*(public|private)[ \t]+(static)?[ \t]*([a-zA-Z0-9_]+)/\4/m,members/
---regex-typescript=/^[ \t]*(export)?[ \t]*class[ \t]+([a-zA-Z0-9_]+)/\2/c,classes/
---regex-typescript=/^[ \t]*(export)?[ \t]*enum[ \t]+([a-zA-Z0-9_]+)/\2/e,enums/
---regex-typescript=/^[ \t]*(export)?[ \t]*function[ \t]+([a-zA-Z0-9_]+)/\2/f,functions/
---regex-typescript=/^[ \t]*(export)?[ \t]*interface[ \t]+([a-zA-Z0-9_]+)/\2/i,interfaces/
---regex-typescript=/^[ \t]*(export)?[ \t]*module[ \t]+([a-zA-Z0-9_]+)/\2/n,modules/
---regex-typescript=/^[ \t]*(export[ \t]+([a-z]+[ \t]+)?)?class[ \t]+([a-zA-Z0-9_$]+)/\3/c,classes/
---regex-typescript=/^[ \t]*(export[ \t]+)?(default[ \t]+)?(async[ \t]+)?function(\*)?[ \t]+([a-zA-Z0-9_$]+)/\5/f,functions/
---regex-typescript=/^[ \t]*(export[ \t]+)?(public|protected|private)?[ \t]*(static[ \t]+)?(abstract[ \t]+)?(((get|set|readonly)[ \t]+)|(async[ \t]+[*]*[ \t]*))?(#?[a-zA-Z1-9_$]+)[ \t]*[:(]/\9/m,members/
---regex-typescript=/^[ \t]*(export[ \t]+)?enum[ \t]+([a-zA-Z0-9_$]+)/\2/e,enums/
---regex-typescript=/^[ \t]*(export[ \t]+)?interface[ \t]+([a-zA-Z0-9_$]+)/\2/i,interfaces/
---regex-typescript=/^[ \t]*(export[ \t]+)?module[ \t]+([a-zA-Z0-9_$]+)/\2/n,modules/
---regex-typescript=/^[ \t]*(export[ \t]+)?type[ \t]+([a-zA-Z0-9_$]+)/\2/t,types/
---regex-typescript=/^[ \t]*(var|let|const)[ \t]+([a-zA-Z0-9_$]+)[ \t]*=[ \t]*function[ \t]*[*]?[ \t]*\(\)/\2/v,varlambdas/
---regex-typescript=/^[ \t]*export[ \t]+(var|let|const)[ \t]+([a-zA-Z0-9_$]+)/\2/v,variables/
---regex-typescript=/^[ \t]*export[ \t]+var[ \t]+([a-zA-Z0-9_]+)/\1/v,variables/
---regex-typescript=/^[ \t]*import[ \t]+([a-zA-Z0-9_$]+)/\1/I,imports/
---regex-typescript=/^[ \t]*import[ \t]+([a-zA-Z0-9_]+)/\1/I,imports/
---regex-typescript=/^[ \t]*var[ \t]+([a-zA-Z0-9_]+)[ \t]*=[ \t]*function[ \t]*\(\)/\1/v,varlambdas/
 --tag-relative=yes
 --totals=yes
--R
