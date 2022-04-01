@@ -484,7 +484,6 @@
          (defun projectile-relevant-known-projects ()
            "Return a list of known projects except the current one (if present)."
            (if (projectile-project-p)
-
                (->> projectile-known-projects
                     (--reduce-from
                      (if (-contains? (-map 's-downcase acc) (s-downcase it)) acc (cons it acc))
@@ -493,7 +492,8 @@
              projectile-known-projects)))
 
        (mapc (lambda (file)
-               (add-to-list 'projectile-globally-ignored-buffers file))
+               (add-to-list 'projectile-globally-ignored-buffers file)
+               (add-to-list 'consult-buffer-filter file))
              '("TAGS" "GTAGS"))
        (mapc (lambda (dir)
                (add-to-list 'projectile-globally-ignored-directories dir))
