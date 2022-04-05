@@ -58,6 +58,12 @@
                 (add-hook 'after-init-hook 'persp-setup)))
          (require 'no-littering))))
 
+;; company-mode
+(cond ((locate-library "company")
+       (require 'company)
+       (setq company-minimum-prefix-length 1)
+       (global-company-mode +1)))
+
 ;; exec-path-from-shell settings to load $PATH on run
 (cond ((locate-library "exec-path-from-shell")
        (require 'exec-path-from-shell)
@@ -294,10 +300,6 @@
        (add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode))
        (setq markdown-command "multimarkdown")))
 
-;; terraform-mode
-(cond ((locate-library "terraform-mode")
-       (require 'terraform-mode)))
-
 ;; rainbow-delimiters mode
 (cond ((locate-library "rainbow-delimiters")
        (require 'rainbow-delimiters)
@@ -410,12 +412,7 @@
          (if (locate-library "prettier-rc")
              (prettier-rc-mode +1)
            ;; use default tide formatter on sav
-           (add-hook 'before-save-hook 'tide-format-before-save))
-
-         (cond ((locate-library "company")
-                (require 'company)
-                (setq company-minimum-prefix-length 1)
-                (company-mode +1))))
+           (add-hook 'before-save-hook 'tide-format-before-save)))
 
        (setq company-tooltip-align-annotations t)
 
@@ -515,6 +512,16 @@
              'consult-projectile-switch-project)
            (define-key projectile-command-map (kbd "e")
              'consult-projectile-recentf)))))
+
+(cond ((locate-library "company-terraform")
+       (with-eval-after-load 'company
+         (require 'company-terraform)
+         (with-eval-after-load 'company-terraform
+           (require 'terraform-mode)
+           (define-derived-mode auto-tf-mode hcl-mode "Terraform"
+             (company-terraform-init))
+           (add-to-list 'auto-mode-alist '("\\.tf\\(vars\\)?\\'" . auto-tf-mode))
+           (add-hook 'terraform-mode-hook #'terraform-format-on-save-mode)))))
 
 ;; MELPA package variable initialization
 (cond ((locate-library "package")

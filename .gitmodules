@@ -190,3 +190,6 @@
 [submodule "themes/emacs-faff-theme"]
 	path = themes/emacs-faff-theme
 	url = https://github.com/WJCFerguson/emacs-faff-theme.git
+[submodule "pkgs/emacs-company-terraform"]
+	path = pkgs/emacs-company-terraform
+	url = https://github.com/rafalcieslak/emacs-company-terraform.git
