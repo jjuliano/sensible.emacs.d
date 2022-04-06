@@ -231,6 +231,12 @@
     - [[https://github.com/SFTtech/starlit-emacs][starlit-emacs]] :: starlit dark theme
     - [[https://github.com/WJCFerguson/emacs-faff-theme][faff-theme]] :: faff light theme
 
+** Font size
+
+   Text size is automatically calculated using the [[https://github.com/WJCFerguson/textsize][textsize]] package. To override
+   the default text size, type =M-x customize-group= then =textsize=. Then
+   change the default text size point.
+
 ** Overrides and personal configurations
 
    Settings can be overridden by creating the elisp file in the =personal/=
