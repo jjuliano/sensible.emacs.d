@@ -193,3 +193,9 @@
 [submodule "pkgs/emacs-company-terraform"]
 	path = pkgs/emacs-company-terraform
 	url = https://github.com/rafalcieslak/emacs-company-terraform.git
+[submodule "pkgs/yaml-mode"]
+	path = pkgs/yaml-mode
+	url = https://github.com/yoshiki/yaml-mode.git
+[submodule "pkgs/bicycle"]
+	path = pkgs/bicycle
+	url = https://github.com/tarsius/bicycle.git

@@ -56,6 +56,7 @@
 --langdef=latex
 --langdef=markdown
 --langdef=mtc
+--langdef=terraform
 --langmap=Clojure:.clj.cljs.cljx
 --langmap=Elixir:.ex.exs
 --langmap=Rust:.rs
@@ -69,6 +70,7 @@
 --langmap=markdown:+.md.mkd
 --langmap=mtc:.mtc
 --langmap=php:.engine.inc.module.theme.install.php
+--langmap=terraform:.tf.tfvars
 --languages=-html
 --php-kinds=+cf-v
 --python-kinds=-i
@@ -334,5 +336,12 @@
 --regex-ruby=/(^|;)[ \t]*event\(? *:([[:alnum:]_]+)/\2?/f,function,aasm_event/
 --regex-ruby=/(^|;)[ \t]*expose\(? *:([[:alnum:]_]+)/\2/f,function,exposure/
 --regex-ruby=/(^|[:;])[ \t]*([A-Z][[:alnum:]_]+) *=/\2/c,class,constant/
+--regex-terraform=/^([a-z0-9_]+)[[:space:]]*=/\1/f,TFVar/
+--regex-terraform=/^[[:space:]]*data[[:space:]]*"([^"]*)"[[:space:]]*"([^"]*)"/\2/d,Data/
+--regex-terraform=/^[[:space:]]*module[[:space:]]*"([^"]*)"/\1/m,Module/
+--regex-terraform=/^[[:space:]]*output[[:space:]]*"([^"]*)"/\1/o,Output/
+--regex-terraform=/^[[:space:]]*provider[[:space:]]*"([^"]*)"/\1/p,Provider/
+--regex-terraform=/^[[:space:]]*resource[[:space:]]*"([^"]*)"[[:space:]]*"([^"]*)"/\2/r,Resource/
+--regex-terraform=/^[[:space:]]*variable[[:space:]]*"([^"]*)"/\1/v,Variable/
 --tag-relative=yes
 --totals=yes
