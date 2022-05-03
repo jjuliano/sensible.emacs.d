@@ -199,3 +199,6 @@
 [submodule "pkgs/bicycle"]
 	path = pkgs/bicycle
 	url = https://github.com/tarsius/bicycle.git
+[submodule "pkgs/compat-el"]
+	path = pkgs/compat-el
+	url = https://github.com/phikal/compat.el.git
