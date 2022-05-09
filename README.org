@@ -43,7 +43,7 @@
      ├── config
      │   └── 00-globals.el         // global configurations
      │   └── 01-packages.el        // package configurations
-     |   └── 02-editor.el          // editor configurations
+     │   └── 02-editor.el          // editor configurations
      ├── personal/                 // added to .gitignore, to store all custom user configurations
      ├── pkgs/                     // default packages as git submodules
      ├── docs/                     // contains docs related files
