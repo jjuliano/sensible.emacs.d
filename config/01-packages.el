@@ -534,6 +534,8 @@
 (cond ((locate-library "consult-projectile")
        (with-eval-after-load 'consult
          (with-eval-after-load 'projectile
+           (setq projectile-find-dir-includes-top-level t)
+
            (require 'consult-projectile)
 
            (define-key projectile-command-map (kbd "0")

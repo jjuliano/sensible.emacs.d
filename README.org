@@ -116,7 +116,8 @@
     - [[https://github.com/bbatsov/projectile][projectile]] :: integrated project management for Emacs
       - C-c p :: opens the projectile command menu
         - 0 :: opens the projectile multiview
-        - D :: add a new project (by opening a file, the directory will be added automatically)
+        - d :: add a new project (by opening a file, the directory will be added automatically)
+        - D :: opens a directory of an existing project
         - p :: opens an existing project
         - e :: switch to a recently opened file
         - s s :: search current project using [[https://github.com/ggreer/the_silver_searcher][ag]]
