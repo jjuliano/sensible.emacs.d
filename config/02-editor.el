@@ -7,7 +7,7 @@
                                             user-emacs-directory))
 
 ;; Show fill-column
-(global-display-fill-column-indicator-mode)
+(global-display-fill-column-indicator-mode t)
 
 ;; Turn-on auto-fill mode
 (setq-default auto-fill-function 'do-auto-fill)
@@ -67,3 +67,36 @@
 
 ;; Display README.org on start
 (setq initial-buffer-choice (expand-file-name "README.org" user-emacs-directory))
+
+;; Guess the major mode from the file name
+(setq-default major-mode
+              (lambda () ; guess major mode from file name
+                (unless buffer-file-name
+                  (let ((buffer-file-name (buffer-name)))
+                    (set-auto-mode)))))
+
+;; Require a confirmation before closing Emacs
+(setq confirm-kill-emacs #'yes-or-no-p)
+
+;; Resize frame and window pixel-wise (instead of character-wise)
+(setq window-resize-pixelwise t)
+(setq frame-resize-pixelwise t)
+
+;; Remember what files were last opened
+(recentf-mode t)
+
+;; Abbreviate all yes-or-no queries
+(defalias 'yes-or-no #'y-or-n-p)
+
+;; Disable splash screen
+(setq inhibit-startup-screen t)
+
+;; Enable line numbering by default
+(global-display-line-numbers-mode t)
+
+;; Automatically pair parentheses
+(electric-pair-mode t)
+
+;; Finally, re-require better-defaults to load it on top of our configurations
+(cond ((locate-library "better-defaults")
+       (require 'better-defaults)))
