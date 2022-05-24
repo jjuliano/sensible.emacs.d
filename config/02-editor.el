@@ -2,10 +2,6 @@
 (when (version<= "26.0.50" emacs-version )
   (global-display-line-numbers-mode))
 
-;; MELPA config file
-(setq-default custom-file (expand-file-name "config/custom.el"
-                                            user-emacs-directory))
-
 ;; Show fill-column
 (global-display-fill-column-indicator-mode t)
 
@@ -100,3 +96,7 @@
 ;; Finally, re-require better-defaults to load it on top of our configurations
 (cond ((locate-library "better-defaults")
        (require 'better-defaults)))
+
+;; Need to define the custom config file path as better-defaults override it
+(setq-default custom-file (expand-file-name "config/custom.el"
+                                            user-emacs-directory))
