@@ -64,7 +64,7 @@
 (cond ((locate-library "company")
        (progn
          (require 'company)
-         (setq company-minimum-prefix-length 1)
+         (setq company-minimum-prefix-length 3)
          (global-company-mode +1))))
 
 ;; exec-path-from-shell settings to load $PATH on run
