@@ -10,386 +10,386 @@
 
 * What is sensible.emacs.d?
 
-  A clean room implementation of a clean vanilla Emacs configuration that is
-  sanely manageable, and practically useful.
+A clean room implementation of a clean vanilla Emacs configuration that is
+sanely manageable, and practically useful.
 
 * Personable and Sensible Emacs Configuration
 
-  This Emacs configuration aims to be uncluttered, clean, vanilla, and
-  practically useful for any day-to-day tasks.
+This Emacs configuration aims to be uncluttered, clean, vanilla, and
+practically useful for any day-to-day tasks.
 
-  It only has the absolute necessary configurations, tailored to be minimal,
-  practical and useful. It is easy to add any additional feature and package
-  later if you need one.
+It only has the absolute necessary configurations, tailored to be minimal,
+practical and useful. It is easy to add any additional feature and package
+later if you need one.
 
-  There are several reasons for keeping the configuration to a bare minimum, one
-  is that it's easier to keep track of all the packages and keystrokes. It is
-  better to have a setup that you use 90% of the time, than having a cluttered
-  setup that will just make it difficult to keep up with gazillions of
-  preinstalled packages that usually end-up being unused.
+There are several reasons for keeping the configuration to a bare minimum, one
+is that it's easier to keep track of all the packages and keystrokes. It is
+better to have a setup that you use 90% of the time, than having a cluttered
+setup that will just make it difficult to keep up with gazillions of
+preinstalled packages that usually end-up being unused.
 
-  This configuration tries not to be a one-size-fits all configuration, but it
-  tries to be an Emacs configuration that suits most of the developers, and I
-  keep it personable, clean, easy and sensible.
+This configuration tries not to be a one-size-fits all configuration, but it
+tries to be an Emacs configuration that suits most of the developers, and I
+keep it personable, clean, easy and sensible.
 
 ** Files
 
-   The files are structured in the following tree.
+The files are structured in the following tree.
 
-   #+BEGIN_SRC text
-     ├── README.org                // default documentation (shown on start-up)
-     ├── init.el                   // contains the org-directory and about-me settings
-     ├── boot.el                   // loads all the *.el files in the config/ and personal/ directory
-     ├── config
-     │   └── 00-globals.el         // global configurations
-     │   └── 01-packages.el        // package configurations
-     │   └── 02-editor.el          // editor configurations
-     ├── personal/                 // added to .gitignore, to store all custom user configurations
-     ├── pkgs/                     // default packages as git submodules
-     ├── docs/                     // contains docs related files
-     └── themes/                   // themes
-   #+END_SRC
+#+BEGIN_SRC text
+  ├── README.org                // default documentation (shown on start-up)
+  ├── init.el                   // contains the org-directory and about-me settings
+  ├── boot.el                   // loads all the *.el files in the config/ and personal/ directory
+  ├── config
+  │   └── 00-globals.el         // global configurations
+  │   └── 01-packages.el        // package configurations
+  │   └── 02-editor.el          // editor configurations
+  ├── personal/                 // added to .gitignore, to store all custom user configurations
+  ├── pkgs/                     // default packages as git submodules
+  ├── docs/                     // contains docs related files
+  └── themes/                   // themes
+#+END_SRC
 
 ** Installation
 
-   To install, clone the repository to a =.emacs.d= directory. Note that is
-   recommended to backup your previous Emacs directory.
+To install, clone the repository to a =.emacs.d= directory. Note that is
+recommended to backup your previous Emacs directory.
 
-   #+BEGIN_SRC shell
-     $ mv ~/.emacs.d ~/.emacs.d.bak
-     $ git clone https://github.com/jjuliano/sensible.emacs.d ~/.emacs.d
-     $ cd .emacs.d && git submodule update --init --recursive
-   #+END_SRC
+#+BEGIN_SRC shell
+  $ mv ~/.emacs.d ~/.emacs.d.bak
+  $ git clone https://github.com/jjuliano/sensible.emacs.d ~/.emacs.d
+  $ cd .emacs.d && git submodule update --init --recursive
+#+END_SRC
 
 ** System packages
 
-   In addition to the Emacs [[#packages][default packages]], you need to ensure the following
-   packages exists in your system, which can be installed via your operating
-   system's package manager.
+In addition to the Emacs [[#packages][default packages]], you need to ensure the following
+packages exists in your system, which can be installed via your operating
+system's package manager.
 
-   - [[https://git-scm.com][git]] :: Used by Magit for [[#version-control][version control]].
-   - [[https://github.com/ggreer/the_silver_searcher][ag]], rg, git grep or grep :: Used by Dumb-jump for [[#code-navigation][code navigation]] and recursive search in [[#project-management][project management]].
-   - [[https://prettier.io/][prettier]] :: Used to prettify HTML & JS code upon save. See: [[#development][development]].
-   - [[https://fletcherpenney.net/multimarkdown/][multimarkdown]] :: Used for [[#markdown-mode][markdown-mode]].
-   - [[https://internal1.languagetool.org/snapshots/][LanguageTool]] :: Used for [[#grammar-check][grammar check]].
-     - Preconfigured to look in =~/.emacs.d/data/LanguageTool/languagetool-commandline.jar=, see =00-globals.el=.
-   - [[https://pygments.org/][Pygments]] :: Used for [[#code-syntax-highlighting][code syntax highlighting]].
-     - [[https://tug.org/texlive/][pdflatex]] :: [[#code-syntax-highlighting][code syntax highlighting]] when exporting to PDF from LaTeX.
-   - [[https://cmake.org/][cmake]] :: Used by [[#term][terminal emulator]].
-     - [[https://github.com/akermu/emacs-libvterm/tree/master/etc][shell-side configurations]] :: shell-side configs needed to be added to .zshrc or .bashrc
-   - [[http://aspell.net][aspell]] :: Used for [[#spell-check][spell checking]].
-   - [[http://ctags.sourceforge.net][Exuberant CTAGS]] :: Used for indexing symbols on the current project in [[#project-management][project management]].
-   - [[https://jdk.java.net/][OpenJDK]] :: used by [[https://languagetool.org/][languagetool]] for the [[#grammar-check][grammar check]] functionality.
+- [[https://git-scm.com][git]] :: Used by Magit for [[#version-control][version control]].
+- [[https://github.com/ggreer/the_silver_searcher][ag]], rg, git grep or grep :: Used by Dumb-jump for [[#code-navigation][code navigation]] and recursive search in [[#project-management][project management]].
+- [[https://prettier.io/][prettier]] :: Used to prettify HTML & JS code upon save. See: [[#development][development]].
+- [[https://fletcherpenney.net/multimarkdown/][multimarkdown]] :: Used for [[#markdown-mode][markdown-mode]].
+- [[https://internal1.languagetool.org/snapshots/][LanguageTool]] :: Used for [[#grammar-check][grammar check]].
+  - Preconfigured to look in =~/.emacs.d/data/LanguageTool/languagetool-commandline.jar=, see =00-globals.el=.
+- [[https://pygments.org/][Pygments]] :: Used for [[#code-syntax-highlighting][code syntax highlighting]].
+  - [[https://tug.org/texlive/][pdflatex]] :: [[#code-syntax-highlighting][code syntax highlighting]] when exporting to PDF from LaTeX.
+- [[https://cmake.org/][cmake]] :: Used by [[#term][terminal emulator]].
+  - [[https://github.com/akermu/emacs-libvterm/tree/master/etc][shell-side configurations]] :: shell-side configs needed to be added to .zshrc or .bashrc
+- [[http://aspell.net][aspell]] :: Used for [[#spell-check][spell checking]].
+- [[http://ctags.sourceforge.net][Exuberant CTAGS]] :: Used for indexing symbols on the current project in [[#project-management][project management]].
+- [[https://jdk.java.net/][OpenJDK]] :: used by [[https://languagetool.org/][languagetool]] for the [[#grammar-check][grammar check]] functionality.
 
 ** Upgrade
 
-   To upgrade your local configuration and it's submodules type:
+To upgrade your local configuration and it's submodules type:
 
-   #+BEGIN_SRC shell
-     $ cd ~/.emacs.d
-     $ git submodule update --remote --merge
-   #+END_SRC
+#+BEGIN_SRC shell
+  $ cd ~/.emacs.d
+  $ git submodule update --remote --merge
+#+END_SRC
 
 ** Packages
 
-   It uses the following packages by default, the individual elisp packages are
-   source directly from the website, while other packages are hosted and are
-   managed by =git submodules=.
+It uses the following packages by default, the individual elisp packages are
+source directly from the website, while other packages are hosted and are
+managed by =git submodules=.
 
 *** general
-    - [[https://github.com/emacscollective/no-littering][no-littering]] :: ensure .emacs.d folder is clean
-    - [[https://www.emacswiki.org/emacs/backup-each-save.el][backup-each-save.el]] :: backup files on each save
-    - [[https://git.sr.ht/~technomancy/better-defaults][better-defaults.el]] :: the base defaults
-    - [[https://github.com/purcell/exec-path-from-shell][exec-path-from-shell]] :: made $PATH available inside Emacs
-    - [[https://github.com/jjuliano/practical.org.el][practical.org.el]] :: practical org-mode GTD and Zettelkasten workflow presets
-      - [[https://www.emacswiki.org/emacs/BbdbMode][bbdb]] :: The Insidious Big Brother Database, an Emacs address-book database
-    - [[https://www.emacswiki.org/emacs/download/multiple-line-edit.el][multiple-line-edit.el]] :: select lines simultaneously
-    - [[https://github.com/cyrus-and/zoom][zoom]] :: auto-resize active windows
-    - [[https://github.com/WJCFerguson/textsize][textsize]] :: auto-adjust text size based on screen/monitor dimension
-    - [[https://github.com/nex3/perspective-el][perspective-el]] :: workspace management
-    - [[https://github.com/rolandwalker/unicode-fonts][unicode-fonts]] :: configure unicode-fonts for Emacs with the following dependencies
-      - [[https://github.com/rolandwalker/font-utils][font-utils]] :: Utility functions for working with fonts in Emacs
-      - [[https://github.com/rolandwalker/ucs-utils][ucs-utils]] :: Utilities for Unicode characters in Emacs
-      - [[https://github.com/rolandwalker/list-utils][list-utils]] :: List-manipulation utility functions for Emacs
+- [[https://github.com/emacscollective/no-littering][no-littering]] :: ensure .emacs.d folder is clean
+- [[https://www.emacswiki.org/emacs/backup-each-save.el][backup-each-save.el]] :: backup files on each save
+- [[https://git.sr.ht/~technomancy/better-defaults][better-defaults.el]] :: the base defaults
+- [[https://github.com/purcell/exec-path-from-shell][exec-path-from-shell]] :: made $PATH available inside Emacs
+- [[https://github.com/jjuliano/practical.org.el][practical.org.el]] :: practical org-mode GTD and Zettelkasten workflow presets
+  - [[https://www.emacswiki.org/emacs/BbdbMode][bbdb]] :: The Insidious Big Brother Database, an Emacs address-book database
+- [[https://www.emacswiki.org/emacs/download/multiple-line-edit.el][multiple-line-edit.el]] :: select lines simultaneously
+- [[https://github.com/cyrus-and/zoom][zoom]] :: auto-resize active windows
+- [[https://github.com/WJCFerguson/textsize][textsize]] :: auto-adjust text size based on screen/monitor dimension
+- [[https://github.com/nex3/perspective-el][perspective-el]] :: workspace management
+- [[https://github.com/rolandwalker/unicode-fonts][unicode-fonts]] :: configure unicode-fonts for Emacs with the following dependencies
+  - [[https://github.com/rolandwalker/font-utils][font-utils]] :: Utility functions for working with fonts in Emacs
+  - [[https://github.com/rolandwalker/ucs-utils][ucs-utils]] :: Utilities for Unicode characters in Emacs
+  - [[https://github.com/rolandwalker/list-utils][list-utils]] :: List-manipulation utility functions for Emacs
 
 *** project-management
-    - [[https://github.com/bbatsov/projectile][projectile]] :: integrated project management for Emacs
-      - C-c p :: opens the projectile command menu
-        - 0 :: opens the projectile multiview
-        - d :: add a new project (by opening a file, the directory will be added automatically)
-        - D :: opens a directory of an existing project
-        - p :: opens an existing project
-        - e :: switch to a recently opened file
-        - s s :: search current project using [[https://github.com/ggreer/the_silver_searcher][ag]]
-        - x v :: open a [[#term][vterm terminal]] on the current buffer directory
-        - R :: regenerate searchable tags on the current project
-          - j :: find a tag on the current project
-        - ! :: run a shell command on the current buffer directory
-        - & :: run a background shell process command on the current buffer directory
-        - S :: save all buffers in the current project
-        - v :: opens magit (see [[#version-control][version control]])
-      - C-u C-c p f :: force projectile to re-initialize project
+- [[https://github.com/bbatsov/projectile][projectile]] :: integrated project management for Emacs
+  - C-c p :: opens the projectile command menu
+    - 0 :: opens the projectile multiview
+    - d :: add a new project (by opening a file, the directory will be added automatically)
+    - D :: opens a directory of an existing project
+    - p :: opens an existing project
+    - e :: switch to a recently opened file
+    - s s :: search current project using [[https://github.com/ggreer/the_silver_searcher][ag]]
+    - x v :: open a [[#term][vterm terminal]] on the current buffer directory
+    - R :: regenerate searchable tags on the current project
+      - j :: find a tag on the current project
+    - ! :: run a shell command on the current buffer directory
+    - & :: run a background shell process command on the current buffer directory
+    - S :: save all buffers in the current project
+    - v :: opens magit (see [[#version-control][version control]])
+  - C-u C-c p f :: force projectile to re-initialize project
 
 *** term
-    - [[https://github.com/akermu/emacs-libvterm][vterm]] :: terminal emulator based on libvterm C library
-      - M-x vterm :: runs the terminal
-        - C-c C-t :: turns-on =vterm-copy-mode= to treat the terminal like a text-file
+- [[https://github.com/akermu/emacs-libvterm][vterm]] :: terminal emulator based on libvterm C library
+  - M-x vterm :: runs the terminal
+    - C-c C-t :: turns-on =vterm-copy-mode= to treat the terminal like a text-file
 
 *** version-control
-    - [[https://magit.vc/][magit]] :: a complete text-based user interface to Git.
-      - C-x g ? :: Git status then press =?= to display all git actions
-      - q :: quit the Magit status window
-      - s :: git add
-      - b b :: git checkout <branch>
-      - k :: git checkout <file>
-      - c c :: git commit
-        - C-x s and C-c :: save and apply commit
-        - a :: git commit --amend
-      - P p :: git push
-      - F p :: git pull
-      - g :: refresh Magit window
-      - C-c M-g :: open common git shortcuts
-        - s :: stage current buffer
-        - c :: commit current buffer
-        - b :: show git blame on the current buffer
-          - C-RET :: opens the actual file in the diff window
+- [[https://magit.vc/][magit]] :: a complete text-based user interface to Git.
+  - C-x g ? :: Git status then press =?= to display all git actions
+  - q :: quit the Magit status window
+  - s :: git add
+  - b b :: git checkout <branch>
+  - k :: git checkout <file>
+  - c c :: git commit
+    - C-x s and C-c :: save and apply commit
+    - a :: git commit --amend
+  - P p :: git push
+  - F p :: git pull
+  - g :: refresh Magit window
+  - C-c M-g :: open common git shortcuts
+    - s :: stage current buffer
+    - c :: commit current buffer
+    - b :: show git blame on the current buffer
+      - C-RET :: opens the actual file in the diff window
 
 *** development
-    - [[https://github.com/auto-complete/auto-complete][auto-complete]] :: provides auto-completion
-    - [[https://github.com/aki2o/org-ac][org-ac]] :: provides auto-completion on org-mode
-    - [[https://web-mode.org/][web-mode]] :: major mode for editing web templates and CSS files
-    - [[https://github.com/mooz/js2-mode][js2-mode]] :: improved JavaScript editing
-    - [[https://github.com/ternjs/tern][tern-mode]] :: Javascript code analyzer (requires to run =npm install= on =pkgs/tern=)
-    - [[https://github.com/jjuliano/prettier-rc-emacs][prettier-rc]] :: auto beautify both HTML & JS files on save (per project, using local rc files), requires =prettier= to be installed via =npm= or package manager.
-    - [[https://github.com/jjuliano/prettier-rc-emacs][eslint-rc]] :: apply ESLint rules on save (per project, using local rc files), requires =eslint= to be installed via =npm= or package manager.
-    - [[https://github.com/ananthakumaran/tide][tide]] :: TypeScript IDE for Emacs, pre-configured for =company= mode
-    - [[https://github.com/codesuki/add-node-modules-path][add-node-modules-path]] :: add the per project's =node_modules/.bin/= to the =exec-path=
-    - [[https://github.com/wbolster/emacs-direnv][emacs-direnv]] :: load =.env= files inside Emacs
-    - [[https://github.com/purcell/emacs-hcl-mode][emacs-hcl-mode]] :: HCL minor mode editing
-      - [[https://github.com/emacsorphanage/terraform-mode][terraform-mode]] :: major mode for viewing Terraform files
+- [[https://github.com/auto-complete/auto-complete][auto-complete]] :: provides auto-completion
+- [[https://github.com/aki2o/org-ac][org-ac]] :: provides auto-completion on org-mode
+- [[https://web-mode.org/][web-mode]] :: major mode for editing web templates and CSS files
+- [[https://github.com/mooz/js2-mode][js2-mode]] :: improved JavaScript editing
+- [[https://github.com/ternjs/tern][tern-mode]] :: Javascript code analyzer (requires to run =npm install= on =pkgs/tern=)
+- [[https://github.com/jjuliano/prettier-rc-emacs][prettier-rc]] :: auto beautify both HTML & JS files on save (per project, using local rc files), requires =prettier= to be installed via =npm= or package manager.
+- [[https://github.com/jjuliano/prettier-rc-emacs][eslint-rc]] :: apply ESLint rules on save (per project, using local rc files), requires =eslint= to be installed via =npm= or package manager.
+- [[https://github.com/ananthakumaran/tide][tide]] :: TypeScript IDE for Emacs, pre-configured for =company= mode
+- [[https://github.com/codesuki/add-node-modules-path][add-node-modules-path]] :: add the per project's =node_modules/.bin/= to the =exec-path=
+- [[https://github.com/wbolster/emacs-direnv][emacs-direnv]] :: load =.env= files inside Emacs
+- [[https://github.com/purcell/emacs-hcl-mode][emacs-hcl-mode]] :: HCL minor mode editing
+  - [[https://github.com/emacsorphanage/terraform-mode][terraform-mode]] :: major mode for viewing Terraform files
 
 *** code navigation
-    - [[https://github.com/jacktasia/dumb-jump][dumb-jump]] :: jump to definition, requires =ag= or =grep= (pre-configured)
-      - M-. :: jump to definition
-      - M-, :: jump to next definition
+- [[https://github.com/jacktasia/dumb-jump][dumb-jump]] :: jump to definition, requires =ag= or =grep= (pre-configured)
+  - M-. :: jump to definition
+  - M-, :: jump to next definition
 
 *** spell check
-    - [[https://github.com/redguardtoo/wucuo][wucuo]] :: provides a fast spell checking using built-in Flyspell library, if found, it will use this library instead.
-    - [[https://github.com/xuchunyang/flyspell-popup][flyspell-popup]] :: provides pop-up menu selection on a wrong spelled word.
-      - C-; :: display the pop-up menu
+- [[https://github.com/redguardtoo/wucuo][wucuo]] :: provides a fast spell checking using built-in Flyspell library, if found, it will use this library instead.
+- [[https://github.com/xuchunyang/flyspell-popup][flyspell-popup]] :: provides pop-up menu selection on a wrong spelled word.
+  - C-; :: display the pop-up menu
 
 *** grammar check
-    - [[https://github.com/mhayashi1120/Emacs-langtool][langtool]] :: provides an Emacs interface to =LanguageTool= (pre-configured)
-      - Download the desktop version of LanguageTool from [[https://languagetool.org/]].
-      - Modify the =config/00-globals.el= to point to your =languagetool-commandline.jar=
-      - Change the default language from =en-US= to your preferred locale
-      - Keystrokes
-        - C-x 4w :: check spelling and grammar
-        - C-x 4W :: end all check
-        - C-x 4l :: switch default language
-        - C-x 44 :: show message at point
-        - C-x 4c :: correct buffer
+- [[https://github.com/mhayashi1120/Emacs-langtool][langtool]] :: provides an Emacs interface to =LanguageTool= (pre-configured)
+  - Download the desktop version of LanguageTool from [[https://languagetool.org/]].
+  - Modify the =config/00-globals.el= to point to your =languagetool-commandline.jar=
+  - Change the default language from =en-US= to your preferred locale
+  - Keystrokes
+    - C-x 4w :: check spelling and grammar
+    - C-x 4W :: end all check
+    - C-x 4l :: switch default language
+    - C-x 44 :: show message at point
+    - C-x 4c :: correct buffer
 
 *** code syntax check
-    - [[https://www.flycheck.org/][flycheck]] :: code syntax checking for Emacs (pre-configured)
-      - install the supported flycheck supported [[https://www.flycheck.org/en/latest/languages.html#flycheck-languages][languages]].
-      - Keystrokes
-        - C-c ! l :: pop-up list of all errors in the current buffer
-        - C-c ! n and C-c ! p ::  next/previous errors in the current buffer
-        - C-c ! v :: show current setup on buffer
+- [[https://www.flycheck.org/][flycheck]] :: code syntax checking for Emacs (pre-configured)
+  - install the supported flycheck supported [[https://www.flycheck.org/en/latest/languages.html#flycheck-languages][languages]].
+  - Keystrokes
+    - C-c ! l :: pop-up list of all errors in the current buffer
+    - C-c ! n and C-c ! p ::  next/previous errors in the current buffer
+    - C-c ! v :: show current setup on buffer
 
 *** markdown-mode
-    - [[https://github.com/jrblevin/markdown-mode][markdown-mode]] :: markdown-mode using =multimarkdown= binary (pre-configured)
-      - Install =multimarkdown=.
-      - Note to disable =zoom-mode= when using live preview.
-      - Keystrokes
-        - C-c C-c l :: live-mode using eww buffer
-        - C-c C-c m :: preview raw HTML on buffer
-        - C-c C-c p :: preview on the browser
+- [[https://github.com/jrblevin/markdown-mode][markdown-mode]] :: markdown-mode using =multimarkdown= binary (pre-configured)
+  - Install =multimarkdown=.
+  - Note to disable =zoom-mode= when using live preview.
+  - Keystrokes
+    - C-c C-c l :: live-mode using eww buffer
+    - C-c C-c m :: preview raw HTML on buffer
+    - C-c C-c p :: preview on the browser
 
 *** code syntax highlighting
-    - [[https://github.com/gpoore/minted][minted]] :: built-in code highlighting for LaTeX
-      - Install =Pygments= (i.e. pip install Pygments)
-      - add =#+ATTR_LATEX: :options frame=single= and =#+LaTeX_HEADER: \usepackage{minted}= on top of org-mode file
+- [[https://github.com/gpoore/minted][minted]] :: built-in code highlighting for LaTeX
+  - Install =Pygments= (i.e. pip install Pygments)
+  - add =#+ATTR_LATEX: :options frame=single= and =#+LaTeX_HEADER: \usepackage{minted}= on top of org-mode file
 
 *** structural templates
-    - [[https://orgmode.org/manual/Structure-Templates.html][org-tempo]] :: required to support structural template via keyboard shortcut.
-      - <s [TAB] :: insert a new inline =#+BEGIN_SRC...#+END_SRC= line.
-      - C-c C-' :: creates a new window for editing the inline code.
+- [[https://orgmode.org/manual/Structure-Templates.html][org-tempo]] :: required to support structural template via keyboard shortcut.
+  - <s [TAB] :: insert a new inline =#+BEGIN_SRC...#+END_SRC= line.
+  - C-c C-' :: creates a new window for editing the inline code.
 
 *** minibuffer information display
-    - [[https://github.com/justbur/emacs-which-key][emacs-which-key]] :: displays keybinding on minibuffer
-    - [[https://github.com/minad/vertico][vertico]] :: vertical completion on minibuffer
-    - [[https://github.com/minad/marginalia.git][marginalia]] :: provides more useful info on minibuffer completion
-    - [[https://github.com/oantolin/embark.git][embark]] :: provides actionable items on the minibuffer
-    - [[https://github.com/oantolin/orderless.git][orderless]] :: regexp support for minibuffer matching
-    - [[https://github.com/minad/consult][consult]] :: search and navigation command
-    - [[https://github.com/company-mode/company-mode][company-mode]] :: modular in-buffer completion
+- [[https://github.com/justbur/emacs-which-key][emacs-which-key]] :: displays keybinding on minibuffer
+- [[https://github.com/minad/vertico][vertico]] :: vertical completion on minibuffer
+- [[https://github.com/minad/marginalia.git][marginalia]] :: provides more useful info on minibuffer completion
+- [[https://github.com/oantolin/embark.git][embark]] :: provides actionable items on the minibuffer
+- [[https://github.com/oantolin/orderless.git][orderless]] :: regexp support for minibuffer matching
+- [[https://github.com/minad/consult][consult]] :: search and navigation command
+- [[https://github.com/company-mode/company-mode][company-mode]] :: modular in-buffer completion
 
 *** themes
-    - [[https://github.com/kborling/uwu-theme][uwu-theme]] :: default dark theme
-    - [[https://github.com/arcticicestudio/nord-emacs][nord-emacs]] :: nord dark theme
-    - [[https://github.com/SFTtech/starlit-emacs][starlit-emacs]] :: starlit dark theme
-    - [[https://github.com/WJCFerguson/emacs-faff-theme][faff-theme]] :: faff light theme
+- [[https://github.com/kborling/uwu-theme][uwu-theme]] :: default dark theme
+- [[https://github.com/arcticicestudio/nord-emacs][nord-emacs]] :: nord dark theme
+- [[https://github.com/SFTtech/starlit-emacs][starlit-emacs]] :: starlit dark theme
+- [[https://github.com/WJCFerguson/emacs-faff-theme][faff-theme]] :: faff light theme
 
 ** Font size
 
-   Text size is automatically calculated using the [[https://github.com/WJCFerguson/textsize][textsize]] package. To override
-   the default text size, type =M-x customize-group= then =textsize=. Then
-   change the default text size point.
+Text size is automatically calculated using the [[https://github.com/WJCFerguson/textsize][textsize]] package. To override
+the default text size, type =M-x customize-group= then =textsize=. Then
+change the default text size point.
 
 ** Overrides and personal configurations
 
-   Settings can be overridden by creating the elisp file in the =personal/=
-   folder. All configurations on this folder will be loaded right after the
-   initialization of the configurations and packages is completed, however,
-   appending =pre=, i.e. =pre-<file>.el= on the config file will preload the
-   file.
+Settings can be overridden by creating the elisp file in the =personal/=
+folder. All configurations on this folder will be loaded right after the
+initialization of the configurations and packages is completed, however,
+appending =pre=, i.e. =pre-<file>.el= on the config file will preload the
+file.
 
-   All overrides and personal configurations in the =personal/*.el= folder is
-   added to =.gitignore= file, to avoid committing any personal information in
-   VC.
+All overrides and personal configurations in the =personal/*.el= folder is
+added to =.gitignore= file, to avoid committing any personal information in
+VC.
 
 ** Default File Locations
 
-   All personal configurations, org-notes, backups and auto-saves are stored in
-   the =~/Documents/Emacs/= directory. Those files should not be committed to
-   GIT, but they should be managed via your file-sync utility (i.e. iCloud,
-   Dropbox, etc.).
+All personal configurations, org-notes, backups and auto-saves are stored in
+the =~/Documents/Emacs/= directory. Those files should not be committed to
+GIT, but they should be managed via your file-sync utility (i.e. iCloud,
+Dropbox, etc.).
 
-   Package configs and variable files are stored in =~/Documents/Emacs/config/=
-   and =~/Documents/Emacs/data/= respectively.
+Package configs and variable files are stored in =~/Documents/Emacs/config/=
+and =~/Documents/Emacs/data/= respectively.
 
-   Org workdir are set to =~/Documents/Emacs/org/=.
+Org workdir are set to =~/Documents/Emacs/org/=.
 
-   However, you can override it by creating a personal config file in the
-   =personal/= folder.
+However, you can override it by creating a personal config file in the
+=personal/= folder.
 
-   For example, create a file =~/.emacs.d/personal/org.el= which contains the
-   following overrides.
+For example, create a file =~/.emacs.d/personal/org.el= which contains the
+following overrides.
 
-   #+BEGIN_SRC elisp
-     (setq org-directory "~/Emacs/org")
-     (setq org-mobile-directory (expand-file-name "~/Emacs/mobile"))
-   #+END_SRC
+#+BEGIN_SRC elisp
+  (setq org-directory "~/Emacs/org")
+  (setq org-mobile-directory (expand-file-name "~/Emacs/mobile"))
+#+END_SRC
 
 ** Behavior
 
-   On startup, Emacs will present this =README.org= document.
+On startup, Emacs will present this =README.org= document.
 
-   The default Emacs =pulse.el= is pre-configured to provide visual feedback
-   on the current line when switching buffers.
+The default Emacs =pulse.el= is pre-configured to provide visual feedback
+on the current line when switching buffers.
 
-   Buffers are automatically-sized using =zoom= when created.
+Buffers are automatically-sized using =zoom= when created.
 
-   Emoji display support is handled via =unicode-fonts= package.
+Emoji display support is handled via =unicode-fonts= package.
 
 ** Window Transparency Mode
 
-   Window transparency can be enabled by defining =transparent-windows-mode=
-   variable to =t=.
+Window transparency can be enabled by defining =transparent-windows-mode=
+variable to =t=.
 
-   For example, if you create a =personal/pre-variables.el= file with the
-   content =(setq transparent-windows-mode t)=, this will turn transparency mode
-   on.
+For example, if you create a =personal/pre-variables.el= file with the
+content =(setq transparent-windows-mode t)=, this will turn transparency mode
+on.
 
 ** Workspace
 
-   This configuration uses [[https://github.com/nex3/perspective-el][perspective-el]] for managing and switching to
-   different workspace.
+This configuration uses [[https://github.com/nex3/perspective-el][perspective-el]] for managing and switching to
+different workspace.
 
-   Initially, workspace are numbered from 0 to 5. The default workspace is 0.
+Initially, workspace are numbered from 0 to 5. The default workspace is 0.
 
-   To switch to a workspace, type =C-M-<0 to 5>=.
+To switch to a workspace, type =C-M-<0 to 5>=.
 
-   - C-x x ? :: show persp-mode keys
-   - C-x x s :: switch or create workspace
-   - C-x x n or C-c x p :: next/previous workspace
-   - C-x x c :: delete workspace
-   - C-x x r :: rename workspace
+- C-x x ? :: show persp-mode keys
+- C-x x s :: switch or create workspace
+- C-x x n or C-c x p :: next/previous workspace
+- C-x x c :: delete workspace
+- C-x x r :: rename workspace
 
 ** Commenting
 
-   Commenting and uncommenting a line is mapped to =CMD-/= or =S-/=.
+Commenting and uncommenting a line is mapped to =CMD-/= or =S-/=.
 
 ** Multiple select and edit
 
-   Here's the key-stroke to use the multiple select and edit feature.
+Here's the key-stroke to use the multiple select and edit feature.
 
-   - C-c C-SPC :: Select and edit leading edges
-   - C-c M-SPC :: Select and edit trailing edges
+- C-c C-SPC :: Select and edit leading edges
+- C-c M-SPC :: Select and edit trailing edges
 
 ** Sorting and deleting duplicate lines
 
-   - =CMD-[= or =S-[= :: To sort a selection
-   - =CMD-]= or =S-]= :: To delete duplicates from selected lines
+- =CMD-[= or =S-[= :: To sort a selection
+- =CMD-]= or =S-]= :: To delete duplicates from selected lines
 
 ** Themes and Appearance
 
-   Themes can be changed via =M-x load-theme=, or modifying the
-   =config/02-editor.el= file.
+Themes can be changed via =M-x load-theme=, or modifying the
+=config/02-editor.el= file.
 
-   #+BEGIN_SRC elisp
-     (load-theme 'uwu t t)
-     (enable-theme 'uwu)
-   #+END_SRC
+#+BEGIN_SRC elisp
+  (load-theme 'uwu t t)
+  (enable-theme 'uwu)
+#+END_SRC
 
 ** GTD+Zettelkasten org-mode files
-   I created [[https://github.com/jjuliano/practical.org.el][practical.org.el]] GTD+Zettelkasten configuration and presets for
-   managing my tasks, notes, routines, habits and agenda. All the org files
-   should be put relative to your =org-directory= path. The plugin has
-   pre-configured org-files by default which is included in the repository
-   under the =files/= folder.
+I created [[https://github.com/jjuliano/practical.org.el][practical.org.el]] GTD+Zettelkasten configuration and presets for
+managing my tasks, notes, routines, habits and agenda. All the org files
+should be put relative to your =org-directory= path. The plugin has
+pre-configured org-files by default which is included in the repository
+under the =files/= folder.
 
-   Please refer to the [[https://github.com/jjuliano/practical.org.el#installation][practical.org.el's installation instructions]].
+Please refer to the [[https://github.com/jjuliano/practical.org.el#installation][practical.org.el's installation instructions]].
 
 ** Org-mode GTD+Zettelkasten Key Bindings
 
-   Aside from the classic default keys. Here's important key-strokes for using
-   the =practical.org.el= presets.
+Aside from the classic default keys. Here's important key-strokes for using
+the =practical.org.el= presets.
 
-   | Command                                       | Bindings             | Mode + where         |
-   |-----------------------------------------------+----------------------+----------------------|
-   | Agenda                                        | *C-c a*              | any                  |
-   | Agenda for today                              | *C-c a a*            | any                  |
-   |                                               |                      |                      |
-   | Capture menu                                  | *C-c c*              | any                  |
-   | Add new inbox items (inbox.org)               | *C-c c i* or *C-c i* | any                  |
-   | Create new Scheduled agenda item (agenda.org) | *C-c c a*            | any                  |
-   | Create a new note entry (notes.org)           | *C-c c n*            | any                  |
-   | Create a note as a new org file               | *C-c c n* or *C-c b* | any                  |
-   |                                               |                      |                      |
-   | Add/Remove tag                                | *C-c C-c*            | org-mode on headline |
-   | Update progress indicator                     | *C-c C-c*            | org-mode on [/]      |
-   | Update all progress indicators                | *C-u C-c #*          | org-mode             |
-   | Enter estimated effort                        | *C-c C-x e*          | org-mode on headline |
-   | Refile section                                | *C-c C-w*            | org-mode on headline |
-   | Move to next TODO state                       | *S-right*            | org-mode on TODO     |
-   |                                               |                      |                      |
-   | Clock in                                      | *C-c C-x C-i*        | org-mode on headline |
-   | Clock out                                     | *C-c C-x C-o*        | org-mode on headline |
-   |                                               |                      |                      |
-   | Plain timestamp                               | *C-c .*              | org-mode             |
-   | Scheduled timestamp                           | *C-c s*              | org-mode             |
-   | Deadline timestamp                            | *C-c d*              | org-mode             |
-   | Inactive timestamp                            | *C-c !*              | org-mode             |
-   |                                               |                      |                      |
-   | Show all contacts                             | *C-c c C*            | any                  |
-   | Create a new contact                          | *C-c c c*            | any                  |
-   | Regexp search all contacts                    | *C-c c s*            | any                  |
-   |                                               |                      |                      |
-   | Create a new contact                          | *c*                  | bbdb-mode            |
-   | Edit contact                                  | *e*                  | bbdb-mode            |
-   | Insert a line                                 | *i*                  | bbdb-mode            |
-   | Copy the contact                              | *Cr*                 | bbdb-mode            |
-   | Save the contact                              | *s*                  | bbdb-mode            |
+| Command                                       | Bindings             | Mode + where         |
+|-----------------------------------------------+----------------------+----------------------|
+| Agenda                                        | *C-c a*              | any                  |
+| Agenda for today                              | *C-c a a*            | any                  |
+|                                               |                      |                      |
+| Capture menu                                  | *C-c c*              | any                  |
+| Add new inbox items (inbox.org)               | *C-c c i* or *C-c i* | any                  |
+| Create new Scheduled agenda item (agenda.org) | *C-c c a*            | any                  |
+| Create a new note entry (notes.org)           | *C-c c n*            | any                  |
+| Create a note as a new org file               | *C-c c n* or *C-c b* | any                  |
+|                                               |                      |                      |
+| Add/Remove tag                                | *C-c C-c*            | org-mode on headline |
+| Update progress indicator                     | *C-c C-c*            | org-mode on [/]      |
+| Update all progress indicators                | *C-u C-c #*          | org-mode             |
+| Enter estimated effort                        | *C-c C-x e*          | org-mode on headline |
+| Refile section                                | *C-c C-w*            | org-mode on headline |
+| Move to next TODO state                       | *S-right*            | org-mode on TODO     |
+|                                               |                      |                      |
+| Clock in                                      | *C-c C-x C-i*        | org-mode on headline |
+| Clock out                                     | *C-c C-x C-o*        | org-mode on headline |
+|                                               |                      |                      |
+| Plain timestamp                               | *C-c .*              | org-mode             |
+| Scheduled timestamp                           | *C-c s*              | org-mode             |
+| Deadline timestamp                            | *C-c d*              | org-mode             |
+| Inactive timestamp                            | *C-c !*              | org-mode             |
+|                                               |                      |                      |
+| Show all contacts                             | *C-c c C*            | any                  |
+| Create a new contact                          | *C-c c c*            | any                  |
+| Regexp search all contacts                    | *C-c c s*            | any                  |
+|                                               |                      |                      |
+| Create a new contact                          | *c*                  | bbdb-mode            |
+| Edit contact                                  | *e*                  | bbdb-mode            |
+| Insert a line                                 | *i*                  | bbdb-mode            |
+| Copy the contact                              | *Cr*                 | bbdb-mode            |
+| Save the contact                              | *s*                  | bbdb-mode            |
 
 ** Further Customizations
 
-   Some packages are easy to include in the configuration, while other packages
-   requires post-installation procedures. In those packages, it's recommended to
-   use [[https://elpa.gnu.org/][GNU ELPA]] and [[https://melpa.org/][MELPA]].
+Some packages are easy to include in the configuration, while other packages
+requires post-installation procedures. In those packages, it's recommended to
+use [[https://elpa.gnu.org/][GNU ELPA]] and [[https://melpa.org/][MELPA]].
 
-   The [[Packages][default packages]] includes a custom configuration that contains the basic
-   necessary settings to readily use it, you can modify the settings in the
-   =~/.emacs.d/config/01-packages.el= file.
+The [[Packages][default packages]] includes a custom configuration that contains the basic
+necessary settings to readily use it, you can modify the settings in the
+=~/.emacs.d/config/01-packages.el= file.
