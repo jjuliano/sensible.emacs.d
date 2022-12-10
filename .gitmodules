@@ -202,3 +202,6 @@
 [submodule "pkgs/compat-el"]
 	path = pkgs/compat-el
 	url = https://github.com/phikal/compat.el.git
+[submodule "pkgs/chatgpt-el"]
+	path = pkgs/chatgpt-el
+	url = https://github.com/joshcho/ChatGPT.el.git
