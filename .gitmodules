@@ -205,3 +205,12 @@
 [submodule "pkgs/chatgpt-el"]
 	path = pkgs/chatgpt-el
 	url = https://github.com/joshcho/ChatGPT.el.git
+[submodule "pkgs/epc"]
+	path = pkgs/epc
+	url = https://github.com/kiwanami/emacs-epc.git
+[submodule "pkgs/deferred"]
+	path = pkgs/deferred
+	url = https://github.com/kiwanami/emacs-deferred.git
+[submodule "pkgs/ctable"]
+	path = pkgs/ctable
+	url = https://github.com/kiwanami/emacs-ctable.git

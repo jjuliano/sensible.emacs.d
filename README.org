@@ -63,23 +63,23 @@ recommended to backup your previous Emacs directory.
 
 ** System packages
 
-In addition to the Emacs [[#packages][default packages]], you need to ensure the following
+In addition to the Emacs [[packages][default packages]], you need to ensure the following
 packages exists in your system, which can be installed via your operating
 system's package manager.
 
-- [[https://git-scm.com][git]] :: Used by Magit for [[#version-control][version control]].
-- [[https://github.com/ggreer/the_silver_searcher][ag]], rg, git grep or grep :: Used by Dumb-jump for [[#code-navigation][code navigation]] and recursive search in [[#project-management][project management]].
-- [[https://prettier.io/][prettier]] :: Used to prettify HTML & JS code upon save. See: [[#development][development]].
-- [[https://fletcherpenney.net/multimarkdown/][multimarkdown]] :: Used for [[#markdown-mode][markdown-mode]].
-- [[https://internal1.languagetool.org/snapshots/][LanguageTool]] :: Used for [[#grammar-check][grammar check]].
+- [[https://git-scm.com][git]] :: Used by Magit for [[version-control][version control]].
+- [[https://github.com/ggreer/the_silver_searcher][ag]], rg, git grep or grep :: Used by Dumb-jump for [[code-navigation][code navigation]] and recursive search in [[project-management][project management]]
+- [[https://prettier.io/][prettier]] :: Used to prettify HTML & JS code upon save. See: [[development][development]].
+- [[https://fletcherpenney.net/multimarkdown/][multimarkdown]] :: Used for [[markdown-mode][markdown-mode]].
+- [[https://internal1.languagetool.org/snapshots/][LanguageTool]] :: Used for [[grammar-check][grammar check]].
   - Preconfigured to look in =~/.emacs.d/data/LanguageTool/languagetool-commandline.jar=, see =00-globals.el=.
-- [[https://pygments.org/][Pygments]] :: Used for [[#code-syntax-highlighting][code syntax highlighting]].
-  - [[https://tug.org/texlive/][pdflatex]] :: [[#code-syntax-highlighting][code syntax highlighting]] when exporting to PDF from LaTeX.
-- [[https://cmake.org/][cmake]] :: Used by [[#term][terminal emulator]].
+- [[https://pygments.org/][Pygments]] :: Used for [[code-syntax-highlighting][code syntax highlighting]].
+  - [[https://tug.org/texlive/][pdflatex]] :: [[code-syntax-highlighting][code syntax highlighting]] when exporting to PDF from LaTeX.
+- [[https://cmake.org/][cmake]] :: Used by [[term][terminal emulator]].
   - [[https://github.com/akermu/emacs-libvterm/tree/master/etc][shell-side configurations]] :: shell-side configs needed to be added to .zshrc or .bashrc
-- [[http://aspell.net][aspell]] :: Used for [[#spell-check][spell checking]].
-- [[http://ctags.sourceforge.net][Exuberant CTAGS]] :: Used for indexing symbols on the current project in [[#project-management][project management]].
-- [[https://jdk.java.net/][OpenJDK]] :: used by [[https://languagetool.org/][languagetool]] for the [[#grammar-check][grammar check]] functionality.
+- [[http://aspell.net][aspell]] :: Used for [[spell-check][spell checking]].
+- [[http://ctags.sourceforge.net][Exuberant CTAGS]] :: Used for indexing symbols on the current project in [[project-management][project management]].
+- [[https://jdk.java.net/][OpenJDK]] :: used by [[https://languagetool.org/][languagetool]] for the [[grammar-check][grammar check]] functionality.
 
 ** Upgrade
 
@@ -112,6 +112,16 @@ managed by =git submodules=.
   - [[https://github.com/rolandwalker/ucs-utils][ucs-utils]] :: Utilities for Unicode characters in Emacs
   - [[https://github.com/rolandwalker/list-utils][list-utils]] :: List-manipulation utility functions for Emacs
 
+*** artificial-intelligence
+- [[https://github.com/joshcho/ChatGPT.el][ChatGPT.el]] :: ask an AI for any topics or to generate documentation, suggest code or improve your code. (see [[Setting Up ChatGPT]] for instructions on how to setup ChatGPT for Emacs.)
+  - C-c q :: opens the ChatGPT prompt where you can freely type your questions or inquiry.
+    - with selected text :: brings up the following functions
+      - doc :: generate a documentation of the selected text/code
+      - improve :: suggest improvement to the selected text/code
+      - bug :: find a bug on the selected text/code
+      - understand :: explain the selected text/code
+      - custom :: tell ChatGPT what do do with the selected text, see [[https://github.com/f/awesome-chatgpt-prompts]] for sample.
+
 *** project-management
 - [[https://github.com/bbatsov/projectile][projectile]] :: integrated project management for Emacs
   - C-c p :: opens the projectile command menu
@@ -121,13 +131,13 @@ managed by =git submodules=.
     - p :: opens an existing project
     - e :: switch to a recently opened file
     - s s :: search current project using [[https://github.com/ggreer/the_silver_searcher][ag]]
-    - x v :: open a [[#term][vterm terminal]] on the current buffer directory
+    - x v :: open a [[term][vterm terminal]] on the current buffer directory
     - R :: regenerate searchable tags on the current project
       - j :: find a tag on the current project
     - ! :: run a shell command on the current buffer directory
     - & :: run a background shell process command on the current buffer directory
     - S :: save all buffers in the current project
-    - v :: opens magit (see [[#version-control][version control]])
+    - v :: opens magit (see [[version-control][version control]])
   - C-u C-c p f :: force projectile to re-initialize project
 
 *** term
@@ -383,6 +393,22 @@ the =practical.org.el= presets.
 | Insert a line                                 | *i*                  | bbdb-mode            |
 | Copy the contact                              | *Cr*                 | bbdb-mode            |
 | Save the contact                              | *s*                  | bbdb-mode            |
+
+** Setting Up ChatGPT
+
+Here's a suggestion on how to install ChatGPT in your local system.
+1. Setup [[https://github.com/pyenv/pyenv][pyenv]] in your local machine and install =Python=
+   - Once [[https://github.com/pyenv/pyenv][pyenv]] is installed, install the latest Python version
+     - e.g. =pyenv install 3.11.1=
+   - Next reference the latest Python version as your default =python= bin
+     - e.g. =pyenv global 3.11.1=
+       - With =pyenv= installed, the =pip3= becomes =pip= and =python3= becomes =python=
+   - Finally, add the =pyenv= init shell variables to your shell
+     - See =pyenv init= for instructions
+2. Install local ChatGPT Python libraries and dependencies
+   - =pip install revChatGPT --upgrade=
+   - =pip install epc=
+   - Next, create a =~/config.json= file with your ChatGPT authentication. (See https://github.com/acheong08/ChatGPT/wiki/Setup for instructions)
 
 ** Further Customizations
 
