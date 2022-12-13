@@ -406,9 +406,11 @@ Here's a suggestion on how to install ChatGPT in your local system.
    - Finally, add the =pyenv= init shell variables to your shell
      - See =pyenv init= for instructions
 2. Install local ChatGPT Python libraries and dependencies
-   - =pip install revChatGPT --upgrade=
    - =pip install epc=
-   - Next, create a =~/config.json= file with your ChatGPT authentication. (See https://github.com/acheong08/ChatGPT/wiki/Setup for instructions)
+   - =pip install git+https://github.com/mmabrouk/chatgpt-wrapper=
+   - =pip install pytest-playwright=
+   - Next, execute =playwright install=, which will install a headless browser for ChatGPT authentication. It is important that you exit any existing browser instance that playwright is using. (i.e. Firefox)
+   - Finally, run =chatgpt install=, which will bring up the ChatGPT interactive prompt. And just restart Emacs.
 
 ** Further Customizations
 
