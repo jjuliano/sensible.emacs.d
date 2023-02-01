@@ -17,6 +17,6 @@
 
 ;; language-tool
 (setq-default langtool-language-tool-jar (expand-file-name
-                                          "data/LanguageTool/languagetool-commandline.jar"
-                                          user-emacs-directory))
+                 "data/LanguageTool/languagetool-commandline.jar"
+                 user-emacs-directory))
 (setq-default langtool-default-language "en-US")

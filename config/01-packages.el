@@ -591,6 +591,7 @@
 ;; ChatGPT.el
 (cond ((locate-library "chatgpt")
        (progn
+         (setq python-interpreter "python")
          (setq chatgpt-repo-path (expand-file-name "pkgs/chatgpt-el/" user-emacs-directory))
          (require 'chatgpt)
          (global-set-key (kbd "C-c q") 'chatgpt-query))))
