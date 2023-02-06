@@ -471,7 +471,11 @@
 
 ;; Magit
 (cond ((locate-library "magit")
-       (require 'magit)))
+       (progn
+       ;; Compat
+       (cond ((locate-library "compat")
+              (require 'compat)
+              (require 'magit))))))
 
 ;; improve vterm color mode
 (cond ((locate-library "eterm-256color")
