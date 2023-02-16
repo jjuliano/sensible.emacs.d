@@ -32,7 +32,7 @@ This configuration tries not to be a one-size-fits all configuration, but it
 tries to be an Emacs configuration that suits most of the developers, and I
 keep it personable, clean, easy and sensible.
 
-** Files
+* Files
 
 The files are structured in the following tree.
 
@@ -50,7 +50,7 @@ The files are structured in the following tree.
   └── themes/                   // themes
 #+END_SRC
 
-** Installation
+* Installation
 
 To install, clone the repository to a =.emacs.d= directory. Note that is
 recommended to backup your previous Emacs directory.
@@ -61,7 +61,7 @@ recommended to backup your previous Emacs directory.
   $ cd .emacs.d && git submodule update --init --recursive
 #+END_SRC
 
-** System packages
+* System packages
 
 In addition to the Emacs [[packages][default packages]], you need to ensure the following
 packages exists in your system, which can be installed via your operating
@@ -81,7 +81,7 @@ system's package manager.
 - [[http://ctags.sourceforge.net][Exuberant CTAGS]] :: Used for indexing symbols on the current project in [[project-management][project management]].
 - [[https://jdk.java.net/][OpenJDK]] :: used by [[https://languagetool.org/][languagetool]] for the [[grammar-check][grammar check]] functionality.
 
-** Upgrade
+* Upgrade
 
 To upgrade your local configuration and it's submodules type:
 
@@ -90,7 +90,7 @@ To upgrade your local configuration and it's submodules type:
   $ git submodule update --remote --merge
 #+END_SRC
 
-** Packages
+* Packages
 
 It uses the following packages by default, the individual elisp packages are
 source directly from the website, while other packages are hosted and are
@@ -112,7 +112,7 @@ managed by =git submodules=.
   - [[https://github.com/rolandwalker/ucs-utils][ucs-utils]] :: Utilities for Unicode characters in Emacs
   - [[https://github.com/rolandwalker/list-utils][list-utils]] :: List-manipulation utility functions for Emacs
 
-*** artificial-intelligence
+** artificial-intelligence
 - [[https://github.com/joshcho/ChatGPT.el][ChatGPT.el]] :: ask an AI for any topics or to generate documentation, suggest code or improve your code. (see [[Setting Up ChatGPT]] for instructions on how to setup ChatGPT for Emacs.)
   - C-c q :: opens the ChatGPT prompt where you can freely type your questions or inquiry.
     - with selected text :: brings up the following functions
@@ -122,7 +122,7 @@ managed by =git submodules=.
       - understand :: explain the selected text/code
       - custom :: tell ChatGPT what do do with the selected text, see [[https://github.com/f/awesome-chatgpt-prompts]] for sample.
 
-*** project-management
+** project-management
 - [[https://github.com/bbatsov/projectile][projectile]] :: integrated project management for Emacs
   - C-c p :: opens the projectile command menu
     - 0 :: opens the projectile multiview
@@ -140,12 +140,12 @@ managed by =git submodules=.
     - v :: opens magit (see [[version-control][version control]])
   - C-u C-c p f :: force projectile to re-initialize project
 
-*** term
+** term
 - [[https://github.com/akermu/emacs-libvterm][vterm]] :: terminal emulator based on libvterm C library
   - M-x vterm :: runs the terminal
     - C-c C-t :: turns-on =vterm-copy-mode= to treat the terminal like a text-file
 
-*** version-control
+** version-control
 - [[https://magit.vc/][magit]] :: a complete text-based user interface to Git.
   - C-x g ? :: Git status then press =?= to display all git actions
   - q :: quit the Magit status window
@@ -164,7 +164,7 @@ managed by =git submodules=.
     - b :: show git blame on the current buffer
       - C-RET :: opens the actual file in the diff window
 
-*** development
+** development
 - [[https://github.com/auto-complete/auto-complete][auto-complete]] :: provides auto-completion
 - [[https://github.com/aki2o/org-ac][org-ac]] :: provides auto-completion on org-mode
 - [[https://web-mode.org/][web-mode]] :: major mode for editing web templates and CSS files
@@ -178,17 +178,17 @@ managed by =git submodules=.
 - [[https://github.com/purcell/emacs-hcl-mode][emacs-hcl-mode]] :: HCL minor mode editing
   - [[https://github.com/emacsorphanage/terraform-mode][terraform-mode]] :: major mode for viewing Terraform files
 
-*** code navigation
+** code navigation
 - [[https://github.com/jacktasia/dumb-jump][dumb-jump]] :: jump to definition, requires =ag= or =grep= (pre-configured)
   - M-. :: jump to definition
   - M-, :: jump to next definition
 
-*** spell check
+** spell check
 - [[https://github.com/redguardtoo/wucuo][wucuo]] :: provides a fast spell checking using built-in Flyspell library, if found, it will use this library instead.
 - [[https://github.com/xuchunyang/flyspell-popup][flyspell-popup]] :: provides pop-up menu selection on a wrong spelled word.
   - C-; :: display the pop-up menu
 
-*** grammar check
+** grammar check
 - [[https://github.com/mhayashi1120/Emacs-langtool][langtool]] :: provides an Emacs interface to =LanguageTool= (pre-configured)
   - Download the desktop version of LanguageTool from [[https://languagetool.org/]].
   - Modify the =config/00-globals.el= to point to your =languagetool-commandline.jar=
@@ -200,7 +200,7 @@ managed by =git submodules=.
     - C-x 44 :: show message at point
     - C-x 4c :: correct buffer
 
-*** code syntax check
+** code syntax check
 - [[https://www.flycheck.org/][flycheck]] :: code syntax checking for Emacs (pre-configured)
   - install the supported flycheck supported [[https://www.flycheck.org/en/latest/languages.html#flycheck-languages][languages]].
   - Keystrokes
@@ -208,7 +208,7 @@ managed by =git submodules=.
     - C-c ! n and C-c ! p ::  next/previous errors in the current buffer
     - C-c ! v :: show current setup on buffer
 
-*** markdown-mode
+** markdown-mode
 - [[https://github.com/jrblevin/markdown-mode][markdown-mode]] :: markdown-mode using =multimarkdown= binary (pre-configured)
   - Install =multimarkdown=.
   - Note to disable =zoom-mode= when using live preview.
@@ -217,17 +217,17 @@ managed by =git submodules=.
     - C-c C-c m :: preview raw HTML on buffer
     - C-c C-c p :: preview on the browser
 
-*** code syntax highlighting
+** code syntax highlighting
 - [[https://github.com/gpoore/minted][minted]] :: built-in code highlighting for LaTeX
   - Install =Pygments= (i.e. pip install Pygments)
   - add =#+ATTR_LATEX: :options frame=single= and =#+LaTeX_HEADER: \usepackage{minted}= on top of org-mode file
 
-*** structural templates
+** structural templates
 - [[https://orgmode.org/manual/Structure-Templates.html][org-tempo]] :: required to support structural template via keyboard shortcut.
   - <s [TAB] :: insert a new inline =#+BEGIN_SRC...#+END_SRC= line.
   - C-c C-' :: creates a new window for editing the inline code.
 
-*** minibuffer information display
+** minibuffer information display
 - [[https://github.com/justbur/emacs-which-key][emacs-which-key]] :: displays keybinding on minibuffer
 - [[https://github.com/minad/vertico][vertico]] :: vertical completion on minibuffer
 - [[https://github.com/minad/marginalia.git][marginalia]] :: provides more useful info on minibuffer completion
@@ -236,19 +236,19 @@ managed by =git submodules=.
 - [[https://github.com/minad/consult][consult]] :: search and navigation command
 - [[https://github.com/company-mode/company-mode][company-mode]] :: modular in-buffer completion
 
-*** themes
+** themes
 - [[https://github.com/kborling/uwu-theme][uwu-theme]] :: default dark theme
 - [[https://github.com/arcticicestudio/nord-emacs][nord-emacs]] :: nord dark theme
 - [[https://github.com/SFTtech/starlit-emacs][starlit-emacs]] :: starlit dark theme
 - [[https://github.com/WJCFerguson/emacs-faff-theme][faff-theme]] :: faff light theme
 
-** Font size
+* Font size
 
 Text size is automatically calculated using the [[https://github.com/WJCFerguson/textsize][textsize]] package. To override
 the default text size, type =M-x customize-group= then =textsize=. Then
 change the default text size point.
 
-** Overrides and personal configurations
+* Overrides and personal configurations
 
 Settings can be overridden by creating the elisp file in the =personal/=
 folder. All configurations on this folder will be loaded right after the
@@ -260,7 +260,7 @@ All overrides and personal configurations in the =personal/*.el= folder is
 added to =.gitignore= file, to avoid committing any personal information in
 VC.
 
-** Default File Locations
+* Default File Locations
 
 All personal configurations, org-notes, backups and auto-saves are stored in
 the =~/Documents/Emacs/= directory. Those files should not be committed to
@@ -283,7 +283,7 @@ following overrides.
   (setq org-mobile-directory (expand-file-name "~/Emacs/mobile"))
 #+END_SRC
 
-** Behavior
+* Behavior
 
 On startup, Emacs will present this =README.org= document.
 
@@ -294,7 +294,7 @@ Buffers are automatically-sized using =zoom= when created.
 
 Emoji display support is handled via =unicode-fonts= package.
 
-** Window Transparency Mode
+* Window Transparency Mode
 
 Window transparency can be enabled by defining =transparent-windows-mode=
 variable to =t=.
@@ -303,7 +303,7 @@ For example, if you create a =personal/pre-variables.el= file with the
 content =(setq transparent-windows-mode t)=, this will turn transparency mode
 on.
 
-** Workspace
+* Workspace
 
 This configuration uses [[https://github.com/nex3/perspective-el][perspective-el]] for managing and switching to
 different workspace.
@@ -318,23 +318,23 @@ To switch to a workspace, type =C-M-<0 to 5>=.
 - C-x x c :: delete workspace
 - C-x x r :: rename workspace
 
-** Commenting
+* Commenting
 
 Commenting and uncommenting a line is mapped to =CMD-/= or =S-/=.
 
-** Multiple select and edit
+* Multiple select and edit
 
 Here's the key-stroke to use the multiple select and edit feature.
 
 - C-c C-SPC :: Select and edit leading edges
 - C-c M-SPC :: Select and edit trailing edges
 
-** Sorting and deleting duplicate lines
+* Sorting and deleting duplicate lines
 
 - =CMD-[= or =S-[= :: To sort a selection
 - =CMD-]= or =S-]= :: To delete duplicates from selected lines
 
-** Themes and Appearance
+* Themes and Appearance
 
 Themes can be changed via =M-x load-theme=, or modifying the
 =config/02-editor.el= file.
@@ -344,7 +344,7 @@ Themes can be changed via =M-x load-theme=, or modifying the
   (enable-theme 'uwu)
 #+END_SRC
 
-** GTD+Zettelkasten org-mode files
+* GTD+Zettelkasten org-mode files
 I created [[https://github.com/jjuliano/practical.org.el][practical.org.el]] GTD+Zettelkasten configuration and presets for
 managing my tasks, notes, routines, habits and agenda. All the org files
 should be put relative to your =org-directory= path. The plugin has
@@ -353,7 +353,7 @@ under the =files/= folder.
 
 Please refer to the [[https://github.com/jjuliano/practical.org.el#installation][practical.org.el's installation instructions]].
 
-** Org-mode GTD+Zettelkasten Key Bindings
+* Org-mode GTD+Zettelkasten Key Bindings
 
 Aside from the classic default keys. Here's important key-strokes for using
 the =practical.org.el= presets.
@@ -394,7 +394,7 @@ the =practical.org.el= presets.
 | Copy the contact                              | *Cr*                 | bbdb-mode            |
 | Save the contact                              | *s*                  | bbdb-mode            |
 
-** Setting Up ChatGPT
+* Setting Up ChatGPT
 
 Here's a suggestion on how to install ChatGPT in your local system.
 1. Setup [[https://github.com/pyenv/pyenv][pyenv]] in your local machine and install =Python=
@@ -412,7 +412,7 @@ Here's a suggestion on how to install ChatGPT in your local system.
    - Next, execute =playwright install=, which will install a headless browser for ChatGPT authentication. It is important that you exit any existing browser instance that playwright is using. (i.e. Firefox)
    - Finally, run =chatgpt install=, which will bring up the ChatGPT interactive prompt. And just restart Emacs.
 
-** Further Customizations
+* Further Customizations
 
 Some packages are easy to include in the configuration, while other packages
 requires post-installation procedures. In those packages, it's recommended to
