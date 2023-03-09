@@ -242,6 +242,8 @@
 ;; load node-modules/bin paths
 (cond ((locate-library "add-node-modules-path")
        (progn
+         (require 'add-node-modules-path)
+
          (eval-after-load 'js-mode
            '(add-hook 'js-mode-hook #'add-node-modules-path))
          (eval-after-load 'web-mode
@@ -460,6 +462,14 @@
          ;; enable typescript-tslint checker
          (flycheck-add-mode 'typescript-tslint 'web-mode)
 
+         (add-to-list 'auto-mode-alist '("\\.ts\\'" . web-mode))
+         (add-hook 'web-mode-hook
+                   (lambda ()
+                     (when (string-equal "ts" (file-name-extension buffer-file-name))
+                       (setup-tide-mode))))
+         ;; enable typescript-tslint checker
+         (flycheck-add-mode 'typescript-tslint 'web-mode)
+
          (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
          (add-hook 'web-mode-hook
                    (lambda ()
@@ -467,6 +477,7 @@
                        (setup-tide-mode))))
          ;; configure jsx-tide checker to run after your default jsx checker
          (flycheck-add-mode 'javascript-eslint 'web-mode)
+
          (flycheck-add-next-checker 'javascript-eslint 'jsx-tide 'append))))
 
 ;; Magit
