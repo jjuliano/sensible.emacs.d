@@ -1,5 +1,5 @@
 ;; fill-column
-(setq-default fill-column 80)
+(setq-default fill-column 120)
 
 ;; transparent-window mode
 (setq-default transparent-windows-mode nil)

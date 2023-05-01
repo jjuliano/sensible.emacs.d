@@ -78,6 +78,8 @@
 (setq window-resize-pixelwise t)
 (setq frame-resize-pixelwise t)
 
+(setq textsize--point-size 12)
+
 ;; Remember what files were last opened
 (recentf-mode t)
 
