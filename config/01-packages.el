@@ -483,10 +483,13 @@
 ;; Magit
 (cond ((locate-library "magit")
        (progn
-       ;; Compat
-       (cond ((locate-library "compat")
-              (require 'compat)
-              (require 'magit))))))
+         ;; Compat
+         (cond ((locate-library "compat")
+                (require 'compat)
+                (require 'magit)
+
+                (define-key magit-hunk-section-map (kbd "RET") 'magit-diff-visit-file-other-window)
+                (define-key magit-file-section-map (kbd "RET") 'magit-diff-visit-file-other-window))))))
 
 ;; improve vterm color mode
 (cond ((locate-library "eterm-256color")
