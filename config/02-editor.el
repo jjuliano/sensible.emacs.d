@@ -78,7 +78,11 @@
 (setq window-resize-pixelwise t)
 (setq frame-resize-pixelwise t)
 
-(setq textsize--point-size 12)
+;; Textsize
+(setq textsize--point-size 16)
+(global-set-key (kbd "C-=") 'textsize-increment)
+(global-set-key (kbd "C--") 'textsize-decrement)
+(global-set-key (kbd "C-0") 'textsize-reset)
 
 ;; Remember what files were last opened
 (recentf-mode t)
