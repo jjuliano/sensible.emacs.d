@@ -214,3 +214,6 @@
 [submodule "pkgs/ctable"]
 	path = pkgs/ctable
 	url = https://github.com/kiwanami/emacs-ctable.git
+[submodule "pkgs/polymode"]
+	path = pkgs/polymode
+	url = https://github.com/polymode/polymode.git
