@@ -217,3 +217,9 @@
 [submodule "pkgs/polymode"]
 	path = pkgs/polymode
 	url = https://github.com/polymode/polymode.git
+[submodule "pkgs/pcache-el"]
+	path = pkgs/pcache-el
+	url = https://github.com/sigma/pcache.git
+[submodule "pkgs/persistent-soft-el"]
+	path = pkgs/persistent-soft-el
+	url = https://github.com/rolandwalker/persistent-soft.git

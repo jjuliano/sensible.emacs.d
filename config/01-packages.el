@@ -60,6 +60,12 @@
                 (add-hook 'after-init-hook 'persp-setup)))
          (require 'no-littering))))
 
+;; persistent-soft
+(cond ((locate-library "persistent-soft")
+       (progn
+         (require 'pcache)
+         (require 'persistent-soft))))
+
 ;; company-mode
 (cond ((locate-library "company")
        (progn
