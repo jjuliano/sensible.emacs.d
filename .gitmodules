@@ -223,3 +223,12 @@
 [submodule "pkgs/persistent-soft-el"]
 	path = pkgs/persistent-soft-el
 	url = https://github.com/rolandwalker/persistent-soft.git
+[submodule "pkgs/inf-ruby"]
+	path = pkgs/inf-ruby
+	url = https://github.com/nonsequitur/inf-ruby.git
+[submodule "pkgs/yari"]
+	path = pkgs/yari
+	url = https://github.com/hron/yari.el.git
+[submodule "pkgs/yasnippet"]
+	path = pkgs/yasnippet
+	url = https://github.com/joaotavora/yasnippet.git

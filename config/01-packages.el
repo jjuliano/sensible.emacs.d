@@ -181,6 +181,11 @@
          (require 'dumb-jump)
          (add-hook 'xref-backend-functions #'dumb-jump-xref-activate))))
 
+;; yasnippet
+(cond ((locate-library "yasnippet")
+       (progn
+         (require 'ruby-mode))))
+
 ;; js2-mode
 (cond ((locate-library "js2-mode")
        (progn
@@ -347,7 +352,7 @@
            (call-interactively (if arg 'consult-file-externally 'find-file)))
 
          (define-key consult-narrow-map (vconcat consult-narrow-key "?")
-           #'consult-narrow-help)
+                     #'consult-narrow-help)
 
          (global-set-key (kbd "C-x C-f") 'consult-find-file)
 
@@ -563,15 +568,15 @@
            (require 'consult-projectile)
 
            (define-key projectile-command-map (kbd "0")
-             'consult-projectile)
+                       'consult-projectile)
            (define-key projectile-command-map (kbd "f")
-             'consult-projectile-find-file)
+                       'consult-projectile-find-file)
            (define-key projectile-command-map (kbd "D")
-             'consult-projectile-find-dir)
+                       'consult-projectile-find-dir)
            (define-key projectile-command-map (kbd "p")
-             'consult-projectile-switch-project)
+                       'consult-projectile-switch-project)
            (define-key projectile-command-map (kbd "e")
-             'consult-projectile-recentf)))))
+                       'consult-projectile-recentf)))))
 
 (cond ((locate-library "company-terraform")
        (with-eval-after-load 'company
@@ -619,3 +624,34 @@
          (setq chatgpt-repo-path (expand-file-name "pkgs/chatgpt-el/" user-emacs-directory))
          (require 'chatgpt)
          (global-set-key (kbd "C-c q") 'chatgpt-query))))
+
+;; Ruby-mode
+(cond ((locate-library "ruby-mode")
+       (progn
+         (require 'ruby-mode)
+         ;; Don't auto-insert encoding comments
+         ;; Those are almost never needed in Ruby 2+
+         (setq ruby-insert-encoding-magic-comment nil)
+
+         (cond ((locate-library "inf-ruby")
+                (progn
+                  (require 'inf-ruby)
+                  (add-hook 'ruby-mode-hook 'inf-ruby-minor-mode)
+                  (inf-ruby-minor-mode +1))))
+
+         (cond ((locate-library "yari")
+                (progn
+                  (require 'yari)
+                  ;; Map yari to C-h R
+                  (define-key 'help-command (kbd "R") 'yari))))
+
+         (cond ((locate-library "minitest")
+                (progn
+                  (require 'minitest)
+                  (add-hook 'ruby-mode-hook 'minitest-mode)
+                  (eval-after-load 'minitest
+                    '(minitest-install-snippets))
+                  )))
+
+         ;; CamelCase aware editing operations
+         (subword-mode +1))))
