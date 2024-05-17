@@ -144,6 +144,15 @@ managed by =git submodules=.
 - [[https://github.com/akermu/emacs-libvterm][vterm]] :: terminal emulator based on libvterm C library
   - M-x vterm :: runs the terminal
     - C-c C-t :: turns-on =vterm-copy-mode= to treat the terminal like a text-file
+- [[https://codeberg.org/akib/emacs-eat][eat]] :: more modern terminal emulator
+  - M-x eat :: runs the terminal
+    - C-q :: Send next key to the terminal.
+    - C-y :: Like `yank', but send the text to the terminal.
+    - M-y :: Like `yank-pop', but send the text to the terminal.
+    - C-c C-k :: Kill process.
+    - C-c C-e :: Switch to "emacs" input mode.
+    - C-c M-d :: Switch to "char" input mode.
+    - C-c C-l :: Switch to "line" input mode.
 
 ** version-control
 - [[https://magit.vc/][magit]] :: a complete text-based user interface to Git.

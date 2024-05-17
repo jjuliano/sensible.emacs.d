@@ -232,3 +232,6 @@
 [submodule "pkgs/yasnippet"]
 	path = pkgs/yasnippet
 	url = https://github.com/joaotavora/yasnippet.git
+[submodule "pkgs/emacs-eat"]
+	path = pkgs/emacs-eat
+	url = https://codeberg.org/akib/emacs-eat

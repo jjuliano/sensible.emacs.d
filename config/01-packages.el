@@ -522,6 +522,10 @@
                      (buffer-face-mode t)))
          (require 'vterm))))
 
+;; eat
+(cond ((locate-library "eat")
+       (require 'eat)))
+
 ;; org-tempo
 (cond ((locate-library "org-tempo")
        (require 'org-tempo)))
