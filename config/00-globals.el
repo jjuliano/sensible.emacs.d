@@ -13,7 +13,7 @@
 (setq-default org-mobile-directory (expand-file-name "~/Dropbox/Apps/MobileOrg"))
 
 ;; zoom-mode
-(setq-default use-zoom-mode t)
+;; (setq-default use-zoom-mode t)
 
 ;; language-tool
 (setq-default langtool-language-tool-jar (expand-file-name
