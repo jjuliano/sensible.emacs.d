@@ -519,14 +519,14 @@
        (require 'xterm-color)))
 
 ;; vterm
-(cond ((locate-library "vterm")
-       (progn
-         (setq vterm-term-environment-variable "eterm-color")
-         (add-hook 'vterm-mode-hook
-                   (lambda ()
-                     (set (make-local-variable 'buffer-face-mode-face) 'fixed-pitch)
-                     (buffer-face-mode t)))
-         (require 'vterm))))
+;;(cond ((locate-library "vterm")
+;;       (progn
+;;         (setq vterm-term-environment-variable "eterm-color")
+;;         (add-hook 'vterm-mode-hook
+;;                   (lambda ()
+;;                     (set (make-local-variable 'buffer-face-mode-face) 'fixed-pitch)
+;;                     (buffer-face-mode t)))
+;;         (require 'vterm))))
 
 ;; eat
 (cond ((locate-library "eat")

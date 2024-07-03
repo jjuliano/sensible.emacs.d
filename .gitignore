@@ -18,3 +18,4 @@ data/*
 config/custom.el
 TAGS
 var/*
+history
