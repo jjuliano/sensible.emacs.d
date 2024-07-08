@@ -92,7 +92,7 @@
 (cond ((locate-library "multiple-line-edit")
        (progn
          (require 'multiple-line-edit)
-
+         ;; Note: For macOS, C-SPC binding is assigned to input sources.
          (global-set-key (kbd "C-c C-SPC") 'mulled/edit-leading-edges)
          (global-set-key (kbd "C-c M-SPC") 'mulled/edit-trailing-edges))))
 

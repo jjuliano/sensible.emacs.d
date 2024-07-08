@@ -106,3 +106,8 @@
 ;; Need to define the custom config file path as better-defaults override it
 (setq-default custom-file (expand-file-name "config/custom.el"
                                             user-emacs-directory))
+
+;; Org inline images
+(setq org-display-inline-images t)
+(setq org-redisplay-inline-images t)
+(setq org-startup-with-inline-images "inlineimages")
