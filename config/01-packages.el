@@ -308,10 +308,10 @@
 ;;       (persp-mode 1)))
 
 ;; textsize-mode
-(cond ((locate-library "textsize")
-       (progn
-         (require 'textsize)
-         (textsize-mode +1))))
+;; (cond ((locate-library "textsize")
+;;        (progn
+;;          (require 'textsize)
+;;          (textsize-mode +1))))
 
 ;; flyspell spell-checking
 (cond ((locate-library "flyspell")
