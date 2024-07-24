@@ -235,3 +235,12 @@
 [submodule "pkgs/emacs-eat"]
 	path = pkgs/emacs-eat
 	url = https://codeberg.org/akib/emacs-eat
+[submodule "pkgs/pkl-mode"]
+	path = pkgs/pkl-mode
+	url = https://github.com/sin-ack/pkl-mode
+[submodule "pkgs/copilot-el"]
+	path = pkgs/copilot-el
+	url = https://github.com/copilot-emacs/copilot.el.git
+[submodule "pkgs/editorconfig"]
+	path = pkgs/editorconfig
+	url = https://github.com/editorconfig/editorconfig-emacs.git
