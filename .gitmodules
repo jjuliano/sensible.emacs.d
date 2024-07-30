@@ -233,7 +233,7 @@
 	path = pkgs/yasnippet
 	url = https://github.com/joaotavora/yasnippet.git
 [submodule "pkgs/emacs-eat"]
-	path = pkgs/emacs-eat
+	path = pkgs/eat
 	url = https://codeberg.org/akib/emacs-eat
 [submodule "pkgs/pkl-mode"]
 	path = pkgs/pkl-mode

@@ -508,15 +508,22 @@
                 (define-key magit-hunk-section-map (kbd "RET") 'magit-diff-visit-file-other-window)
                 (define-key magit-file-section-map (kbd "RET") 'magit-diff-visit-file-other-window))))))
 
+;; term-256color
+(cond ((locate-library "xterm-color")
+       (require 'xterm-color)))
+
 ;; improve vterm color mode
 (cond ((locate-library "eterm-256color")
        (progn
          (require 'eterm-256color)
          (add-hook 'term-mode-hook #'eterm-256color-mode))))
 
-;; dependency of eterm-256color
-(cond ((locate-library "xterm-color")
-       (require 'xterm-color)))
+;; eat
+(cond ((locate-library "eat")
+       (require 'eat)
+       (setq eat-term-name "xterm-256color")
+       (add-hook 'eshell-load-hook #'eat-eshell-mode)
+       (add-hook 'eshell-load-hook #'eat-eshell-visual-command-mode)))
 
 ;; vterm
 ;;(cond ((locate-library "vterm")
@@ -527,10 +534,6 @@
 ;;                     (set (make-local-variable 'buffer-face-mode-face) 'fixed-pitch)
 ;;                     (buffer-face-mode t)))
 ;;         (require 'vterm))))
-
-;; eat
-(cond ((locate-library "eat")
-       (require 'eat)))
 
 ;; org-tempo
 (cond ((locate-library "org-tempo")
@@ -665,3 +668,28 @@
 
          ;; CamelCase aware editing operations
          (subword-mode +1))))
+
+;; Copilot mode
+;; (cond ((locate-library "copilot")
+;;        (progn
+;;          (require 'copilot)
+;;          (add-hook 'prog-mode-hook 'copilot-mode)
+;;          (define-key copilot-completion-map (kbd "<tab>") 'copilot-accept-completion)
+;;          (define-key copilot-completion-map (kbd "TAB") 'copilot-accept-completion)
+;;                ;; (setq copilot-network-proxy '(:host "localhost" :port 4891))
+;; )))
+
+;; PKL mode
+(cond ((locate-library "pkl-mode")
+       (progn
+         (require 'pkl-mode)
+
+         (add-hook 'pkl-mode 'rainbow-delimiters-mode)
+         ;; (pkl-enable-copilot t))
+         )))
+
+;; Editorconfig
+(cond ((locate-library "editorconfig")
+       (progn
+         (require 'editorconfig)
+         (editorconfig-mode 1))))
