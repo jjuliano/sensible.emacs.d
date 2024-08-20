@@ -244,3 +244,6 @@
 [submodule "pkgs/editorconfig"]
 	path = pkgs/editorconfig
 	url = https://github.com/editorconfig/editorconfig-emacs.git
+[submodule "pkgs/visual-fill-column"]
+	path = pkgs/visual-fill-column
+	url = https://codeberg.org/joostkremers/visual-fill-column.git

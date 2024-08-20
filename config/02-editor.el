@@ -5,8 +5,14 @@
 ;; Show fill-column
 (global-display-fill-column-indicator-mode t)
 
-;; Turn-on auto-fill mode
-(setq-default auto-fill-function 'do-auto-fill)
+;; Default modes
+(setq-default
+ auto-fill-function 'do-auto-fill
+ adaptive-wrap-prefix-mode 1
+ visual-line-mode 1
+ ;; visual-line-fill-column-mode 1
+ ;; visual-fill-mode 1
+ )
 
 ;; Pulse highlight current line on switch window
 (defun pulse-line (&rest _)

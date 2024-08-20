@@ -679,6 +679,16 @@
 ;;                ;; (setq copilot-network-proxy '(:host "localhost" :port 4891))
 ;; )))
 
+;; Visual Fill Mode + Adaptive Wrap
+(cond ((locate-library "adaptive-wrap")
+       (require 'adaptive-wrap)
+       (cond ((locate-library "visual-fill")
+              (require 'visual-fill)))))
+
+;; Visual fill column mode
+(cond ((locate-library "visual-fill-column")
+       (require 'visual-fill-column)))
+
 ;; PKL mode
 (cond ((locate-library "pkl-mode")
        (progn

@@ -1,0 +1,2 @@
+;; Generated package description from visual-fill.el  -*- no-byte-compile: t -*-
+(define-package "visual-fill" "0.2" "Auto-refill paragraphs without modifying the buffer" 'nil :commit "1951eaf59e25091d5597cc45e3dd5925be005122" :url "https://elpa.gnu.org/packages/visual-fill.html" :authors '(("Stefan Monnier" . "monnier@iro.umontreal.ca")) :maintainer '("Stefan Monnier" . "monnier@iro.umontreal.ca"))
