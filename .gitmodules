@@ -247,3 +247,6 @@
 [submodule "pkgs/visual-fill-column"]
 	path = pkgs/visual-fill-column
 	url = https://codeberg.org/joostkremers/visual-fill-column.git
+[submodule "pkgs/cucumber-el"]
+	path = pkgs/cucumber-el
+	url = https://github.com/michaelklishin/cucumber.el.git

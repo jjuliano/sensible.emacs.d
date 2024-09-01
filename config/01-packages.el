@@ -703,3 +703,9 @@
        (progn
          (require 'editorconfig)
          (editorconfig-mode 1))))
+
+;; Cucumber.el
+(cond ((locate-library "feature-mode")
+       (progn
+         (require 'feature-mode)
+         (add-to-list 'auto-mode-alist '("\.feature$" . feature-mode)))))
