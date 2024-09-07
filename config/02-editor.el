@@ -117,3 +117,8 @@
 (setq org-display-inline-images t)
 (setq org-redisplay-inline-images t)
 (setq org-startup-with-inline-images "inlineimages")
+
+;; Disable mouse-wheel text zoom
+(global-unset-key (kbd "<pinch>"))
+(global-set-key (kbd "<C-wheel-up>") 'ignore)
+(global-set-key (kbd "<C-wheel-down>") 'ignore)
