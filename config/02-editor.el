@@ -122,3 +122,6 @@
 (global-unset-key (kbd "<pinch>"))
 (global-set-key (kbd "<C-wheel-up>") 'ignore)
 (global-set-key (kbd "<C-wheel-down>") 'ignore)
+
+;; Upgrade package default by default
+(setq package-install-upgrade-built-in t)
