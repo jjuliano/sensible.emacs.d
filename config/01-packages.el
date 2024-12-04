@@ -512,6 +512,10 @@
 (cond ((locate-library "xterm-color")
        (require 'xterm-color)))
 
+;; emacs-kotlin
+(cond ((locate-library "kotlin-mode")
+       (require 'kotlin-mode)))
+
 ;; improve vterm color mode
 (cond ((locate-library "eterm-256color")
        (progn
