@@ -498,15 +498,30 @@
          (flycheck-add-next-checker 'javascript-eslint 'jsx-tide 'append))))
 
 ;; Magit
+
 (cond ((locate-library "magit")
        (progn
          ;; Compat
          (cond ((locate-library "compat")
-                (require 'compat)
-                (require 'magit)
+                (require 'compat)))
 
-                (define-key magit-hunk-section-map (kbd "RET") 'magit-diff-visit-file-other-window)
-                (define-key magit-file-section-map (kbd "RET") 'magit-diff-visit-file-other-window))))))
+         ;; Dash
+         (cond ((locate-library "dash")
+                (require 'dash)))
+
+         ;; Transient
+         (cond ((locate-library "transient")
+                (require 'transient)))
+
+         ;; with-editor
+         (cond ((locate-library "with-editor")
+                (require 'with-editor)))
+
+         (require 'magit)
+
+        (define-key magit-hunk-section-map (kbd "RET") 'magit-diff-visit-file-other-window)
+        (define-key magit-file-section-map (kbd "RET") 'magit-diff-visit-file-other-window)
+)))
 
 ;; term-256color
 (cond ((locate-library "xterm-color")
