@@ -137,8 +137,8 @@
          (require 'go-mode)
 
          (defun go-mode-setup ()
-           ;; Use goimports instead of go-fmt
-           (setq gofmt-command "goimports")
+           ;; Use gofumpt instead of go-fmt
+           (setq gofmt-command "gofumpt")
            ;; Call Gofmt before saving
            (add-hook 'before-save-hook 'gofmt-before-save)
 
