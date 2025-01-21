@@ -302,6 +302,12 @@
          (require 'flycheck-color-mode-line)
          (add-hook 'flycheck-mode-hook 'flycheck-color-mode-line-mode))))
 
+;; flycheck-golangci-lint
+(cond ((locate-library "flycheck-golangci-lint")
+       (progn
+         (require 'flycheck-golangci-lint)
+         (add-hook 'flycheck-mode-hook #'flycheck-golangci-lint-setup))))
+
 ;; alternative workspace management via persp-mode.el
 ;;(cond ((locate-library "persp-mode")
 ;;       (require 'persp-mode)
@@ -356,6 +362,8 @@
 
          (global-set-key (kbd "C-x C-f") 'consult-find-file)
 
+         (consult-customize find-file :sort nil)
+         (consult-customize consult-find-file :sort nil)
          (consult-customize consult-mark :preview-key 'any)
          (add-hook 'completion-list-mode-hook #'consult-preview-at-point-mode))))
 
