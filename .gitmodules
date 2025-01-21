@@ -253,3 +253,6 @@
 [submodule "pkgs/emacs-kotlin"]
 	path = pkgs/emacs-kotlin
 	url = https://github.com/Emacs-Kotlin-Mode-Maintainers/kotlin-mode.git
+[submodule "pkgs/flycheck-golangci-lint"]
+	path = pkgs/flycheck-golangci-lint
+	url = https://github.com/weijiangan/flycheck-golangci-lint.git
